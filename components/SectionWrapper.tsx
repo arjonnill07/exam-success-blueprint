@@ -1,9 +1,8 @@
-
 import React from 'react';
 
 interface SectionWrapperProps {
-  title?: string;
-  subtitle?: string;
+  title?: React.ReactNode;
+  subtitle?: React.ReactNode;
   children: React.ReactNode;
   className?: string;
   id?: string;
