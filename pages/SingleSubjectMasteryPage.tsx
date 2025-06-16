@@ -1,9 +1,8 @@
-
 import React, { useState } from 'react';
 import SectionWrapper from '../components/SectionWrapper';
 import Card from '../components/Card';
-import { STRATEGIES, BLOOM_STAGES } from '../constants';
-import { Strategy, BloomStage, BloomLevel } from '../types';
+import { STRATEGIES } from '../constants';
+import { Strategy } from '../types';
 import StrategyDetail from '../components/StrategyDetail';
 import BookOpenIcon from '../components/icons/BookOpenIcon';
 import BrainIcon from '../components/icons/BrainIcon';
@@ -24,23 +23,6 @@ const SingleSubjectMasteryPage: React.FC = () => {
   );
   
   const relevantStrategiesForAnxiety = STRATEGIES.filter(s => s.id === 'stress-taming');
-
-  const bloomLevelColors: Record<BloomLevel, string> = {
-    [BloomLevel.REMEMBERING]: "bg-red-100 border-red-300",
-    [BloomLevel.UNDERSTANDING]: "bg-orange-100 border-orange-300",
-    [BloomLevel.APPLYING]: "bg-yellow-100 border-yellow-300",
-    [BloomLevel.ANALYZING]: "bg-green-100 border-green-300",
-    [BloomLevel.EVALUATING]: "bg-blue-100 border-blue-300",
-    [BloomLevel.CREATING]: "bg-purple-100 border-purple-300",
-  };
-  const bloomLevelTextColors: Record<BloomLevel, string> = {
-    [BloomLevel.REMEMBERING]: "text-red-700",
-    [BloomLevel.UNDERSTANDING]: "text-orange-700",
-    [BloomLevel.APPLYING]: "text-yellow-700",
-    [BloomLevel.ANALYZING]: "text-green-700",
-    [BloomLevel.EVALUATING]: "text-blue-700",
-    [BloomLevel.CREATING]: "text-purple-700",
-  };
 
 
   return (
@@ -117,35 +99,6 @@ const SingleSubjectMasteryPage: React.FC = () => {
             </div>
           </div>
         )}
-
-
-        {/* Bloom's Taxonomy Section */}
-        <SectionWrapper title="Ascend Bloom's Taxonomy Together" subtitle="This section guides you through this hierarchical approach to truly master concepts, moving from basic understanding to critical thinking and creation. This is how expertise is built for exams!" className="bg-sky-50 rounded-xl mt-12 py-10">
-          <div className="space-y-6">
-            {BLOOM_STAGES.map((stage: BloomStage) => (
-              <div key={stage.level} className={`p-1 rounded-lg ${bloomLevelColors[stage.level]}`}>
-                <Card 
-                    title="" // Title is now handled inside the card for better styling with color
-                    className={`bg-white !shadow-md hover:!shadow-lg !scale-100 hover:!scale-[1.02]`} // Override some default card styles
-                >
-                    <div className={`p-3 -m-3 mb-3 rounded-t-md border-b-2 ${bloomLevelColors[stage.level]}`}>
-                        <h3 className={`text-2xl font-bold ${bloomLevelTextColors[stage.level]}`}>{stage.level}</h3>
-                    </div>
-                    <div className="font-medium text-gray-700 mb-3 space-y-2" dangerouslySetInnerHTML={{ __html: stage.description.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }}></div>
-                    <h4 className="font-semibold text-gray-600 mt-4 mb-2">Suggested Activities:</h4>
-                    <ul className="list-disc list-inside text-sm text-gray-600 space-y-1 pl-1">
-                    {stage.activities.map((activity, index) => (
-                        <li key={index} dangerouslySetInnerHTML={{ __html: activity.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }}></li>
-                    ))}
-                    </ul>
-                </Card>
-              </div>
-            ))}
-          </div>
-           <p className="mt-8 text-center text-gray-700 text-lg">
-            It is recommended to use these levels to deepen engagement with any subject. The goal is to move beyond just remembering, towards applying, analyzing, evaluating, and even creating new insights for exam success and beyond!
-          </p>
-        </SectionWrapper>
 
 
         {/* Overcoming Test Anxiety Section */}

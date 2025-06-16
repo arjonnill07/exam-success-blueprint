@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import SectionWrapper from '../components/SectionWrapper';
 import Card from '../components/Card';
-import MailIconOutline from '../components/icons/MailIcon'; // Renamed to avoid conflict, for form
 import UserCircleIcon from '../components/icons/UserCircleIcon';
-import ChatBubbleLeftEllipsisIcon from '../components/icons/ChatBubbleLeftEllipsisIcon';
 import LinkedInIcon from '../components/icons/LinkedInIcon';
 import GitHubIcon from '../components/icons/GitHubIcon';
 import EmailIconSolid from '../components/icons/EmailIconSolid';
 import PhoneIcon from '../components/icons/PhoneIcon';
+import FacebookIcon from '../components/icons/UsersIcon'; // Placeholder for Facebook
+import LightbulbIcon from '../components/icons/LightbulbIcon'; // Placeholder for Portfolio
 
 const contactInfo = [
   {
@@ -33,122 +33,33 @@ const contactInfo = [
     url: "tel:01881896752",
     icon: PhoneIcon,
     handle: "01881896752"
+  },
+  {
+    name: "Facebook",
+    url: "https://www.facebook.com/arjon.nill",
+    icon: FacebookIcon,
+    handle: "arjon.nill"
+  },
+  {
+    name: "Portfolio",
+    url: "https://arjongolder.vercel.app/",
+    icon: LightbulbIcon,
+    handle: "arjongolder.vercel.app"
   }
 ];
 
-
 const ContactPage: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log('Form data submitted:', formData);
-    setIsSubmitted(true);
-    setTimeout(() => {
-        setFormData({ name: '', email: '', message: '' });
-        setIsSubmitted(false);
-    }, 3000);
-  };
-
   return (
-    <div className="animate-fadeIn">
+    <div className="animate-fadeIn min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-100 py-12 px-2 md:px-0 flex items-start justify-center">
       <SectionWrapper
         title="Connect & Continue Your Journey"
         subtitle="Thank you for embarking on this learning quest! If you have questions, ideas, or wish to connect, here’s how you can reach out. This platform is here to support your exam journey."
       >
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-          {/* Contact Form Card */}
-          <Card title="Send a Message" icon={<ChatBubbleLeftEllipsisIcon className="w-8 h-8 text-blue-600" />}>
-            {isSubmitted ? (
-              <div className="p-4 text-center bg-green-100 text-green-700 rounded-lg">
-                <h4 className="font-semibold text-lg">Thank You!</h4>
-                <p>Your message has been received (conceptually!).</p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                    Your Full Name
-                  </label>
-                  <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <UserCircleIcon className="h-5 w-5 text-gray-400" />
-                    </div>
-                    <input
-                      type="text"
-                      name="name"
-                      id="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full pl-10 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                      placeholder="John Doe"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                    Your Email Address
-                  </label>
-                  <div className="relative">
-                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <MailIconOutline className="h-5 w-5 text-gray-400" />
-                    </div>
-                    <input
-                      type="email"
-                      name="email"
-                      id="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full pl-10 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                      placeholder="you@example.com"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                    Your Message
-                  </label>
-                  <textarea
-                    name="message"
-                    id="message"
-                    rows={4}
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="Your question or feedback..."
-                  ></textarea>
-                </div>
-                <div>
-                  <button
-                    type="submit"
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg shadow-md transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-                  >
-                    Send Message
-                  </button>
-                </div>
-              </form>
-            )}
-          </Card>
-
-          {/* Arjon Golder's Contact Information Card */}
-          <Card title="Direct Contact Details" icon={<UserCircleIcon className="w-8 h-8 text-blue-600" />}>
-            <div className="space-y-6 my-2">
+        <div className="flex flex-col items-center w-full mt-8">
+          <Card 
+            className="w-full max-w-2xl mx-auto shadow-2xl border-2 border-indigo-100 bg-white/90 rounded-2xl p-8 flex flex-col items-center"
+          >
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 my-4 w-full justify-items-center">
               {contactInfo.map(contact => {
                 const ContactIconComponent = contact.icon;
                 return (
@@ -157,20 +68,18 @@ const ContactPage: React.FC = () => {
                     href={contact.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center p-3 bg-indigo-50 hover:bg-indigo-100 rounded-xl shadow-md transition-all duration-300 group border border-indigo-200"
+                    className="flex flex-col items-center gap-2 p-4 bg-gradient-to-r from-indigo-50 to-blue-50 hover:from-blue-100 hover:to-indigo-100 rounded-xl shadow-md transition-all duration-300 border border-indigo-200 group hover:scale-105 w-full text-center"
                   >
-                    <ContactIconComponent className="w-7 h-7 md:w-8 md:h-8 text-indigo-600 mr-4 transition-transform duration-300 group-hover:scale-110 flex-shrink-0" />
-                    <div className="flex-grow min-w-0"> {/* Added for text truncation */}
-                      <p className="text-md md:text-lg font-semibold text-indigo-700 truncate">{contact.name}</p>
-                      <p className="text-slate-500 text-sm md:text-base group-hover:text-indigo-500 truncate">{contact.handle}</p>
-                    </div>
+                    <ContactIconComponent className="w-8 h-8 text-indigo-600 group-hover:text-blue-700 transition-transform duration-300 flex-shrink-0 mb-1" />
+                    <span className="text-lg font-semibold text-indigo-700 truncate">{contact.name}</span>
+                    <span className="text-slate-500 text-sm group-hover:text-indigo-500 truncate">{contact.handle}</span>
                   </a>
                 );
               })}
             </div>
-             <p className="text-xs text-gray-500 mt-6 text-center">
-                Keep exploring, keep learning, and keep forging your unique path to mastery!
-             </p>
+            <p className="text-xs text-gray-500 mt-8 text-center italic">
+              Keep exploring, keep learning, and keep forging your unique path to mastery!
+            </p>
           </Card>
         </div>
       </SectionWrapper>
