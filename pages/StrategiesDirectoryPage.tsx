@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 import { STRATEGIES } from '../constants';
 import { Strategy, StrategyCategory } from '../types';
 import StrategyDetail from '../components/StrategyDetail';
@@ -30,7 +29,6 @@ const StrategiesDirectoryPage: React.FC = () => {
 	const [shuffledA, setShuffledA] = useState(false);
 	const [shuffledB, setShuffledB] = useState(false);
 	const [selectedStrategy, setSelectedStrategy] = useState<Strategy | null>(null);
-	const location = useLocation();
 
 	useEffect(() => {
 		let filtered: Strategy[];
@@ -49,15 +47,6 @@ const StrategiesDirectoryPage: React.FC = () => {
 		setShuffledA(false);
 		setShuffledB(false);
 	}, [filterCategory]);
-
-	useEffect(() => {
-		if (location.state?.scrollToId) {
-			const idxA = deckA.findIndex(s => s.id === location.state.scrollToId);
-			const idxB = deckB.findIndex(s => s.id === location.state.scrollToId);
-			if (idxA !== -1) setCurrentIdxA(idxA);
-			if (idxB !== -1) setCurrentIdxB(idxB);
-		}
-	}, [location.state, deckA, deckB]);
 
 	// Deck navigation logic
 	const handleShuffleA = () => {
@@ -153,6 +142,7 @@ const StrategiesDirectoryPage: React.FC = () => {
 						</div>
 						<div className="mt-2 text-blue-800 font-semibold text-base">{deckA.length > 0 ? `Card ${currentIdxA + 1} of ${deckA.length}` : 'No strategies.'}</div>
 					</div>
+
 					{/* Deck B */}
 					<div className="flex flex-col items-center w-full md:w-1/2">
 						<div className="relative z-10 w-[340px] max-w-full">
@@ -197,6 +187,7 @@ const StrategiesDirectoryPage: React.FC = () => {
 					</div>
 				</div>
 			</div>
+
 			{/* Modal for Strategy Detail */}
 			{selectedStrategy && (
 				<div
