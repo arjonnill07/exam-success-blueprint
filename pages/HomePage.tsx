@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import SectionWrapper from '../components/SectionWrapper';
-import Card from '../components/Card';
 import { STRATEGIES, MOTIVATIONAL_QUOTES } from '../constants';
-import BookOpenIcon from '../components/icons/BookOpenIcon';
 import TargetIcon from '../components/icons/TargetIcon';
-import ClipboardListIcon from '../components/icons/ClipboardListIcon';
-import ZapIcon from '../components/icons/ZapIcon';
 
 const testimonials = [
 	{
@@ -26,6 +21,7 @@ const testimonials = [
 const HomePage: React.FC = () => {
 	const [quote, setQuote] = useState('');
 	const [testimonialIdx, setTestimonialIdx] = useState(0);
+	const featuredStrategies = STRATEGIES.slice(0, 3);
 
 	useEffect(() => {
 		setQuote(
@@ -39,155 +35,193 @@ const HomePage: React.FC = () => {
 		return () => clearInterval(interval);
 	}, []);
 
-	const featuredStrategies = STRATEGIES.slice(0, 3);
-
 	return (
 		<div className="animate-fadeIn">
-			{/* Hero Section - Modern Minimalist, Light Blue Texture */}
-			<div
-				className="relative py-20 px-4 text-center overflow-hidden rounded-b-3xl shadow-lg mb-12 border-b border-slate-200"
-				style={{
-					background: `linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%)`,
-					backgroundImage: `url('data:image/svg+xml;utf8,<svg width=\'100%\' height=\'100%\' xmlns=\'http://www.w3.org/2000/svg\'><defs><radialGradient id=\'a\' cx=\'50%\' cy=\'50%\' r=\'80%\' fx=\'50%\' fy=\'50%\'><stop offset=\'0%\' stop-color=\'%23bae6fd\' stop-opacity=\'0.4\'/><stop offset=\'100%\' stop-color=\'%23f0f9ff\' stop-opacity=\'0.7\'/></radialGradient></defs><rect width=\'100%\' height=\'100%\' fill=\'url(%23a)\'/></svg>')`,
-					backgroundRepeat: 'no-repeat',
-					backgroundSize: 'cover',
-				}}
-			>
-				<h1 className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight text-blue-900 drop-shadow-sm">
+			{/* Hero Section - Clean, Focused */}
+			<div className="relative py-20 px-4 text-center overflow-hidden rounded-b-3xl shadow-lg mb-10 border-b border-slate-200 bg-gradient-to-br from-sky-100 via-blue-50 to-white">
+				<h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight text-blue-900 drop-shadow-sm leading-tight">
 					Bangladesh’s Exam Success Blueprint
 				</h1>
-				<p className="text-2xl md:text-3xl mb-6 max-w-2xl mx-auto font-medium text-blue-700 drop-shadow-sm">
+				<p className="text-2xl md:text-4xl mb-8 max-w-2xl mx-auto font-semibold text-blue-700 drop-shadow-sm leading-snug">
 					Study smarter, not harder.{' '}
 					<span className="text-sky-500 font-bold">Ace your exams</span> with
 					confidence!
 				</p>
-				<div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8">
-					<Link
-						to="/strategies"
-						className="bg-sky-200 hover:bg-sky-300 text-blue-900 font-bold py-3 px-8 rounded-full text-lg shadow-lg transition-transform transform hover:scale-105 border border-sky-300"
-					>
-						Explore Strategies
-					</Link>
-					<Link
-						to="/manage-subjects"
-						className="bg-white hover:bg-blue-50 text-blue-700 font-bold py-3 px-8 rounded-full text-lg shadow-lg border-2 border-sky-200 transition-transform transform hover:scale-105"
-					>
-						Plan Your Studies
-					</Link>
-					<Link
-						to="/quick-prep"
-						className="inline-flex items-center bg-white hover:bg-sky-100 text-sky-600 font-bold py-3 px-8 rounded-full text-lg shadow-lg border border-sky-200 transition-transform transform hover:scale-105 animate-pulse"
-					>
-						<ZapIcon className="w-5 h-5 mr-2" /> Exam SOS!
-					</Link>
-				</div>
-				<div className="max-w-xl mx-auto bg-white/80 rounded-xl p-6 mt-6 shadow border border-sky-100">
-					<p className="text-lg md:text-xl italic text-blue-800">“{quote}”</p>
+				<Link
+					to="/strategies"
+					className="bg-gradient-to-r from-sky-400 to-blue-500 text-white font-extrabold py-5 px-12 rounded-full text-2xl shadow-2xl border-4 border-sky-200 transition-transform transform hover:scale-105 focus:ring-4 focus:ring-sky-300 mb-4 inline-block"
+					style={{ boxShadow: '0 8px 32px 0 rgba(56,189,248,0.25)' }}
+				>
+					Get Started
+				</Link>
+				<div className="mt-6 max-w-xl mx-auto bg-white/90 rounded-xl p-8 shadow border border-sky-100">
+					<p className="text-xl md:text-2xl italic text-blue-800 leading-relaxed">
+						“{quote}”
+					</p>
 				</div>
 			</div>
 
-			{/* Core Features Section */}
-			<SectionWrapper
-				title={<span>Unlock Your Potential</span>}
-				subtitle="Discover the tools and techniques to ensure academic success. You're supported every step of the way!"
-				id="features"
-			>
-				<div className="grid md:grid-cols-3 gap-8">
-					<Link to="/manage-subjects" className="block hover:no-underline group">
-						<Card
-							title={
-								<span className="flex items-center gap-2">
-									<ClipboardListIcon className="w-7 h-7" /> Multi-Subject Planning
-								</span>
-							}
-						>
-							<p>
-								Organize study schedules, balance coursework, and track progress
-								across all subjects efficiently. Let's build a solid plan.
-							</p>
-							<span className="mt-4 inline-block text-blue-600 font-semibold group-hover:underline">
-								Plan Studies &rarr;
-							</span>
-						</Card>
+			{/* How It Works Section - Visual, Simple, Responsive, Interactive */}
+			<div className="py-10 px-4 flex flex-col items-center">
+				<h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">
+					How It Works
+				</h2>
+				<div className="flex flex-col md:flex-row gap-8 items-center w-full justify-center">
+					{/* Step 1 */}
+					<Link
+						to="/strategies"
+						className="flex flex-col items-center w-full max-w-xs flex-1 group focus:outline-none focus:ring-2 focus:ring-sky-400 rounded-xl transition"
+					>
+						<div className="bg-sky-200 p-6 rounded-full shadow-lg mb-2 border-4 border-sky-300 group-hover:scale-110 transition-transform">
+							<TargetIcon className="w-10 h-10 text-blue-900" />
+						</div>
+						<span className="font-bold text-lg text-blue-900 text-center">
+							Explore Proven Strategies
+						</span>
+						<span className="text-sky-700 text-sm mt-1 text-center">
+							Find what works for you
+						</span>
 					</Link>
-					<Link to="/subject-mastery" className="block hover:no-underline group">
-						<Card
-							title={
-								<span className="flex items-center gap-2">
-									<BookOpenIcon className="w-7 h-7" /> Subject-Specific Mastery
-								</span>
-							}
-						>
-							<p>
-								Dive deep into individual subjects. Discover tailored techniques to
-								overcome test anxiety and achieve true understanding for each one.
-							</p>
-							<span className="mt-4 inline-block text-blue-600 font-semibold group-hover:underline">
-								Master Subjects &rarr;
-							</span>
-						</Card>
+					{/* Arrow */}
+					<span className="text-3xl text-sky-400 hidden md:inline">→</span>
+					<span className="text-3xl text-sky-400 md:hidden">↓</span>
+					{/* Step 2 */}
+					<Link
+						to="/manage-subjects"
+						className="flex flex-col items-center w-full max-w-xs flex-1 group focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-xl transition"
+					>
+						<div className="bg-blue-100 p-6 rounded-full shadow-lg mb-2 border-4 border-blue-200 group-hover:scale-110 transition-transform">
+							<svg
+								className="w-10 h-10 text-blue-900"
+								fill="none"
+								stroke="currentColor"
+								strokeWidth="2"
+								viewBox="0 0 24 24"
+							>
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									d="M9 17v-2a4 4 0 014-4h4m0 0V7m0 4l-4-4m4 4l4-4"
+								/>
+							</svg>
+						</div>
+						<span className="font-bold text-lg text-blue-900 text-center">
+							Plan & Track Progress
+						</span>
+						<span className="text-blue-700 text-sm mt-1 text-center">
+							Stay organized, stress less
+						</span>
 					</Link>
-					<Link to="/strategies" className="block hover:no-underline group">
-						<Card
-							title={
-								<span className="flex items-center gap-2">
-									<TargetIcon className="w-7 h-7" /> Proven Study Strategies
-								</span>
-							}
-						>
-							<p>
-								Explore a comprehensive library of scientifically-backed study
-								methods curated to boost retention and performance, explained
-								clearly.
-							</p>
-							<span className="mt-4 inline-block text-blue-600 font-semibold group-hover:underline">
-								Discover Techniques &rarr;
-							</span>
-						</Card>
+					{/* Arrow */}
+					<span className="text-3xl text-sky-400 hidden md:inline">→</span>
+					<span className="text-3xl text-sky-400 md:hidden">↓</span>
+					{/* Step 3 */}
+					<Link
+						to="/subject-mastery"
+						className="flex flex-col items-center w-full max-w-xs flex-1 group focus:outline-none focus:ring-2 focus:ring-blue-200 rounded-xl transition"
+					>
+						<div className="bg-blue-50 p-6 rounded-full shadow-lg mb-2 border-4 border-blue-100 group-hover:scale-110 transition-transform">
+							<svg
+								className="w-10 h-10 text-blue-900"
+								fill="none"
+								stroke="currentColor"
+								strokeWidth="2"
+								viewBox="0 0 24 24"
+							>
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									d="M12 20h9"
+								/>
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									d="M12 4v16m0 0H3"
+								/>
+							</svg>
+						</div>
+						<span className="font-bold text-lg text-blue-900 text-center">
+							Master Every Subject
+						</span>
+						<span className="text-blue-700 text-sm mt-1 text-center">
+							Deep-dive for real results
+						</span>
+					</Link>
+					{/* Arrow */}
+					<span className="text-3xl text-sky-400 hidden md:inline">→</span>
+					<span className="text-3xl text-sky-400 md:hidden">↓</span>
+					{/* Step 4 */}
+					<Link
+						to="/quick-prep"
+						className="flex flex-col items-center w-full max-w-xs flex-1 group focus:outline-none focus:ring-2 focus:ring-yellow-300 rounded-xl transition"
+					>
+						<div className="bg-yellow-100 p-6 rounded-full shadow-lg mb-2 border-4 border-yellow-300 group-hover:scale-110 transition-transform">
+							<svg
+								className="w-10 h-10 text-yellow-600"
+								fill="none"
+								stroke="currentColor"
+								strokeWidth="2"
+								viewBox="0 0 24 24"
+							>
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									d="M13 16h-1v-4h-1m4 4h-1v-4h-1m-4 4h-1v-4h-1"
+								/>
+							</svg>
+						</div>
+						<span className="font-bold text-lg text-yellow-700 text-center">
+							Exam SOS
+						</span>
+						<span className="text-yellow-700 text-sm mt-1 text-center">
+							Last-minute help
+						</span>
 					</Link>
 				</div>
-			</SectionWrapper>
+				<p className="mt-6 text-sky-700 text-lg text-center max-w-xl">
+					Jump in wherever you need. Every section is designed to help you
+					succeed!
+				</p>
+			</div>
 
-			{/* Featured Strategies Section */}
-			<SectionWrapper
-				title={<span>Featured Techniques</span>}
-				subtitle="Start with these powerful strategies. They make a real difference!"
-				className="bg-sky-50"
-				id="featured-strategies"
-			>
-				<div className="grid md:grid-cols-3 gap-8">
+			{/* Featured Techniques - Modern, Subtle Effects */}
+			<div className="py-12 px-4 bg-gradient-to-br from-sky-50 to-white">
+				<h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-8 text-center">
+					Today’s Highlight
+				</h2>
+				<div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
 					{featuredStrategies.map((strategy) => {
 						const IconComponent = strategy.icon;
 						return (
-							<Link
+							<div
 								key={strategy.id}
-								to="/strategies"
-								state={{ scrollToId: strategy.id }}
-								className="block hover:no-underline group"
+								className="relative group bg-white rounded-3xl shadow-xl border-4 border-sky-100 p-8 flex flex-col items-center hover:shadow-2xl hover:border-blue-200 transition-all cursor-pointer"
 							>
-								<Card
-									title={
-										<span className="flex items-center gap-2">
-											<IconComponent className="w-7 h-7" /> {strategy.title}
-										</span>
-									}
+								<IconComponent className="w-14 h-14 text-blue-700 mb-4 group-hover:scale-110 transition-transform" />
+								<h3 className="text-2xl font-bold text-blue-900 mb-2 text-center">
+									{strategy.title}
+								</h3>
+								<p className="text-blue-700 text-lg mb-4 text-center">
+									{strategy.description}
+								</p>
+								<Link
+									to="/strategies"
+									state={{ scrollToId: strategy.id }}
+									className="bg-sky-200 hover:bg-sky-300 text-blue-900 font-bold py-2 px-6 rounded-full text-lg shadow-md transition-transform transform hover:scale-105 mt-auto"
 								>
-									<p>{strategy.description}</p>
-									<span className="mt-4 inline-block text-blue-600 font-semibold group-hover:underline">
-										Learn More &rarr;
-									</span>
-								</Card>
-							</Link>
+									Try This Now
+								</Link>
+							</div>
 						);
 					})}
 				</div>
-			</SectionWrapper>
+			</div>
 
 			{/* Student Success Testimonials */}
-			<SectionWrapper
-				title={<span>Student Success</span>}
-				subtitle="Real stories from Bangladeshi students"
-			>
+			<div className="py-12 px-4">
+				<h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-8 text-center">
+					Student Success
+				</h2>
 				<div className="max-w-2xl mx-auto">
 					<div className="bg-white rounded-2xl shadow-lg p-8 text-center border-l-4 border-blue-200 min-h-[140px] transition-all duration-500">
 						<p className="italic text-lg text-blue-800 mb-2">
@@ -198,27 +232,7 @@ const HomePage: React.FC = () => {
 						</div>
 					</div>
 				</div>
-			</SectionWrapper>
-
-			{/* Call to Action Section */}
-			<SectionWrapper className="bg-sky-900 text-white" id="cta">
-				<div className="text-center max-w-3xl mx-auto">
-					<h2 className="text-3xl md:text-4xl font-bold mb-4">
-						Ready to Transform Your Study Habits?
-					</h2>
-					<p className="text-lg mb-8">
-						Join countless students achieving their academic goals with smarter
-						study strategies. It's time to study smarter, not just harder, with
-						this guide by your side.
-					</p>
-					<Link
-						to="/strategies"
-						className="bg-sky-200 hover:bg-sky-300 text-blue-900 font-bold py-4 px-10 rounded-full text-xl shadow-lg transition-transform transform hover:scale-105"
-					>
-						Let's Get Started!
-					</Link>
-				</div>
-			</SectionWrapper>
+			</div>
 		</div>
 	);
 };

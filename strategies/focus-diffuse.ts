@@ -26,9 +26,10 @@ const focusDiffuse: Strategy = {
   ],
   benefits: [],
   realWorldExamples: [
-    "<em>Stuck on a complex Physics problem for an exam?</em> Work on it intently (focused mode), then take a 10-minute walk or listen to a song (diffuse mode) before returning. You'll often see it differently!",
-    "<em>Brainstorming arguments for an exam essay:</em> Focus on the prompt and jot down initial ideas, then perhaps do a quick, unrelated chore (like making tea) to let ideas percolate and connect.",
-    "<em>Trying to understand a dense chapter for an upcoming test:</em> Study the details section by section, then take a break and think about something else entirely before doing a quick review. This helps solidify the big picture."
+    `<strong>Physics Problem Breakthrough:</strong> Stuck on a tough SSC Physics calculation? Focus hard for 25 minutes, then take a walk or chat with a friend. <em>Eureka!</em> Many students find the answer pops into their head during the break! <br/><em>Try it now:</em> Next time you’re stuck, step away for 10 minutes—see what happens when you return.`,
+    `<strong>Essay Brainstorming:</strong> For Bangla or English essays, focus on the topic and jot down ideas for 20 minutes. Then, do a quick chore (like making tea or watering plants). <em>Surprise:</em> New arguments and examples will often come to you!`,
+    `<strong>Math & Science Revision:</strong> Study a dense chapter (like Chemistry reactions) in focused mode, then listen to music or doodle for a few minutes. <em>Result:</em> You’ll connect concepts and remember more for the exam.`,
+    `<strong>Real Student Story:</strong> “I was stuck on a math proof for hours. After a break to play carrom, the solution just clicked!” <br/><em>Challenge:</em> Try alternating focus and break sessions for your hardest subject today.”`,
   ],
   examPrepFocus: []
 };

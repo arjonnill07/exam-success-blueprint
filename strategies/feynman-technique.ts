@@ -5,34 +5,51 @@ import TeacherIcon from '../components/icons/TeacherIcon';
 const feynmanTechnique: Strategy = {
   id: "feynman-technique",
   title: "Feynman Technique (Teach Me!)",
-  description: "Explain a concept in simple terms to identify gaps in understanding.",
+  description: "Unlock your superpower: teach any topic simply, and you’ll master it for life!",
   longDescription: `
-    <p><strong>Quick Take for Your Exams:</strong> The ultimate test of understanding for any exam topic! If you can explain it simply, you truly get it. If not, you've found exactly where to focus your revision.</p>
-    <p><strong>🧑‍🏫 What Is It?</strong></p>
-    <ul>
-      <li>Choose a concept you need to learn for an exam.</li>
-      <li>Write or say an explanation of it as if you're teaching a child (or someone unfamiliar with the topic).</li>
-      <li>Use simple language and analogies. Avoid jargon.</li>
-      <li>Identify areas where your explanation is weak or confusing – these are your knowledge gaps for the exam.</li>
-    </ul>
+    <div class="space-y-3">
+      <div><strong>🦸‍♂️ What:</strong> Become a teacher, detective, and storyteller! Explain any topic as if you’re teaching a 10-year-old, a friend, or even your parents. If you can do that, you truly understand it.</div>
+      <div><strong>💡 Why it works:</strong> Teaching forces your brain to organize, simplify, and connect ideas. If you get stuck, you’ve found your weak spot—now you know exactly what to fix before the exam!</div>
+      <div><strong>⚡ How to use your superpower:</strong>
+        <ul class="list-disc list-inside ml-4">
+          <li>Pick a topic you want to master (e.g., Math theorem, Biology process, English poem).</li>
+          <li>Explain it out loud or write it down as if your listener is much younger or new to the subject.</li>
+          <li>Use simple words, stories, or even doodles—no jargon allowed!</li>
+          <li>Notice where you hesitate or get confused. That’s your clue to review and try again.</li>
+        </ul>
+      </div>
+      <div class="bg-sky-50 border-l-4 border-sky-400 p-2 rounded">
+        <strong>Try it now:</strong> After studying a tough chapter, call a friend or sibling and explain it in your own words. Or, teach your pillow! If you can make them (or yourself) say “Oh, now I get it!”—you’re exam-ready.
+      </div>
+      <div class="text-blue-700 text-sm mt-2">
+        <strong>Real-world Eureka:</strong> Ever noticed how the best students are always helping others? That’s their secret! When you teach, you learn twice. You’ll spot gaps, build confidence, and maybe even become the go-to genius in your group.
+      </div>
+    </div>
   `,
   category: StrategyCategory.CONCEPT_MASTERY,
   icon: UsersIcon,
   visualExplainerComponent: TeacherIcon,
   visualExplainerCaption: "Visualizing Feynman Technique: Explaining a concept simply, as if to a student.",
   howTo: [
-    "**1. Pick a Concept:** Choose something you need to master for your exam.",
-    "**2. Teach It Simply:** Write down or say aloud an explanation using only simple language. Imagine your student is 10 years old.",
-    "**3. Spot the Gaps:** Where did you get stuck, use jargon, or feel unsure? This is crucial exam feedback.",
-    "**4. Review & Simplify:** Go back to your study materials to clarify those weak points. Then, try simplifying your explanation again."
+    "Pick a topic you want to master (e.g., Math, Science, English).",
+    "Explain it out loud or write it down as if teaching a 10-year-old.",
+    "Use simple words, stories, or doodles—no jargon!",
+    "Where you get stuck, review and try again until it’s crystal clear.",
   ],
-  benefits: [],
+  benefits: [
+    "Makes you a true master, not just a memorizer!",
+    "Builds confidence and helps friends too.",
+    "Turns boring study into a fun challenge.",
+  ],
   realWorldExamples: [
-    "<em>Struggling with 'natural selection' for a Biology exam?</em> Try to explain it to an imaginary younger sibling. Where do you hesitate? That's your study point.",
-    "<em>Preparing for an Economics exam on 'supply and demand'?</em> Write out an explanation using everyday examples, avoiding technical terms until you can define them simply.",
-    "<em>Before a Math exam, if a particular theorem is confusing:</em> Attempt to explain its proof and significance in the simplest terms possible. This quickly reveals if you've truly grasped it."
+    "<em>Biology:</em> Explain 'natural selection' to your younger sibling using animal stories.",
+    "<em>Economics:</em> Teach 'supply and demand' to your parents using a bazaar example.",
+    "<em>Math:</em> Draw a comic strip to explain a tricky theorem to a friend.",
   ],
-  examPrepFocus: []
+  examPrepFocus: [
+    "Perfect for tough, confusing topics in any subject.",
+    "Great for group study and last-minute revision.",
+  ]
 };
 
 export default feynmanTechnique;

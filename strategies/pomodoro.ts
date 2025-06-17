@@ -29,10 +29,11 @@ const pomodoro: Strategy = {
   ],
   benefits: [],
   realWorldExamples: [
-    "<strong>📐 Math:</strong><br/>Pomodoro 1: Solve 7 tricky problems from Algebra<br/>Pomodoro 2: Revise formula list or error notebook",
-    "<strong>🧪 Science (Physics, Chemistry, Biology):</strong><br/>Pomodoro 1: Review key definitions and laws<br/>Pomodoro 2: Solve board-style short questions",
-    "<strong>📚 History & Civics:</strong><br/>Pomodoro 1: Memorize key events from a chapter<br/>Pomodoro 2: Write a practice answer to a long question",
-    "<strong>🗣️ Language/Grammar:</strong><br/>Pomodoro 1: Flashcards for 20 vocab words (Active Recall style!)<br/>Pomodoro 2: Practice paragraph or dialogue writing"
+    `<strong>SSC/HSC Exam Crunch:</strong> Students who use Pomodoro say they finish revision faster and feel less tired. 4 Pomodoros = 2 hours of real focus, not 6 hours of distracted study! <br/><em>Eureka!</em> Try it for your next mock test revision—notice how much more you remember, and how fresh you feel at the end!`,
+    `<strong>Math Mastery:</strong> Break a big chapter (like Trigonometry) into 25-minute sprints. After each Pomodoro, jot down what you recall—see your memory grow! <br/><em>Try it now:</em> Set a timer, solve 5 problems, then take a break. Repeat. You’ll be amazed at your progress.`,
+    `<strong>Bangla & English Essays:</strong> Use Pomodoro to brainstorm, draft, and revise in separate sessions. The break helps you spot mistakes and spark new ideas. <br/><em>Real student tip:</em> “I write better essays when I walk around during breaks—my best ideas come then!”`,
+    `<strong>Science & History:</strong> Toppers use Pomodoro to memorize facts, then test themselves in the next session. The break helps their brain lock in the info! <br/><em>Challenge:</em> Memorize 10 facts, take a break, then recall them aloud. See the difference!`,
+    `<strong>Real Student Story:</strong> “I used to get headaches after long study days. Now, with Pomodoro, I finish early and still have energy for cricket!” <br/><em>Action:</em> Try Pomodoro for just one evening—notice your energy and mood!”`,
   ],
   examPrepFocus: [],
   // interactiveComponent: <PomodoroTimer />

@@ -41,29 +41,29 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <NavLink to="/" className="flex-shrink-0 flex items-center text-blue-900">
-              <SparklesIcon className="h-8 w-8 mr-2 text-sky-400" />
-              <span className="font-extrabold text-2xl tracking-tight drop-shadow-sm">{APP_NAME}</span>
+              <SparklesIcon className="h-10 w-10 mr-3 text-sky-400" />
+              <span className="font-extrabold text-3xl tracking-tight drop-shadow-sm">{APP_NAME}</span>
             </NavLink>
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-2">
               <NavLink to="/" className={navLinkClass}>
-                Home
+                <span className="text-lg md:text-xl">Home</span>
               </NavLink>
               <NavLink to="/manage-subjects" className={navLinkClass}>
-                Multi-Subject Plan
+                <span className="text-lg md:text-xl">Planner</span>
               </NavLink>
               <NavLink to="/subject-mastery" className={navLinkClass}>
-                Subject Mastery
+                <span className="text-lg md:text-xl">Mastery</span>
               </NavLink>
               <NavLink to="/strategies" className={navLinkClass}>
-                Study Strategies
+                <span className="text-lg md:text-xl">Strategies</span>
               </NavLink>
               <NavLink to="/contact" className={navLinkClass}>
-                Contact
+                <span className="text-lg md:text-xl">Contact</span>
               </NavLink>
               <NavLink to="/quick-prep" className={sosNavLinkClass}>
-                <ZapIcon className="h-5 w-5 mr-1" /> Exam SOS!
+                <ZapIcon className="h-6 w-6 mr-2" /> <span className="text-lg md:text-xl">Exam SOS</span>
               </NavLink>
             </div>
           </div>
@@ -98,19 +98,19 @@ const Header: React.FC = () => {
               Home
             </NavLink>
             <NavLink to="/manage-subjects" className={mobileNavLinkClass} onClick={() => setIsMobileMenuOpen(false)}>
-              Multi-Subject Plan
+              Planner
             </NavLink>
             <NavLink to="/subject-mastery" className={mobileNavLinkClass} onClick={() => setIsMobileMenuOpen(false)}>
-              Subject Mastery
+              Mastery
             </NavLink>
             <NavLink to="/strategies" className={mobileNavLinkClass} onClick={() => setIsMobileMenuOpen(false)}>
-              Study Strategies
+              Strategies
             </NavLink>
             <NavLink to="/contact" className={mobileNavLinkClass} onClick={() => setIsMobileMenuOpen(false)}>
               Contact
             </NavLink>
             <NavLink to="/quick-prep" className={mobileSosNavLinkClass} onClick={() => setIsMobileMenuOpen(false)}>
-               <ZapIcon className="h-5 w-5 mr-1" /> Exam SOS!
+               <ZapIcon className="h-5 w-5 mr-1" /> Exam SOS
             </NavLink>
           </div>
         </div>

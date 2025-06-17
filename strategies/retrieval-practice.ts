@@ -5,33 +5,50 @@ import BrainArrowsIcon from '../components/icons/BrainArrowsIcon';
 const retrievalPractice: Strategy = {
   id: "retrieval-practice",
   title: "Retrieval Practice (More Testing!)",
-  description: "Strengthen memory by actively recalling information, similar to Active Recall.",
+  description: "Test yourself often—like a dress rehearsal for the real exam!",
   longDescription: `
-    <p><strong>Quick Take for Your Exams:</strong> This is Active Recall's close cousin, focusing on using practice tests, quizzes, and past exam papers to pull information from your memory. It’s like doing dress rehearsals for the actual exam!</p>
-    <p><strong>📝 What Is It?</strong></p>
-    <ul>
-      <li>A learning strategy that emphasizes bringing information to mind from memory.</li>
-      <li>Often involves using practice questions, quizzes, or creating your own tests based on exam material.</li>
-      <li>Builds on Active Recall by structuring the retrieval process, often mimicking exam conditions.</li>
-    </ul>
+    <div class="space-y-3">
+      <div><strong>📝 What:</strong> Practice pulling answers from your memory—no peeking! It’s like doing mock tests before the real thing.</div>
+      <div><strong>💡 Why it works:</strong> Every time you try to recall info, your brain builds stronger memory paths. It’s proven: testing yourself beats just rereading notes!</div>
+      <div><strong>⚡ How to use it:</strong>
+        <ul class="list-disc list-inside ml-4">
+          <li>Use past board questions, class tests, or make your own quiz.</li>
+          <li>Answer without looking at your book or notes (closed book!).</li>
+          <li>Check your answers, then focus on what you missed.</li>
+        </ul>
+      </div>
+      <div class="bg-sky-50 border-l-4 border-sky-400 p-2 rounded">
+        <strong>Try it now:</strong> After studying a chapter, close your book and write down everything you remember. Or, ask a friend to quiz you with last year’s board questions!
+      </div>
+      <div class="text-blue-700 text-sm mt-2">
+        <strong>Real-world Eureka:</strong> Think of it like cricket practice: you don’t just watch matches, you play practice games! The more you test yourself, the more confident you’ll be on exam day—no surprises, just results.
+      </div>
+    </div>
   `,
   category: StrategyCategory.MEMORY_ENHANCEMENT,
   icon: ZapIcon,
   visualExplainerComponent: BrainArrowsIcon,
   visualExplainerCaption: "Visualizing Retrieval Practice: Actively testing yourself, simulating exam recall.",
   howTo: [
-    "**1. Gather Your Materials:** Use end-of-chapter questions, past exam papers, or create your own quiz questions.",
-    "**2. Test Yourself (Closed Book!):** Answer the questions without looking at your notes or textbook. Simulate exam conditions.",
-    "**3. Check Your Answers:** Carefully review your responses against the correct answers or mark scheme.",
-    "**4. Analyze & Learn from Mistakes:** Understand why you got questions wrong. This directs your focused study for the actual exam."
+    "Gather past papers, class tests, or make your own quiz questions.",
+    "Test yourself without notes (closed book).",
+    "Check your answers and focus on mistakes.",
+    "Repeat regularly for every subject.",
   ],
-  benefits: [],
+  benefits: [
+    "Builds real exam confidence—no surprises!",
+    "Strengthens memory much more than just rereading.",
+    "Shows you exactly what to revise next.",
+  ],
   realWorldExamples: [
-    "<em>Preparing for a multiple-choice History exam:</em> Regularly do blocks of practice questions under timed conditions.",
-    "<em>Getting ready for a Math exam:</em> Work through full past papers, then meticulously mark your answers and study the solutions for any errors.",
-    "<em>For any subject:</em> After studying a chapter, create 3-5 potential exam questions and try to answer them a day later without notes."
+    "<em>SSC/HSC:</em> Do last year’s board questions under timed conditions.",
+    "<em>Math:</em> Solve a full past paper, then mark and review your mistakes.",
+    "<em>Any subject:</em> After a study session, write 3 possible exam questions and answer them tomorrow without notes.",
   ],
-  examPrepFocus: []
+  examPrepFocus: [
+    "Perfect for mock tests, board prep, and class tests.",
+    "Great for building exam stamina and confidence.",
+  ]
 };
 
 export default retrievalPractice;
