@@ -110,6 +110,9 @@ const MultiSubjectPlannerPage = () => {
   // Add state for mobile Pomodoro modal
   const [showPomodoro, setShowPomodoro] = useState(false);
 
+  // Add state for mobile subject input
+  const [showMobileAdd, setShowMobileAdd] = useState(false);
+
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(subjects));
   }, [subjects]);
@@ -446,20 +449,36 @@ const MultiSubjectPlannerPage = () => {
               />
               <button className="bg-blue-600 text-white px-3 py-1 rounded-lg font-bold hover:bg-blue-700 transition" onClick={addSubject} title="Add subject">+</button>
             </div>
-            {/* Floating Action Button for Add Subject (mobile only) */}
-            <button
-              className="flex md:hidden bottom-6 right-6 z-50 bg-blue-600 text-white rounded-full w-14 h-14 items-center justify-center text-3xl shadow-lg hover:bg-blue-700 transition"
-              style={{ boxShadow: '0 4px 24px 0 rgba(59,130,246,0.25)' }}
-              onClick={() => {
-                const input = document.getElementById('add-subject-input') as HTMLInputElement;
-                if (input) input.focus();
-              }}
-              title="Quick add subject"
-              aria-label="Quick add subject"
-            >
-              <span className="sr-only">Add Subject</span>
-              +
-            </button>
+            {/* Mobile Add Subject Input (show when floating + is pressed) */}
+            {showMobileAdd && (
+              <div className="fixed inset-0 z-50 flex items-end justify-center md:hidden" style={{background: 'rgba(0,0,0,0.2)'}} onClick={e => { if (e.target === e.currentTarget) setShowMobileAdd(false); }}>
+                <div className="bg-white rounded-t-2xl shadow-2xl p-4 w-full max-w-md mx-auto animate-fadeIn flex gap-2">
+                  <input
+                    className="border rounded-lg px-2 py-2 flex-1 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all"
+                    placeholder="Add subject"
+                    value={newSubject}
+                    onChange={e => setNewSubject(e.target.value)}
+                    onKeyDown={e => e.key === 'Enter' && (addSubject(), setShowMobileAdd(false))}
+                    autoFocus
+                  />
+                  <button className="bg-blue-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-700 transition" onClick={() => { addSubject(); setShowMobileAdd(false); }} title="Add subject">Add</button>
+                </div>
+              </div>
+            )}
+            {/* Floating Action Button for Add Subject (mobile only, only on dashboard tab, inside sidebar) */}
+            {selectedTab === 'dashboard' && (
+              <div className="md:hidden w-full flex justify-start mt-4">
+                <button
+                  className="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-3xl shadow-lg hover:bg-blue-700 transition border-2 border-white"
+                  onClick={() => setShowMobileAdd(true)}
+                  title="Quick add subject"
+                  aria-label="Quick add subject"
+                  style={{ minWidth: '3rem', minHeight: '3rem' }}
+                >
+                  +
+                </button>
+              </div>
+            )}
           </aside>
           {/* Main Content: Dashboard or Selected Subject */}
           <main className="flex-1 w-full">

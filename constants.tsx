@@ -2,7 +2,7 @@ import { Strategy, BloomStage, BloomLevel } from './types';
 import strategies from './strategies';
 
 
-export const APP_NAME = "Exam Success Blueprint";
+export const APP_NAME = "Exam Ace";
 
 export const STRATEGIES: Strategy[] = strategies;
 

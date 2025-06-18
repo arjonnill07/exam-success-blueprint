@@ -39,10 +39,10 @@ const HomePage: React.FC = () => {
 		<div className="animate-fadeIn">
 			{/* Hero Section - Clean, Focused */}
 			<div className="relative py-20 px-4 text-center overflow-hidden rounded-b-3xl shadow-lg mb-10 border-b border-slate-200 bg-gradient-to-br from-sky-100 via-blue-50 to-white">
-				<h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight text-blue-900 drop-shadow-sm leading-tight">
+				<h1 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight text-blue-900 drop-shadow-sm leading-tight">
 					Bangladesh’s Exam Success Blueprint
 				</h1>
-				<p className="text-2xl md:text-4xl mb-8 max-w-2xl mx-auto font-semibold text-blue-700 drop-shadow-sm leading-snug">
+				<p className="text-lg md:text-2xl mb-8 max-w-2xl mx-auto font-semibold text-blue-700 drop-shadow-sm leading-snug">
 					Study smarter, not harder.{' '}
 					<span className="text-sky-500 font-bold">Ace your exams</span> with
 					confidence!
