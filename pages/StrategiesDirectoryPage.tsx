@@ -81,17 +81,18 @@ const StrategiesDirectoryPage: React.FC = () => {
 			</div>
 
 			{/* Journey Path Filter */}
-			<div className="flex flex-row items-center justify-center gap-2 w-full max-w-3xl mx-auto mb-10">
+			<div className="flex flex-row flex-wrap items-center justify-center gap-2 w-full max-w-3xl mx-auto mb-10">
 				{CATEGORY_META.map((stop, i) => (
 					<React.Fragment key={stop.key}>
 						<button
 							onClick={() => { setFilterCategory(stop.key as 'All' | StrategyCategory); }}
-							className={`px-6 py-2 rounded-full text-base font-bold transition-all duration-200 border border-sky-200 bg-white hover:bg-sky-100 focus:ring-2 focus:ring-sky-400 relative overflow-hidden ${filterCategory === stop.key ? 'bg-blue-600 text-white border-blue-600' : 'text-blue-700'}`}
+							className={`min-w-[70px] max-w-[120px] px-3 py-1 md:px-6 md:py-2 rounded-full text-sm md:text-base font-bold transition-all duration-200 border border-sky-200 bg-white hover:bg-sky-100 focus:ring-2 focus:ring-sky-400 relative overflow-hidden whitespace-nowrap text-ellipsis ${filterCategory === stop.key ? 'bg-blue-600 text-white border-blue-600' : 'text-blue-700'}`}
+							style={{textOverflow: 'ellipsis', overflow: 'hidden'}}
 						>
-							<span>{stop.label}</span>
+							<span className="block truncate">{stop.label}</span>
 						</button>
 						{i < CATEGORY_META.length - 1 && (
-							<span className="text-lg text-gray-300">|</span>
+							<span className="text-lg text-gray-300 hidden sm:inline">|</span>
 						)}
 					</React.Fragment>
 				))}
