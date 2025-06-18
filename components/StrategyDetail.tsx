@@ -127,15 +127,11 @@ const StrategyDetail: React.FC<StrategyDetailProps> = ({ strategy }) => {
         </div>
       )}
 
-      {/* Real-World Example */}
+      {/* Real-World Example - Carousel Style */}
       {strategy.realWorldExamples && strategy.realWorldExamples.length > 0 && (
-        <div className="mb-6 p-4 bg-indigo-50 border-l-4 border-indigo-400 rounded-xl">
-          <h3 className="text-xl font-bold text-indigo-800 mb-2">Real-World Example</h3>
-          <ul className="list-disc list-inside space-y-2 text-gray-800 pl-1">
-            {strategy.realWorldExamples.map((example, index) => (
-              <li key={index} className="leading-relaxed" dangerouslySetInnerHTML={{ __html: example }}></li>
-            ))}
-          </ul>
+        <div className="mb-6">
+          <h3 className="text-xl font-bold text-indigo-800 mb-4">Real-World Example{strategy.realWorldExamples.length > 1 ? 's' : ''}</h3>
+          <RealWorldExampleCarousel examples={strategy.realWorldExamples} />
         </div>
       )}
 
@@ -198,3 +194,41 @@ const StrategyDetail: React.FC<StrategyDetailProps> = ({ strategy }) => {
 };
 
 export default StrategyDetail;
+
+const exampleMeta = [
+  // You can expand this mapping for more personalized avatars/tags
+  { tag: 'SSC English', avatar: '📚' },
+  { tag: 'HSC Chemistry', avatar: '🧪' },
+  { tag: 'Bangla Literature', avatar: '📖' },
+  { tag: 'Any subject', avatar: '🎓' },
+];
+
+const RealWorldExampleCarousel: React.FC<{ examples: string[] }> = ({ examples }) => {
+  const [idx, setIdx] = React.useState(0);
+  const meta = exampleMeta[idx % exampleMeta.length];
+  const handlePrev = () => setIdx(i => (i - 1 + examples.length) % examples.length);
+  const handleNext = () => setIdx(i => (i + 1) % examples.length);
+  return (
+    <div className="flex flex-col items-center">
+      <div className="bg-indigo-50 border-l-4 border-indigo-400 rounded-xl shadow p-6 w-full max-w-xl relative animate-fadeIn">
+        <div className="flex items-center gap-3 mb-2">
+          <span className="text-2xl">{meta.avatar}</span>
+          <span className="bg-indigo-200 text-indigo-800 px-3 py-1 rounded-full text-xs font-bold">{meta.tag}</span>
+        </div>
+        <blockquote className="italic text-lg text-indigo-900 leading-relaxed" dangerouslySetInnerHTML={{ __html: examples[idx] }} />
+        <div className="mt-4 flex items-center justify-between w-full">
+          <button onClick={handlePrev} className="text-indigo-600 hover:text-indigo-900 font-bold px-3 py-1 rounded transition-colors">&lt; Prev</button>
+          <div className="flex gap-1">
+            {examples.map((_, i) => (
+              <span key={i} className={`inline-block w-2 h-2 rounded-full ${i === idx ? 'bg-indigo-600' : 'bg-indigo-200'}`}></span>
+            ))}
+          </div>
+          <button onClick={handleNext} className="text-indigo-600 hover:text-indigo-900 font-bold px-3 py-1 rounded transition-colors">Next &gt;</button>
+        </div>
+      </div>
+      {idx === examples.length - 1 && examples.length > 1 && (
+        <div className="mt-3 text-green-700 font-semibold animate-bounce">🎉 You’ve seen all the examples!</div>
+      )}
+    </div>
+  );
+};
