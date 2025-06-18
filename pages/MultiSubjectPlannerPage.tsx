@@ -430,10 +430,15 @@ const MultiSubjectPlannerPage = () => {
                     <span className="ml-2 text-xs bg-indigo-200 text-indigo-800 px-2 py-0.5 rounded-full font-bold">{subject.progress}%</span>
                   </button>
                 )}
-                {/* Edit/Delete icons */}
+                {/* Edit/Delete icons for subjects */}
                 <div className="absolute right-2 top-1/2 -translate-y-1/2 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                   <button className="text-gray-500 hover:text-blue-600 p-1" onClick={() => startEditSubject(idx)} title="Rename subject"><span aria-label="Edit" role="img">✏️</span></button>
-                  <button className="text-gray-500 hover:text-red-600 p-1" onClick={() => deleteSubject(idx)} title="Delete subject"><span aria-label="Delete" role="img">🗑️</span></button>
+                  <button className="text-red-600 hover:bg-red-100 p-1 rounded-full transition" onClick={() => deleteSubject(idx)} title="Delete subject">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 7h12M9 7V5a3 3 0 013-3v0a3 3 0 013 3v2m2 0v12a2 2 0 01-2 2H8a2 2 0 01-2-2V7h12z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M10 11v6m4-6v6" />
+                    </svg>
+                  </button>
                 </div>
               </div>
             ))}
@@ -451,7 +456,7 @@ const MultiSubjectPlannerPage = () => {
             </div>
             {/* Mobile Add Subject Input (show when floating + is pressed) */}
             {showMobileAdd && (
-              <div className="fixed inset-0 z-50 flex items-end justify-center md:hidden" style={{background: 'rgba(0,0,0,0.2)'}} onClick={e => { if (e.target === e.currentTarget) setShowMobileAdd(false); }}>
+              <div className="fixed inset-0 z-50 flex items-end justify-center md:hidden pb-32" style={{background: 'rgba(0,0,0,0.2)'}} onClick={e => { if (e.target === e.currentTarget) setShowMobileAdd(false); }}>
                 <div className="bg-white rounded-t-2xl shadow-2xl p-4 w-full max-w-md mx-auto animate-fadeIn flex gap-2">
                   <input
                     className="border rounded-lg px-2 py-2 flex-1 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all"
@@ -465,19 +470,21 @@ const MultiSubjectPlannerPage = () => {
                 </div>
               </div>
             )}
-            {/* Floating Action Button for Add Subject (mobile only, only on dashboard tab, inside sidebar) */}
+            {/* Floating Action Button for Add Subject (mobile only, only on dashboard tab) */}
             {selectedTab === 'dashboard' && (
-              <div className="md:hidden w-full flex justify-start mt-4">
-                <button
-                  className="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-3xl shadow-lg hover:bg-blue-700 transition border-2 border-white"
-                  onClick={() => setShowMobileAdd(true)}
-                  title="Quick add subject"
-                  aria-label="Quick add subject"
-                  style={{ minWidth: '3rem', minHeight: '3rem' }}
-                >
-                  +
-                </button>
-              </div>
+              <button
+                className="flex md:hidden absolute bottom-6 right-6 z-[100] bg-blue-600 text-white rounded-full w-16 h-16 items-center justify-center text-4xl shadow-2xl hover:bg-blue-700 transition border-4 border-white"
+                style={{ boxShadow: '0 8px 32px 0 rgba(59,130,246,0.25)' }}
+                onClick={() => setShowMobileAdd(true)}
+                title="Quick add subject"
+                aria-label="Quick add subject"
+              >
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+                </svg>
+                <span className="sr-only">Add Subject</span>
+                <span className="block md:hidden absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-4xl font-bold pointer-events-none select-none">+</span>
+              </button>
             )}
           </aside>
           {/* Main Content: Dashboard or Selected Subject */}
@@ -536,6 +543,18 @@ const MultiSubjectPlannerPage = () => {
                       placeholder="Add topic/chapter"
                       onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => handleTopicInput(e, selectedTab as number)}
                     />
+                    {window.innerWidth < 768 && (
+                      <button
+                        className="bg-blue-600 text-white px-3 py-1 rounded-lg font-bold hover:bg-blue-700 transition mt-1 mb-2 w-full"
+                        onClick={() => {
+                          const input = document.querySelector('input[placeholder=\'Add topic/chapter\']') as HTMLInputElement;
+                          if (input && input.value.trim()) {
+                            addTopic(selectedTab as number, input.value);
+                            input.value = '';
+                          }
+                        }}
+                      >Add Topic</button>
+                    )}
                     <ul className="space-y-2">
                       {getFilteredPaginatedTopics(subjects[selectedTab as number], selectedTab as number).map((topic, tIdx) => (
                         <li key={tIdx} className="flex items-center gap-2 bg-sky-50 rounded px-2 py-1 group relative">
@@ -602,7 +621,12 @@ const MultiSubjectPlannerPage = () => {
                           )}
                           <div className="absolute right-2 top-1/2 -translate-y-1/2 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                             <button className="text-gray-500 hover:text-blue-600 p-1" onClick={() => startEditTopic(selectedTab as number, tIdx + (topicPage[selectedTab as number] || 0) * TOPICS_PER_PAGE)} title="Rename topic"><span aria-label="Edit" role="img">✏️</span></button>
-                            <button className="text-gray-500 hover:text-red-600 p-1" onClick={() => deleteTopic(selectedTab as number, tIdx + (topicPage[selectedTab as number] || 0) * TOPICS_PER_PAGE)} title="Delete topic"><span aria-label="Delete" role="img">🗑️</span></button>
+                            <button className="text-red-600 hover:bg-red-100 p-1 rounded-full transition" onClick={() => deleteTopic(selectedTab as number, tIdx + (topicPage[selectedTab as number] || 0) * TOPICS_PER_PAGE)} title="Delete topic">
+                              <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 7h12M9 7V5a3 3 0 013-3v0a3 3 0 013 3v2m2 0v12a2 2 0 01-2 2H8a2 2 0 01-2-2V7h12z" />
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M10 11v6m4-6v6" />
+                              </svg>
+                            </button>
                           </div>
                         </li>
                       ))}
