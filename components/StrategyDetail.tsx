@@ -1,7 +1,6 @@
-
-import React from 'react';
-import { Strategy, StrategyCategory } from '../types'; // Added StrategyCategory import
-import { STRATEGIES } from '../constants'; // For pairing
+import React, { useState } from 'react';
+import { Strategy, StrategyCategory } from '../types';
+import { STRATEGIES } from '../constants';
 import { Link } from 'react-router-dom';
 
 
@@ -12,6 +11,7 @@ interface StrategyDetailProps {
 const StrategyDetail: React.FC<StrategyDetailProps> = ({ strategy }) => {
   const IconComponent = strategy.icon;
   const VisualExplainer = strategy.visualExplainerComponent;
+  const [showMore, setShowMore] = useState(false);
 
   const getPairingSuggestions = () => {
     const pairings: { id: string, reason: string }[] = [];
@@ -54,114 +54,145 @@ const StrategyDetail: React.FC<StrategyDetailProps> = ({ strategy }) => {
     }
     return pairings.slice(0, 2).map(p => STRATEGIES.find(s => s.id === p.id)).filter(Boolean) as Strategy[];
   };
-
   const suggestedPairings = getPairingSuggestions();
 
   return (
-    <div className="bg-white shadow-xl rounded-lg p-6 md:p-8 my-4">
-      <div className="flex items-start sm:items-center mb-6 flex-col sm:flex-row">
-        <IconComponent className="h-12 w-12 text-blue-600 mr-0 mb-3 sm:mr-4 sm:mb-0 flex-shrink-0" />
-        <div>
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900">{strategy.title}</h2>
-          <p className="text-md text-blue-700 font-medium">{strategy.category}</p>
+    <div className="bg-white shadow-2xl rounded-3xl p-6 md:p-10 my-6 max-w-3xl mx-auto animate-fadeIn">
+      {/* Hero Section */}
+      <div className="flex flex-col sm:flex-row items-center mb-8 gap-6">
+        <div className="flex flex-col items-center">
+          <IconComponent className="h-16 w-16 text-blue-600 mb-2" />
+          <span className="inline-block bg-yellow-200 text-yellow-800 px-3 py-1 rounded-full text-xs font-bold mb-2">
+            {strategy.category}
+          </span>
+        </div>
+        <div className="flex-1 text-center sm:text-left">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2 leading-tight">{strategy.title}</h2>
+          <div className="italic text-blue-700 text-lg font-medium mb-1">{strategy.description}</div>
         </div>
       </div>
 
-      <div 
-        className="p-4 bg-gray-50 rounded-lg mb-6 border border-gray-200 text-gray-700 text-lg leading-relaxed space-y-3"
-        dangerouslySetInnerHTML={{ __html: strategy.longDescription || strategy.description }}
-      />
+      {/* What & Why */}
+      {strategy.longDescription && (
+        <div className="mb-6 p-4 bg-blue-50 border-l-4 border-blue-400 rounded-xl text-gray-800 text-lg leading-relaxed prose max-w-none" dangerouslySetInnerHTML={{ __html: strategy.longDescription }} />
+      )}
 
+      {/* Visual Explainer */}
       {VisualExplainer && (
-        <div className="mb-6 p-4 bg-gray-100 rounded-lg border border-gray-300 text-center">
-          <h3 className="text-lg font-semibold text-gray-700 mb-3">Visual Cue:</h3>
-          <div className="flex justify-center items-center my-3">
-            <VisualExplainer className="h-24 w-24 md:h-32 md:w-32 text-blue-500" />
-          </div>
+        <div className="mb-6 p-4 bg-sky-50 rounded-xl border border-sky-200 flex flex-col items-center">
+          <VisualExplainer className="h-24 w-24 md:h-32 md:w-32 text-sky-500 mb-2" />
           {strategy.visualExplainerCaption && (
-            <p className="text-sm text-gray-600 italic mt-2">{strategy.visualExplainerCaption}</p>
+            <p className="text-base text-blue-700 italic mt-2 text-center">{strategy.visualExplainerCaption}</p>
           )}
         </div>
       )}
 
-      {strategy.examPrepFocus && strategy.examPrepFocus.length > 0 && (
-        <div className="mb-6 p-4 bg-emerald-50 rounded-lg border border-emerald-300 shadow-sm">
-          <h3 className="text-xl font-semibold text-emerald-800 mb-3">Exam Edge:</h3>
-          <ul className="list-disc list-inside space-y-2 text-emerald-700 pl-1">
-            {strategy.examPrepFocus.map((focus, index) => (
-              <li key={index} className="leading-relaxed font-medium" dangerouslySetInnerHTML={{ __html: focus.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }}></li>
-            ))}
-          </ul>
-        </div>
-      )}
-
+      {/* How to Use */}
       {strategy.howTo && strategy.howTo.length > 0 && (
-        <div className="mb-6 p-4 bg-sky-50 rounded-lg border border-sky-200">
-          <h3 className="text-xl font-semibold text-gray-800 mb-3">How to Implement This:</h3>
-          <ol className="list-decimal list-inside space-y-2 text-gray-700 pl-1">
-            {strategy.howTo.map((step, index) => (
-              <li key={index} className="leading-relaxed" dangerouslySetInnerHTML={{ __html: step.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }}></li>
-            ))}
+        <div className="mb-6 p-4 bg-green-50 border-l-4 border-green-400 rounded-xl">
+          <h3 className="text-xl font-bold text-green-800 mb-2 flex items-center gap-2">⚡ How to Use</h3>
+          <ol className="space-y-4">
+            {strategy.howTo.map((step, index) => {
+              // Remove **bold** markdown, then split at first <br/> or line break
+              const cleanStep = step.replace(/\*\*(.*?)\*\*/g, '$1');
+              const [title, ...descParts] = cleanStep.split(/<br\s*\/?\s*>|\n/);
+              const desc = descParts.join(' ').trim();
+              return (
+                <li key={index} className="bg-white rounded-lg shadow p-4 border border-green-100">
+                  <div className="font-semibold text-lg text-green-900 mb-1" dangerouslySetInnerHTML={{ __html: title }} />
+                  {desc && <div className="text-gray-700 text-base" dangerouslySetInnerHTML={{ __html: desc }} />}
+                </li>
+              );
+            })}
           </ol>
         </div>
       )}
 
+      {/* Try it Now Callout */}
+      {strategy.tryItNow && (
+        <div className="mb-6 p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-xl animate-pulse">
+          <strong>Try it now:</strong> {strategy.tryItNow}
+        </div>
+      )}
+
+      {/* Benefits */}
       {strategy.benefits && strategy.benefits.length > 0 && (
-        <div className="mb-6 p-4 bg-indigo-50 rounded-lg border border-indigo-200">
-          <h3 className="text-xl font-semibold text-gray-800 mb-3">Other Potential Benefits:</h3>
-          <ul className="list-disc list-inside space-y-2 text-gray-700 pl-1">
+        <div className="mb-6 p-4 bg-pink-50 border-l-4 border-pink-400 rounded-xl">
+          <h3 className="text-xl font-bold text-pink-800 mb-2">Benefits</h3>
+          <ul className="list-disc list-inside space-y-2 text-gray-800 pl-1">
             {strategy.benefits.map((benefit, index) => (
-              <li key={index} className="leading-relaxed" dangerouslySetInnerHTML={{ __html: benefit.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }}></li>
+              <li key={index} className="leading-relaxed">{benefit}</li>
             ))}
           </ul>
         </div>
       )}
 
+      {/* Real-World Example */}
       {strategy.realWorldExamples && strategy.realWorldExamples.length > 0 && (
-        <div className="mb-6 p-4 bg-yellow-50 rounded-lg border border-yellow-300">
-          <h3 className="text-xl font-semibold text-yellow-800 mb-3">Real-World & Exam Examples:</h3>
-          <ul className="list-disc list-inside space-y-2 text-yellow-700 pl-1">
+        <div className="mb-6 p-4 bg-indigo-50 border-l-4 border-indigo-400 rounded-xl">
+          <h3 className="text-xl font-bold text-indigo-800 mb-2">Real-World Example</h3>
+          <ul className="list-disc list-inside space-y-2 text-gray-800 pl-1">
             {strategy.realWorldExamples.map((example, index) => (
-              <li key={index} className="leading-relaxed" dangerouslySetInnerHTML={{ __html: example.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }}></li>
+              <li key={index} className="leading-relaxed" dangerouslySetInnerHTML={{ __html: example }}></li>
             ))}
           </ul>
         </div>
       )}
-      
-      {strategy.interactiveComponent && (
-         <div className="mt-8 p-4 border-t border-gray-200">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">Try It Out:</h3>
-            {strategy.interactiveComponent}
+
+      {/* Exam Prep Focus */}
+      {strategy.examPrepFocus && strategy.examPrepFocus.length > 0 && (
+        <div className="mb-6 p-4 bg-emerald-50 border-l-4 border-emerald-400 rounded-xl">
+          <h3 className="text-xl font-bold text-emerald-800 mb-2">Exam Prep Focus</h3>
+          <ul className="list-disc list-inside space-y-2 text-gray-800 pl-1">
+            {strategy.examPrepFocus.map((focus, index) => (
+              <li key={index} className="leading-relaxed">{focus}</li>
+            ))}
+          </ul>
         </div>
       )}
 
-      <div className="mt-6 pt-4 border-t border-gray-200">
-          <h3 className="text-lg font-semibold text-gray-700 mb-2">Consider Pairing With:</h3>
-          {suggestedPairings.length > 0 ? (
-            <ul className="list-none space-y-1 text-sm text-gray-600">
-              {suggestedPairings.map(pairedStrategy => (
-                <li key={pairedStrategy.id}>
-                  <Link 
-                    to="/strategies" 
-                    state={{ scrollToId: pairedStrategy.id }} 
-                    className="font-medium text-blue-600 hover:text-blue-800 hover:underline"
-                    onClick={() => {
-                        const closeButton = document.querySelector('.fixed.inset-0 button.bg-red-500'); 
-                        if (closeButton instanceof HTMLElement) closeButton.click();
-                    }}
-                  >
-                    {pairedStrategy.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p className="text-sm text-gray-600">
-              Explore other strategies in this toolkit to create a powerful, personalized study system! Consider what you're trying to achieve.
-            </p>
-          )}
+      {/* Collapsible More Details/FAQ */}
+      <div className="mb-6">
+        <button
+          className="text-blue-600 underline font-semibold mb-2"
+          onClick={() => setShowMore(v => !v)}
+        >
+          {showMore ? 'Hide More Details' : 'Show More Details / FAQ'}
+        </button>
+        {showMore && (
+          <div className="mt-2 p-4 bg-gray-50 border border-gray-200 rounded-xl text-gray-700">
+            <p>Want to go deeper? Explore advanced tips, common mistakes, and more in our full guide (coming soon)!</p>
+          </div>
+        )}
       </div>
 
+      {/* Pairing Suggestions */}
+      <div className="mt-8 pt-4 border-t border-gray-200">
+        <h3 className="text-lg font-semibold text-gray-700 mb-2">Consider Pairing With:</h3>
+        {suggestedPairings.length > 0 ? (
+          <ul className="list-none space-y-1 text-sm text-gray-600">
+            {suggestedPairings.map(pairedStrategy => (
+              <li key={pairedStrategy.id}>
+                <Link
+                  to="/strategies"
+                  state={{ scrollToId: pairedStrategy.id }}
+                  className="font-medium text-blue-600 hover:text-blue-800 hover:underline"
+                  onClick={() => {
+                    const closeButton = document.querySelector('.fixed.inset-0 button.bg-red-500');
+                    if (closeButton instanceof HTMLElement) closeButton.click();
+                  }}
+                >
+                  {pairedStrategy.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="text-sm text-gray-600">
+            Explore other strategies in this toolkit to create a powerful, personalized study system! Consider what you're trying to achieve.
+          </p>
+        )}
+      </div>
     </div>
   );
 };

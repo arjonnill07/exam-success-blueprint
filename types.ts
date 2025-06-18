@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 export interface Strategy {
@@ -15,6 +14,7 @@ export interface Strategy {
   interactiveComponent?: React.ReactNode;
   visualExplainerComponent?: React.FC<React.SVGProps<SVGSVGElement>>; // For visual explanation
   visualExplainerCaption?: string; // Caption for the visual explainer
+  tryItNow?: string; // Added for actionable callout
 }
 
 export enum StrategyCategory {
