@@ -1,12 +1,15 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
 import useTimer from '../hooks/useTimer';
 import ClockIcon from './icons/ClockIcon';
 
 const PomodoroTimer: React.FC = () => {
-  const WORK_DURATION = 25 * 60; // 25 minutes
-  const SHORT_BREAK_DURATION = 5 * 60; // 5 minutes
-  const LONG_BREAK_DURATION = 15 * 60; // 15 minutes
+  // Customizable durations
+  const [workDuration, setWorkDuration] = useState(25);
+  const [shortBreakDuration, setShortBreakDuration] = useState(5);
+  const [longBreakDuration, setLongBreakDuration] = useState(15);
+  const WORK_DURATION = workDuration * 60;
+  const SHORT_BREAK_DURATION = shortBreakDuration * 60;
+  const LONG_BREAK_DURATION = longBreakDuration * 60;
 
   const [mode, setMode] = useState<'work' | 'shortBreak' | 'longBreak'>('work');
   const [pomodorosCompleted, setPomodorosCompleted] = useState(0);
@@ -52,6 +55,19 @@ const PomodoroTimer: React.FC = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mode]);
+
+  // Add state to trigger timer reset on config change
+  const [configChanged, setConfigChanged] = useState(false);
+
+  // When config changes, reset timer for current mode
+  useEffect(() => {
+    if (configChanged) {
+      const newInitialTime = mode === 'work' ? WORK_DURATION : (mode === 'shortBreak' ? SHORT_BREAK_DURATION : LONG_BREAK_DURATION);
+      timer.reset(newInitialTime);
+      setConfigChanged(false);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [configChanged]);
 
 
   const formatTime = (timeInSeconds: number): string => {
@@ -100,8 +116,52 @@ const PomodoroTimer: React.FC = () => {
   };
 
 
+  // Add UI for customizing durations
   return (
     <div className="p-6 bg-white rounded-xl shadow-2xl text-center max-w-md mx-auto">
+      <form
+        className="flex flex-col md:flex-row gap-2 items-center justify-center mb-4"
+        onSubmit={e => { e.preventDefault(); setConfigChanged(true); }}
+      >
+        <label className="flex flex-col text-xs text-gray-600 font-semibold">
+          Work (min)
+          <input
+            type="number"
+            min={1}
+            max={90}
+            value={workDuration}
+            onChange={e => setWorkDuration(Number(e.target.value))}
+            className="border rounded px-2 py-1 w-16 text-center font-bold"
+          />
+        </label>
+        <label className="flex flex-col text-xs text-gray-600 font-semibold">
+          Short Break
+          <input
+            type="number"
+            min={1}
+            max={30}
+            value={shortBreakDuration}
+            onChange={e => setShortBreakDuration(Number(e.target.value))}
+            className="border rounded px-2 py-1 w-16 text-center font-bold"
+          />
+        </label>
+        <label className="flex flex-col text-xs text-gray-600 font-semibold">
+          Long Break
+          <input
+            type="number"
+            min={1}
+            max={60}
+            value={longBreakDuration}
+            onChange={e => setLongBreakDuration(Number(e.target.value))}
+            className="border rounded px-2 py-1 w-16 text-center font-bold"
+          />
+        </label>
+        <button
+          type="submit"
+          className="ml-2 px-4 py-2 rounded bg-blue-600 text-white font-bold hover:bg-blue-700 transition"
+        >Save</button>
+      </form>
+      
       <div className="flex justify-center space-x-2 mb-6">
         <button onClick={() => switchMode('work')} className={getModeButtonClass('work')}>Work</button>
         <button onClick={() => switchMode('shortBreak')} className={getModeButtonClass('shortBreak')}>Short Break</button>

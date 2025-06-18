@@ -361,9 +361,17 @@ const MultiSubjectPlannerPage = () => {
 
   return (
     <div className="animate-fadeIn min-h-screen bg-gradient-to-br from-blue-100 via-white to-indigo-100 py-12 px-2 md:px-0">
+      {/* For Help (?) modal: */}
       {showOnboarding && (
-        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
-          <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-lg w-full animate-fadeIn">
+        <div
+          className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50"
+          onClick={e => { if (e.target === e.currentTarget) setShowOnboarding(false); }}
+          tabIndex={0}
+          onKeyDown={e => { if (e.key === 'Escape') setShowOnboarding(false); }}
+          aria-modal="true"
+          role="dialog"
+        >
+          <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-lg w-full animate-fadeIn" tabIndex={0}>
             <h2 className="text-2xl font-bold text-indigo-800 mb-4">{ONBOARDING_STEPS[onboardingStep].title}</h2>
             <p className="text-lg text-gray-700 mb-6">{ONBOARDING_STEPS[onboardingStep].content}</p>
             <div className="flex justify-between">
@@ -392,7 +400,7 @@ const MultiSubjectPlannerPage = () => {
       >
         <div className="flex gap-6 flex-col md:flex-row">
           {/* Sidebar: Subject List & Dashboard */}
-          <aside className="w-full md:w-64 min-w-[200px] bg-white rounded-2xl shadow-xl p-4 flex flex-col gap-2 h-fit sticky top-8 transition-all duration-200">
+          <aside className="w-full md:w-64 min-w-[200px] bg-white rounded-2xl shadow-xl p-4 flex flex-col gap-2 h-fit md:sticky md:top-8 transition-all duration-200">
             <button
               className={`w-full text-left px-3 py-2 rounded-lg font-bold mb-2 transition-colors duration-150 ${selectedTab === 'dashboard' ? 'bg-blue-100 text-blue-800 shadow' : 'hover:bg-blue-50'}`}
               onClick={() => setSelectedTab('dashboard')}
@@ -657,14 +665,21 @@ const MultiSubjectPlannerPage = () => {
           </button>
           {/* Pomodoro Modal for mobile */}
           {showPomodoro && (
-            <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
-              <div className="bg-white rounded-2xl shadow-2xl p-6 w-full max-w-xs animate-fadeIn">
+            <div
+              className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50"
+              onClick={e => { if (e.target === e.currentTarget) setShowPomodoro(false); }}
+              tabIndex={0}
+              onKeyDown={e => { if (e.key === 'Escape') setShowPomodoro(false); }}
+              aria-modal="true"
+              role="dialog"
+            >
+              <div className="bg-white rounded-2xl shadow-2xl p-6 w-full max-w-xs animate-fadeIn" tabIndex={0}>
                 <div className="flex justify-between items-center mb-2">
                   <span className="text-lg font-bold text-yellow-700 flex items-center gap-2">
                     <svg className="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                     Pomodoro Timer
                   </span>
-                  <button className="text-gray-500 hover:text-red-600 text-2xl font-bold" onClick={() => setShowPomodoro(false)} title="Close">×</button>
+                  <button className="text-gray-500 hover:text-red-600 text-2xl font-bold" onClick={() => setShowPomodoro(false)} title="Close" tabIndex={0}>×</button>
                 </div>
                 <PomodoroTimer />
               </div>
