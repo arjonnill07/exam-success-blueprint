@@ -1,5 +1,6 @@
-import React, { useState, useEffect, ChangeEvent, KeyboardEvent } from 'react';
+import React, { useState, useEffect, KeyboardEvent } from 'react';
 import SectionWrapper from '../components/SectionWrapper';
+import PomodoroTimer from '../components/PomodoroTimer';
 
 interface Topic {
   name: string;
@@ -34,17 +35,6 @@ const MOTIVATIONAL_QUOTES = [
 
 const priorities = ['High', 'Medium', 'Low'];
 
-const strategies = [
-  'Pomodoro',
-  'Leitner System',
-  'Active Recall',
-  'Chunking',
-  'Spaced Repetition',
-  'Visualization',
-  'Feynman Technique',
-];
-
-// Onboarding steps for the animated walkthrough
 const ONBOARDING_STEPS = [
   {
     title: 'Welcome to Your Exam Success Blueprint!',
@@ -83,29 +73,46 @@ const MultiSubjectPlannerPage = () => {
     const saved = localStorage.getItem(LOCAL_STORAGE_KEY);
     return saved ? JSON.parse(saved) : [];
   });
-  const [quoteIdx, setQuoteIdx] = useState(0);
   const [newSubject, setNewSubject] = useState('');
   const [showOnboarding, setShowOnboarding] = useState(() => {
     return localStorage.getItem('plannerOnboarded') !== 'true';
   });
   const [onboardingStep, setOnboardingStep] = useState(0);
-  const [examDate, setExamDate] = useState<string>("");
-  const [planView, setPlanView] = useState<'daily' | 'weekly'>('daily');
   const [todayPlan, setTodayPlan] = useState<string[]>([]);
   const [weekPlan, setWeekPlan] = useState<string[][]>([]);
   const [topicPage, setTopicPage] = useState<{ [subjectIdx: number]: number }>({});
   const [resourceModal, setResourceModal] = useState<{ subjectIdx: number; topicIdx: number } | null>(null);
 
+  // Gamification state
+  const [badges, setBadges] = useState<string[]>([]);
+  const [streak, setStreak] = useState(0);
+  const [lastCheckDate, setLastCheckDate] = useState<string | null>(null);
+
+  // Sidebar navigation state
+  const [selectedTab, setSelectedTab] = useState<'dashboard' | number>('dashboard'); // 'dashboard' or subject index
+
+  // Add state for editing
+  const [editingSubjectIdx, setEditingSubjectIdx] = useState<number | null>(null);
+  const [editingSubjectName, setEditingSubjectName] = useState('');
+  const [editingTopicIdx, setEditingTopicIdx] = useState<{ subjectIdx: number; topicIdx: number } | null>(null);
+  const [editingTopicName, setEditingTopicName] = useState('');
+
+  // Add exam date state
+  const [examDate, setExamDate] = useState<string>('');
+
+  // Add missing state variables
+  const [planView, setPlanView] = useState<'daily' | 'weekly'>('daily');
+  const [topicSearch, setTopicSearch] = useState('');
+  const [topicFilter, setTopicFilter] = useState<{ status?: string; difficulty?: string; strategy?: string }>({});
+  const [focusMode, setFocusMode] = useState(false);
+  const [focusList, setFocusList] = useState<{ subject: string; topic: string }[]>([]);
+
+  // Add state for mobile Pomodoro modal
+  const [showPomodoro, setShowPomodoro] = useState(false);
+
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(subjects));
   }, [subjects]);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setQuoteIdx(idx => (idx + 1) % MOTIVATIONAL_QUOTES.length);
-    }, 7000);
-    return () => clearInterval(interval);
-  }, []);
 
   const addSubject = () => {
     if (newSubject.trim()) {
@@ -134,10 +141,23 @@ const MultiSubjectPlannerPage = () => {
     setSubjects(updated);
   };
 
-  const setTopicStrategy = (subjectIdx: number, topicIdx: number, strategy: string) => {
+  // Handler to set topic difficulty
+  const setTopicDifficulty = (subjectIdx: number, topicIdx: number, difficulty: 'Easy' | 'Medium' | 'Hard') => {
     const updated = [...subjects];
-    updated[subjectIdx].topics[topicIdx].strategy = strategy;
+    updated[subjectIdx].topics[topicIdx].difficulty = difficulty;
     setSubjects(updated);
+  };
+
+  // Handler to set topic status
+  const setTopicStatus = (subjectIdx: number, topicIdx: number, status: Topic['status']) => {
+    const updated = [...subjects];
+    updated[subjectIdx].topics[topicIdx].status = status;
+    setSubjects(updated);
+  };
+
+  // Handler to open resource modal
+  const openResourceModal = (subjectIdx: number, topicIdx: number) => {
+    setResourceModal({ subjectIdx, topicIdx });
   };
 
   const updateProgress = (arr: Subject[], subjectIdx: number) => {
@@ -153,47 +173,6 @@ const MultiSubjectPlannerPage = () => {
       target.value = '';
     }
   };
-
-  // Add this helper function at the top or inside the component
-  function getStrategyTip(strategy: string) {
-    switch (strategy) {
-      case 'Pomodoro':
-        return 'Pomodoro: Study in focused 25-min bursts, then take a short break.';
-      case 'Leitner System':
-        return 'Leitner: Use flashcards, review tough ones more often.';
-      case 'Active Recall':
-        return 'Active Recall: Test yourself, don’t just reread.';
-      case 'Chunking':
-        return 'Chunking: Break big topics into smaller, manageable parts.';
-      case 'Spaced Repetition':
-        return 'Spaced Repetition: Review material at increasing intervals.';
-      case 'Visualization':
-        return 'Visualization: Use diagrams, mind maps, or draw concepts.';
-      case 'Feynman Technique':
-        return 'Feynman: Explain the topic in simple words as if teaching someone else.';
-      default:
-        return 'Pick a strategy to see a quick tip!';
-    }
-  }
-
-  // Bulk add topics
-  const [bulkTopics, setBulkTopics] = useState('');
-  const [bulkAddIdx, setBulkAddIdx] = useState<number | null>(null);
-  const handleBulkAdd = () => {
-    if (bulkAddIdx !== null && bulkTopics.trim()) {
-      const topics = bulkTopics.split(/\n|,/).map(t => t.trim()).filter(Boolean);
-      const updated = [...subjects];
-      updated[bulkAddIdx].topics.push(...topics.map(name => ({ name, done: false, strategy: '' })));
-      updateProgress(updated, bulkAddIdx);
-      setSubjects(updated);
-      setBulkTopics('');
-      setBulkAddIdx(null);
-    }
-  };
-
-  // Search/filter subjects
-  const [search, setSearch] = useState('');
-  const filteredSubjects = subjects.filter(s => s.name.toLowerCase().includes(search.toLowerCase()));
 
   // Milestone celebration
   const [milestone, setMilestone] = useState('');
@@ -212,21 +191,21 @@ const MultiSubjectPlannerPage = () => {
     localStorage.setItem('plannerOnboarded', 'true');
   };
 
-  // Helper: get all remaining topics
-  function getAllRemainingTopics() {
-    const result: { subject: string; topic: string }[] = [];
+  // Helper: get all remaining topics with difficulty
+  function getAllRemainingTopicsWithDifficulty() {
+    const result: { subject: string; topic: string; difficulty: 'Easy' | 'Medium' | 'Hard' }[] = [];
     subjects.forEach(subj => {
       subj.topics.forEach(t => {
-        if (!t.done) result.push({ subject: subj.name, topic: t.name });
+        if (!t.done) result.push({ subject: subj.name, topic: t.name, difficulty: t.difficulty || 'Medium' });
       });
     });
     return result;
   }
 
-  // Auto-schedule topics based on exam date and plan view
+  // Adaptive auto-schedule topics based on exam date, plan view, and topic difficulty
   useEffect(() => {
     if (!examDate || subjects.length === 0) return;
-    const remaining = getAllRemainingTopics();
+    const remaining = getAllRemainingTopicsWithDifficulty();
     if (remaining.length === 0) {
       setTodayPlan([]);
       setWeekPlan([]);
@@ -235,48 +214,150 @@ const MultiSubjectPlannerPage = () => {
     const now = new Date();
     const exam = new Date(examDate);
     const daysLeft = Math.max(1, Math.ceil((exam.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)));
+    // Assign weights: Hard=2, Medium=1.5, Easy=1
+    const getWeight = (d: string) => d === 'Hard' ? 2 : d === 'Medium' ? 1.5 : 1;
+    const totalWeight = remaining.reduce((sum, t) => sum + getWeight(t.difficulty), 0);
     if (planView === 'daily') {
-      // Evenly distribute topics per day
-      const perDay = Math.ceil(remaining.length / daysLeft);
-      setTodayPlan(remaining.slice(0, perDay).map(t => `${t.subject}: ${t.topic}`));
+      // Calculate how many weighted topics per day
+      const perDayWeight = totalWeight / daysLeft;
+      let plan: string[] = [];
+      let accWeight = 0;
+      for (let i = 0; i < remaining.length; i++) {
+        if (accWeight < perDayWeight) {
+          plan.push(`${remaining[i].subject}: ${remaining[i].topic}`);
+          accWeight += getWeight(remaining[i].difficulty);
+        }
+      }
+      setTodayPlan(plan);
     } else {
-      // Weekly plan: group by week
+      // Weekly plan: group by week using weights
       const weeksLeft = Math.max(1, Math.ceil(daysLeft / 7));
-      const perWeek = Math.ceil(remaining.length / weeksLeft);
-      const plan: string[][] = [];
-      for (let i = 0; i < weeksLeft; i++) {
-        plan.push(remaining.slice(i * perWeek, (i + 1) * perWeek).map(t => `${t.subject}: ${t.topic}`));
+      const perWeekWeight = totalWeight / weeksLeft;
+      let plan: string[][] = [];
+      let week: string[] = [];
+      let accWeight = 0;
+      for (let i = 0; i < remaining.length; i++) {
+        week.push(`${remaining[i].subject}: ${remaining[i].topic}`);
+        accWeight += getWeight(remaining[i].difficulty);
+        if (accWeight >= perWeekWeight || i === remaining.length - 1) {
+          plan.push(week);
+          week = [];
+          accWeight = 0;
+        }
       }
       setWeekPlan(plan);
     }
   }, [examDate, subjects, planView]);
 
   // Helper to get paginated topics
-  function getPaginatedTopics(subject: Subject, idx: number) {
+  function getFilteredPaginatedTopics(subject: Subject, idx: number) {
+    let topics = subject.topics;
+    if (topicSearch.trim()) {
+      topics = topics.filter(t => t.name.toLowerCase().includes(topicSearch.toLowerCase()));
+    }
+    if (topicFilter.status) {
+      topics = topics.filter(t => t.status === topicFilter.status);
+    }
+    if (topicFilter.difficulty) {
+      topics = topics.filter(t => t.difficulty === topicFilter.difficulty);
+    }
+    if (topicFilter.strategy) {
+      topics = topics.filter(t => t.strategy === topicFilter.strategy);
+    }
     const page = topicPage[idx] || 0;
     const start = page * TOPICS_PER_PAGE;
-    return subject.topics.slice(start, start + TOPICS_PER_PAGE);
+    return topics.slice(start, start + TOPICS_PER_PAGE);
   }
 
   // Resource Modal Implementation
-  const [resourceType, setResourceType] = useState<'link' | 'note'>('link');
   const [resourceValue, setResourceValue] = useState('');
 
-  function addResource() {
-    if (!resourceModal || !resourceValue.trim()) return;
-    const { subjectIdx, topicIdx } = resourceModal;
-    const updated = [...subjects];
-    if (!updated[subjectIdx].topics[topicIdx].resources) updated[subjectIdx].topics[topicIdx].resources = [];
-    updated[subjectIdx].topics[topicIdx].resources!.push({ type: resourceType, value: resourceValue.trim() });
-    setSubjects(updated);
-    setResourceValue('');
-    setResourceModal(null);
-  }
   function removeResource(subjectIdx: number, topicIdx: number, resIdx: number) {
     const updated = [...subjects];
     updated[subjectIdx].topics[topicIdx].resources!.splice(resIdx, 1);
     setSubjects(updated);
   }
+
+  // Helper: get today's/this week's plan topics as focus list
+  useEffect(() => {
+    if (!focusMode) return;
+    if (planView === 'daily') {
+      setFocusList(todayPlan.map(item => {
+        const [subject, ...topicArr] = item.split(': ');
+        return { subject, topic: topicArr.join(': ') };
+      }));
+    } else {
+      // For weekly, flatten all topics for the week
+      setFocusList(weekPlan.flat().map(item => {
+        const [subject, ...topicArr] = item.split(': ');
+        return { subject, topic: topicArr.join(': ') };
+      }));
+    }
+  }, [focusMode, todayPlan, weekPlan, planView]);
+
+  // Track streak and award badges
+  useEffect(() => {
+    // Streak logic: if any topic is checked today, increment streak
+    const today = new Date().toISOString().slice(0, 10);
+    let checkedToday = false;
+    subjects.forEach(subj => {
+      subj.topics.forEach(t => {
+        if (t.done && (!lastCheckDate || lastCheckDate !== today)) checkedToday = true;
+      });
+    });
+    if (checkedToday && lastCheckDate !== today) {
+      setStreak(s => s + 1);
+      setLastCheckDate(today);
+    }
+    // Award badges
+    let newBadges: string[] = [];
+    if (subjects.some(s => s.topics.some(t => t.done))) newBadges.push('First Topic Done');
+    if (subjects.every(s => s.progress === 100 && s.topics.length > 0)) newBadges.push('All Subjects Complete');
+    if (streak >= 3) newBadges.push('3-Day Streak');
+    if (streak >= 7) newBadges.push('7-Day Streak');
+    setBadges(newBadges);
+  }, [subjects, streak, lastCheckDate]);
+
+  // Edit handlers
+  const saveEditSubject = (idx: number) => {
+    if (editingSubjectName.trim()) {
+      updateSubject(idx, { name: editingSubjectName });
+      setEditingSubjectIdx(null);
+      setEditingSubjectName('');
+    }
+  };
+
+  const startEditSubject = (idx: number) => {
+    setEditingSubjectIdx(idx);
+    setEditingSubjectName(subjects[idx].name);
+  };
+
+  const deleteSubject = (idx: number) => {
+    const updated = subjects.filter((_, i) => i !== idx);
+    setSubjects(updated);
+    setSelectedTab('dashboard');
+  };
+
+  const saveEditTopic = (subjectIdx: number, topicIdx: number) => {
+    if (editingTopicName.trim()) {
+      const updated = [...subjects];
+      updated[subjectIdx].topics[topicIdx].name = editingTopicName;
+      setSubjects(updated);
+      setEditingTopicIdx(null);
+      setEditingTopicName('');
+    }
+  };
+
+  const startEditTopic = (subjectIdx: number, topicIdx: number) => {
+    setEditingTopicIdx({ subjectIdx, topicIdx });
+    setEditingTopicName(subjects[subjectIdx].topics[topicIdx].name);
+  };
+
+  const deleteTopic = (subjectIdx: number, topicIdx: number) => {
+    const updated = [...subjects];
+    updated[subjectIdx].topics.splice(topicIdx, 1);
+    setSubjects(updated);
+  };
 
   return (
     <div className="animate-fadeIn min-h-screen bg-gradient-to-br from-blue-100 via-white to-indigo-100 py-12 px-2 md:px-0">
@@ -309,273 +390,298 @@ const MultiSubjectPlannerPage = () => {
         title={<span className="text-3xl md:text-4xl font-extrabold text-indigo-800 drop-shadow">Your Exam Success Blueprint</span>}
         subtitle={<span className="text-lg md:text-xl text-indigo-700">A step-by-step map to help you plan, track, and ace every subject using proven strategies.</span>}
       >
-        {/* Search and Milestone Celebration */}
-        <div className="flex items-center gap-4 mb-6">
-          <input
-            className="border rounded-lg px-3 py-2 w-64 focus:outline-none focus:ring-2 focus:ring-blue-400"
-            placeholder="Search subjects..."
-            value={search}
-            onChange={e => setSearch(e.target.value)}
-          />
-          {milestone && (
-            <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full font-bold animate-bounce">🎉 {milestone} Complete!</span>
-          )}
-        </div>
-        {/* How to Use This Planner Info Box */}
-        <div className="mb-8">
-          <div className="bg-yellow-50 border-l-4 border-yellow-400 rounded-lg p-4 shadow flex flex-col gap-2 animate-fadeIn">
-            <div className="flex items-center gap-2">
-              <span className="text-2xl">🗺️</span>
-              <span className="font-bold text-yellow-800 text-lg">How to use this planner</span>
-            </div>
-            <ul className="list-disc list-inside text-yellow-900 text-base ml-4">
-              <li>Add all your exam subjects (e.g., Math, English, Chemistry).</li>
-              <li>For each subject, break it down into chapters or topics you need to cover.</li>
-              <li>Set a clear goal for each subject (e.g., “Score 80%”, “Master all formulas”).</li>
-              <li>Assign a study strategy to each topic—hover the <span className="font-bold">?</span> for tips!</li>
-              <li>Check off topics as you complete them and watch your progress grow.</li>
-              <li>Use the notes area to reflect, jot reminders, or plan revision sessions.</li>
-              <li>Come back anytime—your plan is saved in your browser.</li>
-            </ul>
-            <div className="text-yellow-700 text-sm mt-2 italic">Tip: Unsure which strategy to use? Click the <span className="font-bold">?</span> next to the strategy dropdown for a quick explanation!</div>
-          </div>
-        </div>
-        <div className="mb-8 text-center text-xl text-blue-700 font-semibold italic bg-blue-50 rounded-lg py-3 px-4 shadow animate-fadeIn">
-          {MOTIVATIONAL_QUOTES[quoteIdx]}
-        </div>
-        {/* Step 1: Add Subjects */}
-        <div className="mb-10">
-          <h2 className="text-2xl font-bold text-indigo-700 mb-2">1. Add Your Subjects</h2>
-          <div className="text-sm text-gray-600 mb-2">Example: Math, English, Chemistry</div>
-          <div className="flex gap-2 mb-4">
-            <input
-              className="border rounded-lg px-3 py-2 w-64 focus:outline-none focus:ring-2 focus:ring-blue-400"
-              placeholder="e.g. Math, English, Chemistry"
-              value={newSubject}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewSubject(e.target.value)}
-              onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => e.key === 'Enter' && addSubject()}
-            />
+        <div className="flex gap-6 flex-col md:flex-row">
+          {/* Sidebar: Subject List & Dashboard */}
+          <aside className="w-full md:w-64 min-w-[200px] bg-white rounded-2xl shadow-xl p-4 flex flex-col gap-2 h-fit sticky top-8 transition-all duration-200">
             <button
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-700 transition"
-              onClick={addSubject}
-            >Add</button>
-          </div>
-          <div className="flex flex-wrap gap-4">
+              className={`w-full text-left px-3 py-2 rounded-lg font-bold mb-2 transition-colors duration-150 ${selectedTab === 'dashboard' ? 'bg-blue-100 text-blue-800 shadow' : 'hover:bg-blue-50'}`}
+              onClick={() => setSelectedTab('dashboard')}
+              title="View overall progress and stats"
+            >📊 Dashboard</button>
             {subjects.map((subject, idx) => (
-              <div key={idx} className="bg-white border-2 border-indigo-100 rounded-2xl shadow-lg p-6 w-full max-w-xs">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-lg font-bold text-indigo-800 cursor-pointer" onClick={() => updateSubject(idx, { collapsed: !subject.collapsed })}>
-                    {subject.name}
-                  </span>
-                  <span className="text-xs bg-indigo-200 text-indigo-800 px-2 py-1 rounded-full font-bold">{subject.progress}%</span>
-                </div>
-                {!subject.collapsed && (
-                  <>
-                    {/* Step 2: Add Topics */}
-                    <div className="mb-2">
-                      <div className="text-xs text-gray-500 mb-1">Example: Algebra, Geometry, Trigonometry</div>
-                      <input
-                        className="border rounded px-2 py-1 w-full mb-2"
-                        placeholder="Add topic/chapter"
-                        onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => handleTopicInput(e, idx)}
-                      />
-                      <ul className="space-y-2">
-                        {getPaginatedTopics(subject, idx).map((topic, tIdx) => (
-                          <li key={tIdx} className="flex items-center gap-2 bg-sky-50 rounded px-2 py-1">
-                            <input
-                              type="checkbox"
-                              checked={topic.done}
-                              onChange={() => toggleTopic(idx, tIdx + (topicPage[idx] || 0) * TOPICS_PER_PAGE)}
-                              className="accent-blue-600"
-                            />
-                            <span className={topic.done ? 'line-through text-gray-400' : ''}>{topic.name}</span>
-                            {/* Difficulty Chip */}
-                            <select
-                              className="ml-2 border rounded px-1 py-0.5 text-xs bg-white text-green-700"
-                              value={topic.difficulty || ''}
-                              onChange={e => setTopicDifficulty(idx, tIdx + (topicPage[idx] || 0) * TOPICS_PER_PAGE, e.target.value as 'Easy' | 'Medium' | 'Hard')}
-                            >
-                              <option value="">Difficulty</option>
-                              <option value="Easy">Easy</option>
-                              <option value="Medium">Medium</option>
-                              <option value="Hard">Hard</option>
-                            </select>
-                            {/* Status Chip */}
-                            <select
-                              className="ml-2 border rounded px-1 py-0.5 text-xs bg-white text-purple-700"
-                              value={topic.status || 'Not Started'}
-                              onChange={e => setTopicStatus(idx, tIdx + (topicPage[idx] || 0) * TOPICS_PER_PAGE, e.target.value as Topic['status'])}
-                            >
-                              <option value="Not Started">Not Started</option>
-                              <option value="In Progress">In Progress</option>
-                              <option value="Needs Review">Needs Review</option>
-                              <option value="Done">Done</option>
-                            </select>
-                            {/* Add Resource Button */}
-                            <button
-                              className="ml-2 text-blue-500 hover:underline text-xs"
-                              onClick={() => openResourceModal(idx, tIdx + (topicPage[idx] || 0) * TOPICS_PER_PAGE)}
-                              title="Add Resource"
-                            >📎</button>
-                            {/* Attached Resources */}
-                            {topic.resources && topic.resources.length > 0 && (
-                              <div className="flex flex-col gap-1 ml-8 mt-1">
-                                {topic.resources.map((res, resIdx) => (
-                                  <div key={resIdx} className="flex items-center gap-2 text-xs bg-yellow-50 rounded px-2 py-1">
-                                    {res.type === 'link' ? (
-                                      <a href={res.value} target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">🔗 Link</a>
-                                    ) : (
-                                      <span>📝 {res.value}</span>
-                                    )}
-                                    <button className="text-red-500 ml-1" onClick={() => removeResource(idx, tIdx + (topicPage[idx] || 0) * TOPICS_PER_PAGE, resIdx)} title="Remove">✕</button>
-                                  </div>
-                                ))}
-                              </div>
-                            )}
-                          </li>
-                        ))}
-                      </ul>
-                      {/* Pagination Controls */}
-                      {subject.topics.length > TOPICS_PER_PAGE && (
-                        <div className="flex gap-2 mt-2">
-                          <button
-                            className="px-2 py-1 bg-gray-100 rounded hover:bg-blue-100"
-                            disabled={(topicPage[idx] || 0) === 0}
-                            onClick={() => setTopicPage(p => ({ ...p, [idx]: (p[idx] || 0) - 1 }))}
-                          >Prev</button>
-                          <span className="text-xs text-gray-600">Page {(topicPage[idx] || 0) + 1} of {Math.ceil(subject.topics.length / TOPICS_PER_PAGE)}</span>
-                          <button
-                            className="px-2 py-1 bg-gray-100 rounded hover:bg-blue-100"
-                            disabled={((topicPage[idx] || 0) + 1) * TOPICS_PER_PAGE >= subject.topics.length}
-                            onClick={() => setTopicPage(p => ({ ...p, [idx]: (p[idx] || 0) + 1 }))}
-                          >Next</button>
-                        </div>
-                      )}
-                    </div>
-                    {/* Step 3: Set Goal & Priority */}
-                    <div className="mb-2">
-                      <input
-                        className="border rounded px-2 py-1 w-full mb-1"
-                        placeholder="Set your goal (e.g. Score 80%)"
-                        value={subject.goal}
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateSubject(idx, { goal: e.target.value })}
-                      />
-                      <select
-                        className="border rounded px-2 py-1 w-full"
-                        value={subject.priority}
-                        onChange={(e: React.ChangeEvent<HTMLSelectElement>) => updateSubject(idx, { priority: e.target.value })}
-                      >
-                        {priorities.map(p => <option key={p} value={p}>{p} Priority</option>)}
-                      </select>
-                    </div>
-                    {/* Step 4: Notes/Reflection */}
-                    <textarea
-                      className="border rounded px-2 py-1 w-full mt-2 text-sm"
-                      placeholder="Reflection, notes, or reminders..."
-                      value={subject.notes}
-                      onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => updateSubject(idx, { notes: e.target.value })}
-                      rows={2}
-                    />
-                    {/* Progress Bar */}
-                    <div className="w-full bg-indigo-100 rounded-full h-2 mt-3">
-                      <div
-                        className="bg-blue-600 h-2 rounded-full transition-all"
-                        style={{ width: `${subject.progress}%` }}
-                      ></div>
-                    </div>
-                  </>
+              <div key={idx} className="relative group">
+                {editingSubjectIdx === idx ? (
+                  <input
+                    className="border rounded-lg px-2 py-1 w-full focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    value={editingSubjectName}
+                    onChange={e => setEditingSubjectName(e.target.value)}
+                    onBlur={() => saveEditSubject(idx)}
+                    onKeyDown={e => e.key === 'Enter' && saveEditSubject(idx)}
+                    autoFocus
+                  />
+                ) : (
+                  <button
+                    className={`w-full text-left px-3 py-2 rounded-lg flex items-center justify-between transition-colors duration-150 ${selectedTab === idx ? 'bg-indigo-100 text-indigo-800 shadow' : 'hover:bg-indigo-50'}`}
+                    onClick={() => setSelectedTab(idx)}
+                    title={`View ${subject.name}`}
+                  >
+                    <span>{subject.name}</span>
+                    <span className="ml-2 text-xs bg-indigo-200 text-indigo-800 px-2 py-0.5 rounded-full font-bold">{subject.progress}%</span>
+                  </button>
                 )}
+                {/* Edit/Delete icons */}
+                <div className="absolute right-2 top-1/2 -translate-y-1/2 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <button className="text-gray-500 hover:text-blue-600 p-1" onClick={() => startEditSubject(idx)} title="Rename subject"><span aria-label="Edit" role="img">✏️</span></button>
+                  <button className="text-gray-500 hover:text-red-600 p-1" onClick={() => deleteSubject(idx)} title="Delete subject"><span aria-label="Delete" role="img">🗑️</span></button>
+                </div>
               </div>
             ))}
-          </div>
-        </div>
-        {/* Step 5: Summary & Encouragement */}
-        <div className="mt-12 text-center">
-          <h2 className="text-2xl font-bold text-green-700 mb-2">You’re on your way!</h2>
-          <p className="text-lg text-green-800">Keep checking off topics and reflecting on your progress. Every step brings you closer to exam success!</p>
-        </div>
-        {/* Exam Date Picker and Plan View Switcher */}
-        <div className="flex flex-col md:flex-row items-center gap-4 mb-8">
-          <div>
-            <label className="font-semibold text-indigo-700 mr-2">Exam Date:</label>
-            <input
-              type="date"
-              className="border rounded px-2 py-1"
-              value={examDate}
-              onChange={e => setExamDate(e.target.value)}
-            />
-          </div>
-          <div>
-            <label className="font-semibold text-indigo-700 mr-2">Plan View:</label>
-            <select
-              className="border rounded px-2 py-1"
-              value={planView}
-              onChange={e => setPlanView(e.target.value as 'daily' | 'weekly')}
+            {/* Add Subject Input (desktop only) */}
+            <div className="hidden md:flex mt-4 gap-2">
+              <input
+                className="border rounded-lg px-2 py-1 flex-1 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all"
+                placeholder="Add subject"
+                value={newSubject}
+                onChange={e => setNewSubject(e.target.value)}
+                onKeyDown={e => e.key === 'Enter' && addSubject()}
+                title="Type and press Enter to add"
+              />
+              <button className="bg-blue-600 text-white px-3 py-1 rounded-lg font-bold hover:bg-blue-700 transition" onClick={addSubject} title="Add subject">+</button>
+            </div>
+            {/* Floating Action Button for Add Subject (mobile only) */}
+            <button
+              className="flex md:hidden bottom-6 right-6 z-50 bg-blue-600 text-white rounded-full w-14 h-14 items-center justify-center text-3xl shadow-lg hover:bg-blue-700 transition"
+              style={{ boxShadow: '0 4px 24px 0 rgba(59,130,246,0.25)' }}
+              onClick={() => {
+                const input = document.getElementById('add-subject-input') as HTMLInputElement;
+                if (input) input.focus();
+              }}
+              title="Quick add subject"
+              aria-label="Quick add subject"
             >
-              <option value="daily">Daily</option>
-              <option value="weekly">Weekly</option>
-            </select>
-          </div>
-        </div>
-        {/* Daily/Weekly Plan Display */}
-        {planView === 'daily' ? (
-          <div className="mb-8 bg-blue-50 border-l-4 border-blue-400 rounded-lg p-4">
-            <h3 className="text-lg font-bold text-blue-800 mb-2">Today's Plan</h3>
-            {todayPlan.length === 0 ? (
-              <div className="text-gray-500">All topics are done or no plan generated yet.</div>
-            ) : (
-              <ul className="list-disc list-inside text-blue-900">
-                {todayPlan.map((item, i) => <li key={i}>{item}</li>)}
-              </ul>
-            )}
-          </div>
-        ) : (
-          <div className="mb-8 bg-blue-50 border-l-4 border-blue-400 rounded-lg p-4">
-            <h3 className="text-lg font-bold text-blue-800 mb-2">Weekly Plan</h3>
-            {weekPlan.length === 0 ? (
-              <div className="text-gray-500">All topics are done or no plan generated yet.</div>
-            ) : (
-              <div className="flex flex-col gap-4">
-                {weekPlan.map((week, wIdx) => (
-                  <div key={wIdx}>
-                    <div className="font-semibold text-blue-700 mb-1">Week {wIdx + 1}</div>
-                    <ul className="list-disc list-inside text-blue-900">
-                      {week.map((item, i) => <li key={i}>{item}</li>)}
+              <span className="sr-only">Add Subject</span>
+              +
+            </button>
+          </aside>
+          {/* Main Content: Dashboard or Selected Subject */}
+          <main className="flex-1 w-full">
+            <div className="bg-white/80 rounded-2xl shadow-2xl p-6 md:p-10 transition-all duration-200 min-h-[400px]">
+              {selectedTab === 'dashboard' ? (
+                // Dashboard view: show overall progress, badges, streak, and summary stats
+                <div>
+                  <h2 className="text-2xl font-bold text-indigo-800 mb-4">📊 Dashboard</h2>
+                  <div className="mb-6 flex flex-wrap gap-4 items-center">
+                    {/* Badges, Streak, Progress Chart (already implemented) */}
+                    {badges.length > 0 && (
+                      <div className="flex gap-2 items-center">
+                        {badges.map(badge => (
+                          <span key={badge} className="bg-yellow-200 text-yellow-900 px-3 py-1 rounded-full font-bold shadow animate-bounce">🏅 {badge}</span>
+                        ))}
+                      </div>
+                    )}
+                    <div className="bg-green-100 text-green-800 px-4 py-2 rounded-full font-bold">🔥 Streak: {streak} day{streak !== 1 ? 's' : ''}</div>
+                    {/* Simple Progress Chart */}
+                    <div className="flex flex-col items-center">
+                      <span className="text-xs text-gray-500 mb-1">Overall Progress</span>
+                      <div className="w-32 h-3 bg-gray-200 rounded-full overflow-hidden">
+                        <div
+                          className="h-3 bg-blue-500 rounded-full transition-all"
+                          style={{ width: `${subjects.length ? Math.round(subjects.reduce((sum, s) => sum + s.progress, 0) / subjects.length) : 0}%` }}
+                        ></div>
+                      </div>
+                      <span className="text-xs text-blue-700 mt-1 font-bold">{subjects.length ? Math.round(subjects.reduce((sum, s) => sum + s.progress, 0) / subjects.length) : 0}%</span>
+                    </div>
+                  </div>
+                  <div className="mb-8">
+                    <h3 className="text-lg font-bold text-blue-700 mb-2">Subjects Overview</h3>
+                    <ul className="space-y-2">
+                      {subjects.map((subject, idx) => (
+                        <li key={idx} className="flex items-center gap-3 bg-blue-50 rounded px-3 py-2">
+                          <span className="font-semibold text-indigo-800">{subject.name}</span>
+                          <span className="text-xs bg-indigo-200 text-indigo-800 px-2 py-0.5 rounded-full font-bold">{subject.progress}%</span>
+                          <button className="ml-auto text-blue-600 underline text-xs" onClick={() => setSelectedTab(idx)}>View</button>
+                        </li>
+                      ))}
                     </ul>
                   </div>
-                ))}
-              </div>
-            )}
-          </div>
-        )}
-        {/* Resource Modal (to be implemented in next steps) */}
-        {resourceModal && (
-          <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
-            <div className="bg-white rounded-2xl shadow-2xl p-6 w-full max-w-xs animate-fadeIn">
-              <h3 className="text-lg font-bold mb-2 text-indigo-800">Attach Resource</h3>
-              <div className="mb-3">
-                <label className="mr-2 font-semibold">Type:</label>
-                <select value={resourceType} onChange={e => setResourceType(e.target.value as 'link' | 'note')} className="border rounded px-2 py-1">
-                  <option value="link">Link</option>
-                  <option value="note">Note</option>
-                </select>
-              </div>
-              <div className="mb-3">
-                <input
-                  className="border rounded px-2 py-1 w-full"
-                  placeholder={resourceType === 'link' ? 'Paste a URL (https://...)' : 'Write a note...'}
-                  value={resourceValue}
-                  onChange={e => setResourceValue(e.target.value)}
-                />
-              </div>
-              <div className="flex gap-2 justify-end">
-                <button className="px-3 py-1 rounded bg-gray-200 hover:bg-gray-300" onClick={() => setResourceModal(null)}>Cancel</button>
-                <button className="px-3 py-1 rounded bg-blue-600 text-white font-bold hover:bg-blue-700" onClick={addResource}>Add</button>
+                  {/* Optionally, add more stats/charts here */}
+                </div>
+              ) : (
+                // Single Subject View
+                <div>
+                  {/* Only render the selected subject's card and topics */}
+                  <h2 className="text-2xl font-bold text-indigo-800 mb-4">{subjects[selectedTab as number]?.name}</h2>
+                  {/* Render only the selected subject's details and topics, reusing the existing UI for a single subject */}
+                  <div className="mb-2">
+                    <div className="text-xs text-gray-500 mb-1">Example: Algebra, Geometry, Trigonometry</div>
+                    <input
+                      className="border rounded px-2 py-1 w-full mb-2"
+                      placeholder="Add topic/chapter"
+                      onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => handleTopicInput(e, selectedTab as number)}
+                    />
+                    <ul className="space-y-2">
+                      {getFilteredPaginatedTopics(subjects[selectedTab as number], selectedTab as number).map((topic, tIdx) => (
+                        <li key={tIdx} className="flex items-center gap-2 bg-sky-50 rounded px-2 py-1 group relative">
+                          <input
+                            type="checkbox"
+                            checked={topic.done}
+                            onChange={() => toggleTopic(selectedTab as number, tIdx + (topicPage[selectedTab as number] || 0) * TOPICS_PER_PAGE)}
+                            className="accent-blue-600"
+                          />
+                          {editingTopicIdx && editingTopicIdx.subjectIdx === selectedTab && editingTopicIdx.topicIdx === tIdx + (topicPage[selectedTab as number] || 0) * TOPICS_PER_PAGE ? (
+                            <input
+                              className="border rounded px-1 py-0.5 text-sm w-32 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                              value={editingTopicName}
+                              onChange={e => setEditingTopicName(e.target.value)}
+                              onBlur={() => saveEditTopic(selectedTab as number, tIdx + (topicPage[selectedTab as number] || 0) * TOPICS_PER_PAGE)}
+                              onKeyDown={e => e.key === 'Enter' && saveEditTopic(selectedTab as number, tIdx + (topicPage[selectedTab as number] || 0) * TOPICS_PER_PAGE)}
+                              autoFocus
+                            />
+                          ) : (
+                            <span className={topic.done ? 'line-through text-gray-400' : ''}>{topic.name}</span>
+                          )}
+                          {/* Difficulty Chip */}
+                          <select
+                            className="ml-2 border rounded px-1 py-0.5 text-xs bg-white text-green-700"
+                            value={topic.difficulty || ''}
+                            onChange={e => setTopicDifficulty(selectedTab as number, tIdx + (topicPage[selectedTab as number] || 0) * TOPICS_PER_PAGE, e.target.value as 'Easy' | 'Medium' | 'Hard')}
+                          >
+                            <option value="">Difficulty</option>
+                            <option value="Easy">Easy</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Hard">Hard</option>
+                          </select>
+                          {/* Status Chip */}
+                          <select
+                            className="ml-2 border rounded px-1 py-0.5 text-xs bg-white text-purple-700"
+                            value={topic.status || 'Not Started'}
+                            onChange={e => setTopicStatus(selectedTab as number, tIdx + (topicPage[selectedTab as number] || 0) * TOPICS_PER_PAGE, e.target.value as Topic['status'])}
+                          >
+                            <option value="Not Started">Not Started</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Needs Review">Needs Review</option>
+                            <option value="Done">Done</option>
+                          </select>
+                          {/* Add Resource Button */}
+                          <button
+                            className="ml-2 text-blue-500 hover:underline text-xs"
+                            onClick={() => openResourceModal(selectedTab as number, tIdx + (topicPage[selectedTab as number] || 0) * TOPICS_PER_PAGE)}
+                            title="Add Resource"
+                          >📎</button>
+                          {/* Attached Resources */}
+                          {topic.resources && topic.resources.length > 0 && (
+                            <div className="flex flex-col gap-1 ml-8 mt-1">
+                              {topic.resources.map((res, resIdx) => (
+                                <div key={resIdx} className="flex items-center gap-2 text-xs bg-yellow-50 rounded px-2 py-1">
+                                  {res.type === 'link' ? (
+                                    <a href={res.value} target="_blank" rel="noopener noreferrer" className="text-blue-700 underline">🔗 Link</a>
+                                  ) : (
+                                    <span>📝 {res.value}</span>
+                                  )}
+                                  <button className="text-red-500 ml-1" onClick={() => removeResource(selectedTab as number, tIdx + (topicPage[selectedTab as number] || 0) * TOPICS_PER_PAGE, resIdx)} title="Remove">✕</button>
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                          <div className="absolute right-2 top-1/2 -translate-y-1/2 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <button className="text-gray-500 hover:text-blue-600 p-1" onClick={() => startEditTopic(selectedTab as number, tIdx + (topicPage[selectedTab as number] || 0) * TOPICS_PER_PAGE)} title="Rename topic"><span aria-label="Edit" role="img">✏️</span></button>
+                            <button className="text-gray-500 hover:text-red-600 p-1" onClick={() => deleteTopic(selectedTab as number, tIdx + (topicPage[selectedTab as number] || 0) * TOPICS_PER_PAGE)} title="Delete topic"><span aria-label="Delete" role="img">🗑️</span></button>
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                    {/* Pagination Controls */}
+                    {subjects[selectedTab as number].topics.length > TOPICS_PER_PAGE && (
+                      <div className="flex gap-2 mt-2">
+                        <button
+                          className="px-2 py-1 bg-gray-100 rounded hover:bg-blue-100"
+                          disabled={(topicPage[selectedTab as number] || 0) === 0}
+                          onClick={() => setTopicPage(p => ({ ...p, [selectedTab as number]: (p[selectedTab as number] || 0) - 1 }))}
+                        >Prev</button>
+                        <span className="text-xs text-gray-600">Page {(topicPage[selectedTab as number] || 0) + 1} of {Math.ceil(subjects[selectedTab as number].topics.length / TOPICS_PER_PAGE)}</span>
+                        <button
+                          className="px-2 py-1 bg-gray-100 rounded hover:bg-blue-100"
+                          disabled={((topicPage[selectedTab as number] || 0) + 1) * TOPICS_PER_PAGE >= subjects[selectedTab as number].topics.length}
+                          onClick={() => setTopicPage(p => ({ ...p, [selectedTab as number]: (p[selectedTab as number] || 0) + 1 }))}
+                        >Next</button>
+                      </div>
+                    )}
+                  </div>
+                  {/* Step 3: Set Goal & Priority */}
+                  <div className="mb-2">
+                    <input
+                      className="border rounded px-2 py-1 w-full mb-1"
+                      placeholder="Set your goal (e.g. Score 80%)"
+                      value={subjects[selectedTab as number].goal}
+                      onChange={(e: React.ChangeEvent<HTMLInputElement>) => updateSubject(selectedTab as number, { goal: e.target.value })}
+                    />
+                    <select
+                      className="border rounded px-2 py-1 w-full"
+                      value={subjects[selectedTab as number].priority}
+                      onChange={(e: React.ChangeEvent<HTMLSelectElement>) => updateSubject(selectedTab as number, { priority: e.target.value })}
+                    >
+                      {priorities.map(p => <option key={p} value={p}>{p} Priority</option>)}
+                    </select>
+                  </div>
+                  {/* Step 4: Notes/Reflection */}
+                  <textarea
+                    className="border rounded px-2 py-1 w-full mt-2 text-sm"
+                    placeholder="Reflection, notes, or reminders..."
+                    value={subjects[selectedTab as number].notes}
+                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => updateSubject(selectedTab as number, { notes: e.target.value })}
+                    rows={2}
+                  />
+                  {/* Progress Bar */}
+                  <div className="w-full bg-indigo-100 rounded-full h-2 mt-3">
+                    <div
+                      className="bg-blue-600 h-2 rounded-full transition-all"
+                      style={{ width: `${subjects[selectedTab as number].progress}%` }}
+                    ></div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </main>
+          {/* Right Sidebar: Pomodoro Timer (desktop only) */}
+          <aside className="hidden md:block w-80 min-w-[300px] ml-2">
+            <div className="sticky top-8">
+              <div className="bg-gradient-to-r from-yellow-50 via-white to-blue-50 border border-yellow-200 shadow-xl rounded-2xl p-4 flex flex-col items-center">
+                <span className="text-lg font-bold text-yellow-700 mb-2 flex items-center gap-2">
+                  <svg className="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                  Pomodoro Focus Timer
+                </span>
+                <PomodoroTimer />
               </div>
             </div>
-          </div>
-        )}
+          </aside>
+          {/* Floating Pomodoro Button for mobile */}
+          <button
+            className="fixed md:hidden bottom-6 right-6 z-50 bg-yellow-400 text-white rounded-full w-14 h-14 flex items-center justify-center text-3xl shadow-lg hover:bg-yellow-500 transition"
+            style={{ boxShadow: '0 4px 24px 0 rgba(251,191,36,0.25)' }}
+            onClick={() => setShowPomodoro(true)}
+            title="Open Pomodoro Timer"
+            aria-label="Open Pomodoro Timer"
+          >
+            <span className="sr-only">Open Pomodoro Timer</span>
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          </button>
+          {/* Pomodoro Modal for mobile */}
+          {showPomodoro && (
+            <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+              <div className="bg-white rounded-2xl shadow-2xl p-6 w-full max-w-xs animate-fadeIn">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-lg font-bold text-yellow-700 flex items-center gap-2">
+                    <svg className="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    Pomodoro Timer
+                  </span>
+                  <button className="text-gray-500 hover:text-red-600 text-2xl font-bold" onClick={() => setShowPomodoro(false)} title="Close">×</button>
+                </div>
+                <PomodoroTimer />
+              </div>
+            </div>
+          )}
+        </div>
       </SectionWrapper>
+      {/* Persistent Help Button */}
+      <button
+        className="fixed left-6 bottom-6 z-50 bg-yellow-400 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl shadow-lg hover:bg-yellow-500 transition"
+        style={{ boxShadow: '0 4px 24px 0 rgba(251,191,36,0.25)' }}
+        onClick={() => setShowOnboarding(true)}
+        title="Show planner walkthrough"
+        aria-label="Show planner walkthrough"
+      >
+        ?
+      </button>
     </div>
   );
 };
