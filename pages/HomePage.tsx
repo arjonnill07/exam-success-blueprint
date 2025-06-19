@@ -4,19 +4,20 @@ import { STRATEGIES, MOTIVATIONAL_QUOTES } from '../constants';
 import TargetIcon from '../components/icons/TargetIcon';
 
 const testimonials = [
-	{
-		name: 'Ayesha, Class 10',
-		text: '“This app made planning so easy! I finally stopped cramming and my grades shot up.”',
-	},
-	{
-		name: 'Rahim, Class 12',
-		text: '“The strategies here are simple but powerful. I felt confident for the first time.”',
-	},
-	{
-		name: 'Mitu, Class 8',
-		text: '“I loved the quick tips and the colorful design. Studying feels less scary now!”',
-	},
+  {
+    name: 'সঞ্চিতা, আইবিএ, ঢাকা বিশ্ববিদ্যালয়',
+    text: '“আসলে আগে আমি বুঝতেই পারতাম না কীভাবে পড়া শুরু করব। সবই মনে হতো একসাথে চাপ হয়ে এসেছে। আপনি যেভাবে স্ট্র্যাটেজিগুলো শিখিয়েছেন—পোমোডোরো, অ্যাকটিভ রিকল—সেটা আমার চোখ খুলে দিয়েছে। এখন মনে হয় আমি শুধু পড়ি না, বুঝে পড়ি। নিজেকে কন্ট্রোলে আনতে শিখেছি।”',
+  },
+  {
+    name: 'রিফাত, ঢাকা রেসিডেনসিয়াল মডেল কলেজ',
+    text: '“আগে পড়াশোনা আমার জন্য একটা যুদ্ধ ছিল। যত পড়তাম, তত বেশি ভয় লাগতো। আপনি যখন স্পেসড রিপিটিশন আর স্মার্ট প্ল্যানিং দেখালেন, তখনই প্রথম মনে হলো—এই সিস্টেমটা আমার জন্য কাজ করবে। এখন পরীক্ষার আগেও মাথা ঠান্ডা থাকে। নিজের ওপর বিশ্বাসটা ফিরেছে।”',
+  },
+  {
+    name: 'তাসনিম, শের-ই-বাংলা মেডিকেল কলেজ',
+    text: '“মেডিকেলের জন্য প্রস্তুতি নিতে গিয়ে এক সময় ভেঙে পড়েছিলাম। আপনি আমাকে বলেছিলেন, ‘সব কিছু একসাথে না, ধাপে ধাপে আগাও।’ তখন থেকেই ৮০/২০ রুল আর গোল সেটিং আমার রুটিনের অংশ হয়ে গেছে। সত্যি বলতে, এই স্ট্র্যাটেজিগুলো না থাকলে আমি এতদূর আসতে পারতাম না।”',
+  },
 ];
+
 
 const HomePage: React.FC = () => {
 	const [quote, setQuote] = useState('');
