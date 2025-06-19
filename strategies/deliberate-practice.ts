@@ -33,10 +33,45 @@ const deliberatePractice: Strategy = {
     "Makes practice feel like a game or mission."
   ],
   realWorldExamples: [
-    `<strong>Physics MCQ Mastery:</strong> Always lose marks on 'Current Electricity'? Spend a session only on those MCQs, check answers instantly, and note every mistake. <em>Eureka!</em> Watch your score jump in the next test!`,
-    `<strong>Essay Writing Power:</strong> Struggle with introductions? Write just the first paragraph for 5 essay prompts, get feedback, and rewrite until it feels easy. <em>Try it now:</em> You’ll see your essays improve fast!`,
-    `<strong>Math Problem Slayer:</strong> Weak in Trigonometry proofs? Practice only those, step by step, and compare with model answers. <em>Challenge:</em> Can you spot your most common mistake and fix it today?`,
-    `<strong>Bangla Literature:</strong> Forget key quotes? Practice recalling and writing just the quotes for 10 minutes, then check and repeat. <em>Tip:</em> This is how toppers memorize for essays!`,
+    `<strong>🎯 Math Power-Up: Mastering Quadratic Equations</strong><br/>
+    ❌ Keep making the same mistakes in algebra problems?<br/>
+    ✅ Use deliberate practice to target your weak spots.<br/><br/>
+    <em>How to master “Quadratic Equations”:</em><br/>
+    • <strong>Step 1:</strong> Pick 3 problems you got wrong before<br/>
+    • <strong>Step 2:</strong> Solve them again, checking each step<br/>
+    • <strong>Step 3:</strong> Review the answer key and note your mistakes<br/>
+    • <strong>Step 4:</strong> Try a similar problem right away<br/><br/>
+    🏆 Each round makes you stronger and more confident!`,
+
+    `<strong>📝 English Writing: Essay Introduction Practice</strong><br/>
+    ❌ Struggle to start essays or get stuck on the intro?<br/>
+    ✅ Practice just the introduction, one step at a time.<br/><br/>
+    <em>How to improve “Essay Introductions”:</em><br/>
+    • <strong>Step 1:</strong> Write the intro for 2 different essay topics<br/>
+    • <strong>Step 2:</strong> Ask a friend or teacher for feedback<br/>
+    • <strong>Step 3:</strong> Rewrite the intro using their advice<br/>
+    • <strong>Step 4:</strong> Repeat for the next section<br/><br/>
+    ✍️ Each try makes you more confident and creative!`,
+
+    `<strong>🔬 Science Success: Physics MCQ Mastery</strong><br/>
+    ❌ Lose marks on tricky MCQs in Physics or Chemistry?<br/>
+    ✅ Practice with purpose and instant feedback.<br/><br/>
+    <em>How to master “Physics MCQs”:</em><br/>
+    • <strong>Step 1:</strong> Find 5 MCQs from your last test or textbook<br/>
+    • <strong>Step 2:</strong> Answer them, then check with the answer key<br/>
+    • <strong>Step 3:</strong> For any mistake, ask: “Why did I miss this?”<br/>
+    • <strong>Step 4:</strong> Try a similar question right away<br/><br/>
+    🚀 You’ll see your score jump in the next test!`,
+
+    `<strong>📚 Bangla/English: Paragraph Practice</strong><br/>
+    ❌ Always lose marks for unclear or short paragraphs?<br/>
+    ✅ Practice writing and reviewing, one paragraph at a time.<br/><br/>
+    <em>How to improve “Paragraph Writing”:</em><br/>
+    • <strong>Step 1:</strong> Write a paragraph on a familiar topic (e.g., “A Rainy Day”)<br/>
+    • <strong>Step 2:</strong> Check if it has a clear beginning, middle, and end<br/>
+    • <strong>Step 3:</strong> Ask a friend to read and give feedback<br/>
+    • <strong>Step 4:</strong> Rewrite and improve based on their advice<br/><br/>
+    🌟 Every paragraph you write is a step toward exam success!`,
   ],
   examPrepFocus: []
 };

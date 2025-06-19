@@ -26,10 +26,45 @@ const focusDiffuse: Strategy = {
   ],
   benefits: [],
   realWorldExamples: [
-    `<strong>Physics Problem Breakthrough:</strong> Stuck on a tough SSC Physics calculation? Focus hard for 25 minutes, then take a walk or chat with a friend. <em>Eureka!</em> Many students find the answer pops into their head during the break! <br/><em>Try it now:</em> Next time you’re stuck, step away for 10 minutes—see what happens when you return.`,
-    `<strong>Essay Brainstorming:</strong> For Bangla or English essays, focus on the topic and jot down ideas for 20 minutes. Then, do a quick chore (like making tea or watering plants). <em>Surprise:</em> New arguments and examples will often come to you!`,
-    `<strong>Math & Science Revision:</strong> Study a dense chapter (like Chemistry reactions) in focused mode, then listen to music or doodle for a few minutes. <em>Result:</em> You’ll connect concepts and remember more for the exam.`,
-    `<strong>Real Student Story:</strong> “I was stuck on a math proof for hours. After a break to play carrom, the solution just clicked!” <br/><em>Challenge:</em> Try alternating focus and break sessions for your hardest subject today.”`,
+    `<strong>🧠 Math Breakthrough: Solving Tough Problems</strong><br/>
+    ❌ Stuck on a geometry or algebra problem for ages?<br/>
+    ✅ Use focus and diffuse modes to unlock new ideas.<br/><br/>
+    <em>How to solve a tough math problem:</em><br/>
+    • <strong>Step 1 (Focus):</strong> Work on the problem for 20 minutes, no distractions<br/>
+    • <strong>Step 2 (Diffuse):</strong> Take a real break—walk, stretch, or listen to music<br/>
+    • <strong>Step 3 (Focus):</strong> Come back and try again—notice new ideas popping up!<br/>
+    • <strong>Step 4:</strong> Celebrate every small win—progress is progress!<br/><br/>
+    🚀 This is how toppers get “aha!” moments!`,
+
+    `<strong>✍️ English Essay Brainstorm: Get Creative</strong><br/>
+    ❌ Can’t think of ideas for your essay or story?<br/>
+    ✅ Switch between focus and relax to spark creativity.<br/><br/>
+    <em>How to brainstorm for “Digital Bangladesh” or any topic:</em><br/>
+    • <strong>Step 1 (Focus):</strong> Write down ideas for 15 minutes—no stopping<br/>
+    • <strong>Step 2 (Diffuse):</strong> Take a break: doodle, make tea, or chat with family<br/>
+    • <strong>Step 3 (Focus):</strong> Return and organize your ideas—see what new thoughts appear!<br/>
+    • <strong>Step 4:</strong> Every break is a brain boost. You’re getting creative!<br/><br/>
+    💡 You’ll write faster and with more confidence!`,
+
+    `<strong>🔬 Science Revision: Chemistry Made Easy</strong><br/>
+    ❌ Forgetting reactions or facts after hours of study?<br/>
+    ✅ Alternate focus and break sessions for better memory.<br/><br/>
+    <em>How to revise “Acid-Base Reactions” or any chapter:</em><br/>
+    • <strong>Step 1 (Focus):</strong> Study the chapter for 25 minutes<br/>
+    • <strong>Step 2 (Diffuse):</strong> Step away—play a quick game or listen to a song<br/>
+    • <strong>Step 3 (Focus):</strong> Come back and quiz yourself—surprised by what you remember?<br/>
+    • <strong>Step 4:</strong> Pat yourself on the back—this is how toppers learn!<br/><br/>
+    🌟 You’ll remember more and feel less stressed!`,
+
+    `<strong>📚 History/Geography: Essay or Map Mastery</strong><br/>
+    ❌ Can’t organize your thoughts for a big answer or map?<br/>
+    ✅ Use focus and diffuse to plan and review.<br/><br/>
+    <em>How to master “Liberation War Essay” or “River Map”:</em><br/>
+    • <strong>Step 1 (Focus):</strong> List key points or draw a rough map for 15 minutes<br/>
+    • <strong>Step 2 (Diffuse):</strong> Take a break—walk, snack, or chat<br/>
+    • <strong>Step 3 (Focus):</strong> Return and organize your answer or redraw the map neatly<br/>
+    • <strong>Step 4:</strong> Review and add details—each round makes you better!<br/><br/>
+    🏅 You’ll feel calm and ready for any question!`,
   ],
   examPrepFocus: []
 };

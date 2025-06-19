@@ -33,10 +33,45 @@ const stressTaming: Strategy = {
     "Turns stress into a source of energy and motivation."
   ],
   realWorldExamples: [
-    `<strong>Night Before SSC/HSC:</strong> Can’t sleep? Try 5 minutes of deep breathing or listen to a calming audio. <em>Eureka!</em> You’ll fall asleep faster and wake up fresher for the exam!`,
-    `<strong>Exam Hall Nerves:</strong> Heart racing before the first question? Pause, do 3 power breaths, and repeat your positive phrase. <em>Try it now:</em> You’ll feel your mind clear and your confidence rise!`,
-    `<strong>During a Tough Question:</strong> Stuck and panicking? Look away from the paper, take a slow breath, and focus on your senses for 10 seconds. <em>Tip:</em> This resets your brain so you can try again calmly.`,
-    `<strong>Negative Thoughts While Studying:</strong> Notice a worry like 'I always mess up math'? Write it down, then write a positive counter: 'I’ve improved a lot, and I’ll keep getting better.' <em>Challenge:</em> Try this for your biggest worry today!`,
+    `<strong>😴 Night Before Exam: Calm & Ready</strong><br/>
+    ❌ Can’t sleep, mind racing with worries?<br/>
+    ✅ Use these steps to relax and prepare.<br/><br/>
+    <em>How to get a good night’s sleep before exams:</em><br/>
+    • <strong>Step 1:</strong> Try 5 deep breaths or listen to calming music<br/>
+    • <strong>Step 2:</strong> Pack your bag and lay out your uniform—feel prepared!<br/>
+    • <strong>Step 3:</strong> Remind yourself: “I’ve done my best. Tomorrow is a new chance.”<br/>
+    • <strong>Step 4:</strong> Sleep comes easier when you’re calm and ready<br/><br/>
+    🌙 You’ll wake up fresh and confident!`,
+
+    `<strong>📝 Exam Hall Nerves: Stay Cool</strong><br/>
+    ❌ Heart racing before the first question?<br/>
+    ✅ Calm your mind and boost your focus.<br/><br/>
+    <em>How to stay calm in the exam hall:</em><br/>
+    • <strong>Step 1:</strong> Pause and do 3 slow breaths<br/>
+    • <strong>Step 2:</strong> Repeat a positive phrase: “I can do this!”<br/>
+    • <strong>Step 3:</strong> Look around and notice 3 things you see or hear<br/>
+    • <strong>Step 4:</strong> Start your exam with a clear head—you’ve got this!<br/><br/>
+    🏅 You’ll feel in control and ready to succeed!`,
+
+    `<strong>💭 Study Worries: Turn Stress Into Strength</strong><br/>
+    ❌ Worrying about tough subjects or low marks?<br/>
+    ✅ Use positive self-talk to build confidence.<br/><br/>
+    <em>How to turn worries into motivation:</em><br/>
+    • <strong>Step 1:</strong> Write your worry on a sticky note<br/>
+    • <strong>Step 2:</strong> Write a positive answer next to it: “I’m improving every day.”<br/>
+    • <strong>Step 3:</strong> Read your positive note before each study session<br/>
+    • <strong>Step 4:</strong> Small steps, big progress—be kind to yourself!<br/><br/>
+    🌟 You’ll feel lighter and more motivated!`,
+
+    `<strong>🧘‍♂️ Quick Calm: Mindfulness Mini-Break</strong><br/>
+    ❌ Feeling overwhelmed during study or revision?<br/>
+    ✅ Take a short break to reset your mind.<br/><br/>
+    <em>How to use a mindfulness mini-break:</em><br/>
+    • <strong>Step 1:</strong> Close your eyes and take 3 deep breaths<br/>
+    • <strong>Step 2:</strong> Focus on what you hear, feel, and smell for 1 minute<br/>
+    • <strong>Step 3:</strong> Open your eyes and stretch<br/>
+    • <strong>Step 4:</strong> Return to study feeling refreshed and focused<br/><br/>
+    🌈 You’ll study better and feel less stressed!`,
   ],
   examPrepFocus: []
 };

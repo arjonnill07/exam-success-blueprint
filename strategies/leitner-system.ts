@@ -42,10 +42,45 @@ const leitnerSystem: Strategy = {
     "Builds confidence for any exam.",
   ],
   realWorldExamples: [
-    "<em>SSC English:</em> Imagine you have 50 new words to learn. With Leitner, you’ll only review the tough ones daily—by exam week, you’ll know every word without cramming!",
-    "<em>HSC Chemistry:</em> Struggling with chemical equations? The cards you miss most stay in Box 1, so you see them again and again—until you can write them in your sleep!",
-    "<em>Bangla Literature:</em> Use flashcards for author names, poem lines, or key themes. The Leitner System makes sure you never forget the details that get you bonus marks.",
-    "<em>Any subject:</em> Students who use Leitner say it feels like a game—watching their weak spots disappear and their confidence soar!",
+    `<strong>🃏 English Vocab: Flashcard Power</strong><br/>
+    ❌ Forget new words after a few days?<br/>
+    ✅ Use the Leitner System to make them stick.<br/><br/>
+    <em>How to master “English Vocabulary”:</em><br/>
+    • <strong>Step 1:</strong> Make 10 flashcards for new words<br/>
+    • <strong>Step 2:</strong> Review all cards today. Tomorrow, only review the ones you missed<br/>
+    • <strong>Step 3:</strong> Move correct cards to the next box—see your progress grow!<br/>
+    • <strong>Step 4:</strong> Keep going until all cards are easy<br/><br/>
+    🎉 You’ll remember words for exams and beyond!`,
+
+    `<strong>🧪 Chemistry: Mastering Equations</strong><br/>
+    ❌ Struggle to remember chemical equations?<br/>
+    ✅ Flashcards and the Leitner System make it easy.<br/><br/>
+    <em>How to master “Chemistry Equations”:</em><br/>
+    • <strong>Step 1:</strong> Write tricky equations on flashcards<br/>
+    • <strong>Step 2:</strong> Review daily. If you get one right, move it to the next box<br/>
+    • <strong>Step 3:</strong> Focus on the tough ones—soon, nothing will surprise you in exams!<br/>
+    • <strong>Step 4:</strong> Celebrate when all your cards reach the last box<br/><br/>
+    🏆 You’ll ace even the hardest questions!`,
+
+    `<strong>📚 Bangla Literature: Author & Poem Mastery</strong><br/>
+    ❌ Forget author names or poem lines in the exam?<br/>
+    ✅ Flashcards help you review and remember with ease.<br/><br/>
+    <em>How to master “Bangla Literature”:</em><br/>
+    • <strong>Step 1:</strong> Make flashcards for author names, poem lines, or key themes<br/>
+    • <strong>Step 2:</strong> Review the cards every day, moving the easy ones up a box<br/>
+    • <strong>Step 3:</strong> Watch your weak spots disappear and your confidence soar!<br/>
+    • <strong>Step 4:</strong> Flashcards make revision fun—keep leveling up!<br/><br/>
+    🌟 You’ll never fear literature questions again!`,
+
+    `<strong>➗ Math Formulas: Fast Recall for Exams</strong><br/>
+    ❌ Struggle to remember all the formulas before the test?<br/>
+    ✅ Leitner flashcards make revision quick and easy.<br/><br/>
+    <em>How to master “Math Formulas”:</em><br/>
+    • <strong>Step 1:</strong> Write each formula on a flashcard<br/>
+    • <strong>Step 2:</strong> Review daily, moving correct ones up a box<br/>
+    • <strong>Step 3:</strong> Focus on the ones you miss—review them more often<br/>
+    • <strong>Step 4:</strong> By exam week, you’ll know every formula by heart!<br/><br/>
+    🚀 You’ll feel calm and ready for any math question!`,
   ],
   examPrepFocus: [
     "Perfect for quick, daily revision before exams.",

@@ -45,9 +45,45 @@ const spacedRepetition: Strategy = {
     "Makes revision less stressful and more effective.",
   ],
   realWorldExamples: [
-    "<em>Language learning:</em> Review new words after 1 day, 3 days, 1 week, and so on.",
-    "<em>History dates:</em> Make a spaced review schedule for key events.",
-    "<em>Physics formulas:</em> Review at increasing intervals to lock them in.",
+    `<strong>📖 English Vocab: Remember Words for Life</strong><br/>
+    ❌ Forget new words after a few days?<br/>
+    ✅ Use spaced repetition to make them stick.<br/><br/>
+    <em>How to master “English Vocabulary”:</em><br/>
+    • <strong>Step 1:</strong> Learn 5 new words today<br/>
+    • <strong>Step 2:</strong> Review them tomorrow, then again after 3 days, then a week<br/>
+    • <strong>Step 3:</strong> Use flashcards or a notebook to track your reviews<br/>
+    • <strong>Step 4:</strong> Each review makes the words stick—watch your vocab grow!<br/><br/>
+    🌟 You’ll remember words for exams and beyond!`,
+
+    `<strong>📅 History: Dates & Events That Stick</strong><br/>
+    ❌ Forget important dates right before the exam?<br/>
+    ✅ Review at smart intervals to lock them in.<br/><br/>
+    <em>How to master “History Dates”:</em><br/>
+    • <strong>Step 1:</strong> Write 5 key dates from your chapter<br/>
+    • <strong>Step 2:</strong> Review them after 1 day, then 3 days, then a week<br/>
+    • <strong>Step 3:</strong> Quiz yourself each time—see how much you remember!<br/>
+    • <strong>Step 4:</strong> Spaced review = less cramming, more confidence!<br/><br/>
+    🏆 You’ll ace the timeline questions!`,
+
+    `<strong>🔢 Math Formulas: Fast Recall for Exams</strong><br/>
+    ❌ Struggle to remember all the formulas before the test?<br/>
+    ✅ Spaced repetition makes revision quick and easy.<br/><br/>
+    <em>How to master “Math Formulas”:</em><br/>
+    • <strong>Step 1:</strong> Write each formula in your notebook<br/>
+    • <strong>Step 2:</strong> Review them after 1 day, then 3 days, then a week<br/>
+    • <strong>Step 3:</strong> Test yourself each time—no peeking!<br/>
+    • <strong>Step 4:</strong> Each review makes you faster and more confident<br/><br/>
+    🚀 You’ll feel calm and ready for any math question!`,
+
+    `<strong>🔬 Science: Mastering Key Concepts</strong><br/>
+    ❌ Forget facts or diagrams after a week?<br/>
+    ✅ Review at spaced intervals for long-term memory.<br/><br/>
+    <em>How to master “Science Concepts”:</em><br/>
+    • <strong>Step 1:</strong> Learn a new concept (e.g., “Acid-Base Reactions”)<br/>
+    • <strong>Step 2:</strong> Review after 1 day, then 3 days, then a week<br/>
+    • <strong>Step 3:</strong> Draw the diagram or explain the process from memory<br/>
+    • <strong>Step 4:</strong> Each review makes it easier to recall in exams<br/><br/>
+    🎯 You’ll build real science memory power!`,
   ],
   examPrepFocus: [
     "Perfect for long-term retention and exam prep.",

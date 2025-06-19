@@ -38,9 +38,45 @@ const interleaving: Strategy = {
     "Makes revision less boring!",
   ],
   realWorldExamples: [
-    "<em>SSC:</em> Mix up algebra, geometry, and English grammar in one sitting.",
-    "<em>HSC Science:</em> Alternate MCQs from Physics, Chemistry, and Biology in a single practice round.",
-    "<em>Class 9 Bangla & English:</em> Do a Bangla summary, then an English grammar fill-in-the-blank, then a Bangla MCQ, and so on.",
+    `<strong>🔄 Math & Science: Mix It Up for Exam Power</strong><br/>
+    ❌ Always study one subject at a time and get bored or stuck?<br/>
+    ✅ Mix different topics to train your brain for real exams.<br/><br/>
+    <em>How to use interleaving for “Math & Science”:</em><br/>
+    • <strong>Step 1:</strong> Do 2 algebra sums, then 2 geometry problems<br/>
+    • <strong>Step 2:</strong> Switch to 2 science MCQs (Physics or Chemistry)<br/>
+    • <strong>Step 3:</strong> Repeat the cycle—notice how you adapt faster<br/>
+    • <strong>Step 4:</strong> Review what felt tricky and try again next session<br/><br/>
+    🚀 You’ll be ready for any mix of questions on exam day!`,
+
+    `<strong>📖 Bangla & English: Variety for Stronger Memory</strong><br/>
+    ❌ Forget what you studied by the next day?<br/>
+    ✅ Mix subjects to keep your brain active and alert.<br/><br/>
+    <em>How to use interleaving for “Bangla & English”:</em><br/>
+    • <strong>Step 1:</strong> Do a Bangla summary, then an English grammar fill-in-the-blank<br/>
+    • <strong>Step 2:</strong> Next, try a Bangla MCQ, then an English paragraph<br/>
+    • <strong>Step 3:</strong> Keep switching every 2–3 questions<br/>
+    • <strong>Step 4:</strong> Notice how you remember more and get less bored!<br/><br/>
+    🌟 Mixing it up makes revision fun and effective!`,
+
+    `<strong>🌏 History/Geography: Real Exam Practice</strong><br/>
+    ❌ Struggle to switch between map questions and essays?<br/>
+    ✅ Practice mixing question types just like in the real exam.<br/><br/>
+    <em>How to use interleaving for “History/Geography”:</em><br/>
+    • <strong>Step 1:</strong> Answer a map question, then write a short essay<br/>
+    • <strong>Step 2:</strong> Next, do a timeline or date-matching exercise<br/>
+    • <strong>Step 3:</strong> Switch back to a map or diagram<br/>
+    • <strong>Step 4:</strong> Review and repeat—your brain gets better at switching!<br/><br/>
+    🏅 You’ll feel confident with any question order!`,
+
+    `<strong>🧪 Science: Mixed MCQ Practice</strong><br/>
+    ❌ Get stuck when questions jump between topics?<br/>
+    ✅ Mix MCQs from different chapters in one session.<br/><br/>
+    <em>How to use interleaving for “Science MCQs”:</em><br/>
+    • <strong>Step 1:</strong> Pick 2 MCQs from Physics, 2 from Chemistry, 2 from Biology<br/>
+    • <strong>Step 2:</strong> Answer them in a mixed order<br/>
+    • <strong>Step 3:</strong> Notice which topics feel harder—review those next time<br/>
+    • <strong>Step 4:</strong> Repeat with new questions each session<br/><br/>
+    🎯 You’ll be ready for any surprise in the exam!`,
   ],
   examPrepFocus: [
     "Great for last-month revision before board exams.",

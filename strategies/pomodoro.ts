@@ -29,52 +29,56 @@ const pomodoro: Strategy = {
   ],
   benefits: [],
 realWorldExamples: [
-  `<strong>📘 SSC/HSC Exam Crunch: Physics Chapter Walkthrough</strong><br/>
-  ❌ Studied Motion for 5 hours but can’t explain Newton’s Laws the next day?<br/>
-  ✅ Try this: <strong>4 Pomodoros = 2 hours</strong> of real learning.<br/><br/>
-  <em>How to study “Motion – Chapter 2 (Physics)”:</em><br/>
-  • <strong>Pomodoro 1:</strong> Read & understand Newton’s Laws from the textbook<br/>
-  • <strong>Pomodoro 2:</strong> Watch a 10-min concept video, then solve 3 related examples<br/>
-  • <strong>Pomodoro 3:</strong> Practice MCQs from past SSC/HSC questions<br/>
-  • <strong>Pomodoro 4:</strong> Write key points & formulas from memory ✍️<br/><br/>
-  🔁 Total time: 2 hours. You’ll remember more and still feel fresh!`,
+  `<strong>🕒 Physics: Master a Chapter in Less Time</strong><br/>
+  ❌ Problem: You study “Motion” for hours but can’t recall Newton’s Laws the next day.<br/>
+  ✅ Solution: Use 4 Pomodoros (2 hours) for focused, effective learning!<br/><br/>
+  <em>Action Plan:</em><br/>
+  1. Pomodoro 1: Read and understand Newton’s Laws.<br/>
+  2. Pomodoro 2: Watch a short concept video, then solve 3 examples.<br/>
+  3. Pomodoro 3: Practice MCQs from past questions.<br/>
+  4. Pomodoro 4: Write key points and formulas from memory.<br/>
+  5. Take short breaks between each Pomodoro.<br/><br/>
+  🔁 You’ll remember more and feel less tired!`,
 
-  `<strong>📐 Math Made Easy: Trigonometry SSC Walkthrough</strong><br/>
-  ❌ Trigonometry makes you feel stuck or confused?<br/>
-  ✅ Use 3 Pomodoros to master it — the smart way.<br/><br/>
-  <em>Study plan for “Trigonometry – Chapter 9 (Math)”:</em><br/>
-  • <strong>Pomodoro 1:</strong> Memorize basic formulas (sin, cos, tan) + draw the table<br/>
-  • <strong>Pomodoro 2:</strong> Solve 5 textbook examples (1–5, page 123)<br/>
-  • <strong>Pomodoro 3:</strong> Write formulas & solve 3 problems from memory<br/><br/>
-  📈 After 3 Pomodoros, the chapter won’t feel scary — it’ll feel doable.`,
+  `<strong>📐 Math: Trigonometry Made Simple</strong><br/>
+  ❌ Problem: Trigonometry feels confusing and overwhelming.<br/>
+  ✅ Solution: Break it into 3 Pomodoros for clarity and confidence!<br/><br/>
+  <em>Action Plan:</em><br/>
+  1. Pomodoro 1: Memorize basic formulas and draw the table.<br/>
+  2. Pomodoro 2: Solve 5 textbook examples.<br/>
+  3. Pomodoro 3: Write formulas and solve 3 problems from memory.<br/>
+  4. Review and relax after each session.<br/><br/>
+  📈 After 3 Pomodoros, the chapter will feel much easier!`,
 
-  `<strong>📝 Essay Writing Hack: Bangla Essay (2nd Paper)</strong><br/>
-  ❌ You waste 90 minutes on one essay — starting, erasing, repeating.<br/>
-  ✅ Structure it with Pomodoros.<br/><br/>
-  <em>Write “Digital Bangladesh” (Essay topic) in 3 Pomodoros:</em><br/>
-  • <strong>Pomodoro 1:</strong> Brainstorm ideas — list 5 key points (e.g., education, ICT, job market)<br/>
-  • <strong>Pomodoro 2:</strong> Draft full essay — intro, body, conclusion ✍️<br/>
-  • <strong>Pomodoro 3:</strong> Revise grammar, improve words, add Bangla quotes or proverbs<br/><br/>
-  🧠 End result: A well-structured essay done in 75 minutes — stress-free.`,
+  `<strong>📝 Bangla: Write an Essay Without Stress</strong><br/>
+  ❌ Problem: You spend too long on essays and feel stuck.<br/>
+  ✅ Solution: Structure your writing with Pomodoros!<br/><br/>
+  <em>Action Plan:</em><br/>
+  1. Pomodoro 1: Brainstorm and list 5 key points.<br/>
+  2. Pomodoro 2: Draft the essay (intro, body, conclusion).<br/>
+  3. Pomodoro 3: Revise grammar, improve words, and add quotes.<br/>
+  4. Take a break and review your work.<br/><br/>
+  🧠 You’ll finish faster and with less stress!`,
 
-  `<strong>🧠 Memorizing for Science & History: Biology SSC Example</strong><br/>
-  ❌ Read the Digestive System 3 times but forget it in class?<br/>
-  ✅ Use Pomodoros to memorize and recall effectively.<br/><br/>
-  <em>Memorization plan for “Human Digestive System – Biology Ch. 5”:</em><br/>
-  • <strong>Pomodoro 1:</strong> Read & draw the full diagram (label organs)<br/>
-  • <strong>Break:</strong> 5-minute walk or rest<br/>
-  • <strong>Pomodoro 2:</strong> Try redrawing from memory + list each organ’s function<br/><br/>
-  🔍 Add MCQs from past board papers to reinforce learning. Repeat next day for mastery.`,
+  `<strong>🧬 Biology: Memorize Diagrams Effectively</strong><br/>
+  ❌ Problem: You read about the digestive system but forget the diagram in class.<br/>
+  ✅ Solution: Use Pomodoros to memorize and recall!<br/><br/>
+  <em>Action Plan:</em><br/>
+  1. Pomodoro 1: Read and draw the full diagram, labeling each part.<br/>
+  2. Take a 5-minute break (walk, stretch, or relax).<br/>
+  3. Pomodoro 2: Redraw from memory and list each organ’s function.<br/>
+  4. Add MCQs from past papers for extra practice.<br/><br/>
+  🔍 Repeat the next day for mastery!`,
 
-  `<strong>⚖️ Study-Life Balance Blueprint: HSC Exam Week Strategy</strong><br/>
-  ❌ Studying till midnight leaves you tired and unfocused.<br/>
-  ✅ Top students use 4 Pomodoros before Maghrib to balance focus and rest.<br/><br/>
-  <em>Sample daily plan during exam revision week:</em><br/>
-  • <strong>8:30–9:30 AM:</strong> Pomodoro 1 – English 1st Paper (Unseen Comprehension)<br/>
-  • <strong>10:00–11:00 AM:</strong> Pomodoro 2 – Physics MCQs (Chapter 3 – Heat)<br/>
-  • <strong>3:30–4:30 PM:</strong> Pomodoros 3 & 4 – Bangla 2nd Paper Grammar & Model Test<br/>
-  • <strong>Breaks:</strong> Use for prayer, snacks, or rest ☕<br/><br/>
-  🎯 Result: High focus, no burnout, and time for life after study.`,
+  `<strong>⚖️ Balanced Study-Life Routine</strong><br/>
+  ❌ Problem: Studying late leaves you tired and unfocused.<br/>
+  ✅ Solution: Use Pomodoros to balance study and rest!<br/><br/>
+  <em>Action Plan:</em><br/>
+  1. Pomodoro 1: Focus on English comprehension.<br/>
+  2. Pomodoro 2: Practice Physics MCQs.<br/>
+  3. Pomodoros 3 & 4: Work on Bangla grammar and a model test.<br/>
+  4. Use breaks for snacks, prayer, or rest.<br/><br/>
+  🎯 Result: High focus, no burnout, and time for yourself after study!`,
 ],
 
 

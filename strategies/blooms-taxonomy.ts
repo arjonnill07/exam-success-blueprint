@@ -44,9 +44,53 @@ const bloomsTaxonomy: Strategy = {
     "Builds true understanding, not just rote memorization.",
   ],
   realWorldExamples: [
-    "<em>Biology (Photosynthesis):</em> Recall the formula, explain the process, predict changes, compare plant types, judge efficiency, design an experiment.",
-    "<em>History (Liberation War):</em> List key dates, explain causes, apply lessons, analyze events, evaluate decisions, create a new perspective in an essay.",
-    "<em>Cricket:</em> Remember the rules, understand techniques, apply in practice, analyze mistakes, evaluate performance, create your own shot!",
+    `<strong>🧬 Biology Mastery: Photosynthesis Walkthrough</strong><br/>
+    ❌ Memorized the process but can’t explain it in your own words?<br/>
+    ✅ Try this Bloom’s ladder approach for real understanding.<br/><br/>
+    <em>How to master “Photosynthesis”:</em><br/>
+    • <strong>Step 1 (Remember):</strong> Write the formula and key terms from memory<br/>
+    • <strong>Step 2 (Understand):</strong> Explain the process to a friend or out loud<br/>
+    • <strong>Step 3 (Apply):</strong> Draw and label the diagram in your notebook<br/>
+    • <strong>Step 4 (Analyze):</strong> Compare photosynthesis in sunlight vs. shade<br/>
+    • <strong>Step 5 (Evaluate):</strong> Discuss: Why is sunlight so important?<br/>
+    • <strong>Step 6 (Create):</strong> Design a simple experiment to test plant growth<br/><br/>
+    🌱 You’ll move from memorizing to truly mastering the topic!`,
+
+    `<strong>📚 History Success: Liberation War Example</strong><br/>
+    ❌ You read the chapter but forget key events in the exam?<br/>
+    ✅ Use Bloom’s steps to lock in the details.<br/><br/>
+    <em>How to study “Bangladesh Liberation War”:</em><br/>
+    • <strong>Step 1 (Remember):</strong> List 3 important dates and leaders<br/>
+    • <strong>Step 2 (Understand):</strong> Summarize the main reason for the war in 2 sentences<br/>
+    • <strong>Step 3 (Apply):</strong> Connect a lesson from the war to a current event<br/>
+    • <strong>Step 4 (Analyze):</strong> Compare two leaders’ roles—how were they different?<br/>
+    • <strong>Step 5 (Evaluate):</strong> Share your opinion: What was the bravest act you learned about?<br/>
+    • <strong>Step 6 (Create):</strong> Write a diary entry as if you were a student in 1971<br/><br/>
+    🏆 You’ll remember more and write better answers!`,
+
+    `<strong>➗ Math Confidence: Geometry Problem Solving</strong><br/>
+    ❌ Stuck on geometry proofs or formulas?<br/>
+    ✅ Climb Bloom’s ladder for step-by-step mastery.<br/><br/>
+    <em>How to tackle “Area of Triangle” problems:</em><br/>
+    • <strong>Step 1 (Remember):</strong> Recall the formula from memory<br/>
+    • <strong>Step 2 (Understand):</strong> Explain why the formula works using a drawing<br/>
+    • <strong>Step 3 (Apply):</strong> Solve a real exam question using the formula<br/>
+    • <strong>Step 4 (Analyze):</strong> Compare the area of two triangles—what changes if the base doubles?<br/>
+    • <strong>Step 5 (Evaluate):</strong> Decide which method is fastest for a tricky problem<br/>
+    • <strong>Step 6 (Create):</strong> Make your own geometry puzzle for a friend<br/><br/>
+    📈 You’ll feel more confident and ready for any question!`,
+
+    `<strong>📖 English Writing: Paragraph or Essay Success</strong><br/>
+    ❌ You start writing but get stuck or lose your main idea?<br/>
+    ✅ Use Bloom’s steps to organize and improve your writing.<br/><br/>
+    <em>How to write “A Rainy Day” (or any topic):</em><br/>
+    • <strong>Step 1 (Remember):</strong> List 3 key points for your topic<br/>
+    • <strong>Step 2 (Understand):</strong> Summarize your main idea in one sentence<br/>
+    • <strong>Step 3 (Apply):</strong> Write a short paragraph using your points<br/>
+    • <strong>Step 4 (Analyze):</strong> Check if your paragraph has a clear beginning, middle, and end<br/>
+    • <strong>Step 5 (Evaluate):</strong> Ask a friend to read and give feedback—what’s strong, what’s missing?<br/>
+    • <strong>Step 6 (Create):</strong> Add a personal story or example to make your writing unique<br/><br/>
+    ✍️ You’ll write faster, better, and with more confidence!`,
   ],
   examPrepFocus: [
     "Perfect for preparing for all levels of exam questions.",

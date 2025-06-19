@@ -42,9 +42,45 @@ const feynmanTechnique: Strategy = {
     "Turns boring study into a fun challenge.",
   ],
   realWorldExamples: [
-    "<em>Biology:</em> Explain 'natural selection' to your younger sibling using animal stories.",
-    "<em>Economics:</em> Teach 'supply and demand' to your parents using a bazaar example.",
-    "<em>Math:</em> Draw a comic strip to explain a tricky theorem to a friend.",
+    `<strong>🧑‍🏫 Science Mastery: Teaching Photosynthesis</strong><br/>
+    ❌ You read the chapter but still feel confused?<br/>
+    ✅ Teach it to someone else for true understanding.<br/><br/>
+    <em>How to master “Photosynthesis”:</em><br/>
+    • <strong>Step 1:</strong> Read the topic and close your book<br/>
+    • <strong>Step 2:</strong> Explain it out loud as if teaching a friend or sibling<br/>
+    • <strong>Step 3:</strong> Use simple words and draw a diagram<br/>
+    • <strong>Step 4:</strong> Notice where you get stuck—review and try again<br/><br/>
+    🌟 You’ll remember more and feel confident in class!`,
+
+    `<strong>📚 Literature: Retelling a Story or Poem</strong><br/>
+    ❌ Can’t remember all the details for the exam?<br/>
+    ✅ Use the Feynman Technique to make it stick.<br/><br/>
+    <em>How to study “A Long Poem or Story”:</em><br/>
+    • <strong>Step 1:</strong> Read the story or poem<br/>
+    • <strong>Step 2:</strong> Retell it in your own words to a family member<br/>
+    • <strong>Step 3:</strong> Use a drawing or real-life example if needed<br/>
+    • <strong>Step 4:</strong> Each time you explain, you’ll understand it better<br/><br/>
+    📖 You’ll be ready for any question in the exam!`,
+
+    `<strong>➗ Math: Explaining a Tricky Formula</strong><br/>
+    ❌ Memorized the formula but forget how to use it?<br/>
+    ✅ Teach it to someone else for real mastery.<br/><br/>
+    <em>How to master “Area of Triangle” or any formula:</em><br/>
+    • <strong>Step 1:</strong> Write the formula and what it means<br/>
+    • <strong>Step 2:</strong> Teach it to a friend using a simple story or drawing<br/>
+    • <strong>Step 3:</strong> If you get stuck, check your book, then explain again<br/>
+    • <strong>Step 4:</strong> Teaching is learning—be proud of your progress!<br/><br/>
+    🏅 You’ll never forget the formula again!`,
+
+    `<strong>🌏 History/Geography: Explaining Key Events</strong><br/>
+    ❌ Struggle to remember all the facts for a big chapter?<br/>
+    ✅ Teach the main events to someone else.<br/><br/>
+    <em>How to study “Bangladesh Liberation War” or “River Systems”:</em><br/>
+    • <strong>Step 1:</strong> List the key events or places<br/>
+    • <strong>Step 2:</strong> Explain each one to a friend or family member<br/>
+    • <strong>Step 3:</strong> Use a timeline or map to make it visual<br/>
+    • <strong>Step 4:</strong> Review and teach again—each round makes you better!<br/><br/>
+    🎯 You’ll feel ready for any question on exam day!`,
   ],
   examPrepFocus: [
     "Perfect for tough, confusing topics in any subject.",

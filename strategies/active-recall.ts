@@ -32,12 +32,58 @@ const activeRecall: Strategy = {
     "Saves time—less re-reading, more learning!",
     "Makes exam revision feel like a game or challenge."
   ],
-  realWorldExamples: [
-    `<strong>MCQ Mastery:</strong> Before your next Physics or Biology MCQ test, close your book and try to answer 10 questions from memory. <em>Eureka!</em> You’ll spot your weak areas instantly and fix them before the real exam!`,
-    `<strong>Essay Power:</strong> For Bangla or English, read a passage, then write a summary or key points from memory. <em>Challenge:</em> Can you recall the main arguments without looking? That’s how toppers prep for essays!`,
-    `<strong>Flashcard Game:</strong> Make flashcards for formulas, dates, or vocab. Look at the question, pause, and force yourself to answer before flipping. <em>Tip:</em> Compete with a friend—who can recall more?`,
-    `<strong>Teach to Learn:</strong> Explain a tough concept (like Newton’s Laws or the Water Cycle) to a sibling or even your wall—no notes allowed! <em>Try it now:</em> You’ll quickly see what you know and what needs work.`,
-  ],
+realWorldExamples: [
+  `<strong>🧠 History: Remembering Key Events</strong><br/>
+  ❌ Problem: You read about the Liberation War, but forget the dates and events during revision.<br/>
+  ✅ Solution: Use Active Recall to make facts stick!<br/><br/>
+  <em>Action Plan:</em><br/>
+  1. Read the key facts from your textbook.<br/>
+  2. Close your book and write down all the important dates and events from memory.<br/>
+  3. Check your notes—what did you miss? Mark those for tomorrow’s recall session.<br/>
+  4. Repeat this process every day for 1 week.<br/><br/>
+  ⭐ Step by step, you’ll remember more and feel exam-ready!`,
+
+  `<strong>📘 Science: Mastering Physics Laws</strong><br/>
+  ❌ Problem: You read “Laws of Motion” but can’t explain them in your own words.<br/>
+  ✅ Solution: Give your brain a workout with Active Recall!<br/><br/>
+  <em>Action Plan:</em><br/>
+  1. Read the chapter once with focus.<br/>
+  2. Close your book and write down Newton’s 3 Laws from memory.<br/>
+  3. Next day, try explaining the laws out loud as if teaching a friend.<br/>
+  4. Check your notes and fill in any gaps.<br/><br/>
+  💡 Each time you recall, your memory gets stronger!`,
+
+  `<strong>📐 Math: Conquering Formulas</strong><br/>
+  ❌ Problem: You keep forgetting the quadratic formula during practice.<br/>
+  ✅ Solution: Recall before you peek!<br/><br/>
+  <em>Action Plan:</em><br/>
+  1. Write down the quadratic formula from memory.<br/>
+  2. Solve 2–3 problems without looking at your notes.<br/>
+  3. Check your answers and note any mistakes.<br/>
+  4. Explain the steps aloud to yourself or a study buddy.<br/><br/>
+  🚀 With calm, steady practice, formulas will become second nature!`,
+
+  `<strong>📝 Bangla: Essay Writing Confidence</strong><br/>
+  ❌ Problem: You read model essays but struggle to remember key points when writing your own.<br/>
+  ✅ Solution: Recall and organize ideas step by step!<br/><br/>
+  <em>Action Plan:</em><br/>
+  1. Read a model essay once.<br/>
+  2. Close the book and list the main points from memory.<br/>
+  3. Write a short paragraph about each point.<br/>
+  4. Check your work and gently improve any weak areas.<br/><br/>
+  ✍️ Each session builds your confidence to write essays on your own!`,
+
+  `<strong>🧬 Biology: Drawing Diagrams from Memory</strong><br/>
+  ❌ Problem: You memorize the heart diagram but forget the labels during exams.<br/>
+  ✅ Solution: Recall and draw for lasting memory!<br/><br/>
+  <em>Action Plan:</em><br/>
+  1. Study the heart diagram and its parts.<br/>
+  2. Close your book and draw the diagram on a blank page.<br/>
+  3. Label each part and write its function.<br/>
+  4. Review and repeat the next day.<br/><br/>
+  🎨 Drawing and recalling helps you remember with clarity!`,
+],
+
   examPrepFocus: []
 };
 
