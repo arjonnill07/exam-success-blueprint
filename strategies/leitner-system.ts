@@ -42,45 +42,45 @@ const leitnerSystem: Strategy = {
     "Builds confidence for any exam.",
   ],
   realWorldExamples: [
-    `<strong>🃏 English Vocab: Flashcard Power</strong><br/>
-    ❌ Forget new words after a few days?<br/>
-    ✅ Use the Leitner System to make them stick.<br/><br/>
-    <em>How to master “English Vocabulary”:</em><br/>
-    • <strong>Step 1:</strong> Make 10 flashcards for new words<br/>
-    • <strong>Step 2:</strong> Review all cards today. Tomorrow, only review the ones you missed<br/>
-    • <strong>Step 3:</strong> Move correct cards to the next box—see your progress grow!<br/>
-    • <strong>Step 4:</strong> Keep going until all cards are easy<br/><br/>
+    `<strong>🎲 English Vocab: Flashcard Power</strong><br/>
+    ❌ Problem: Forget new words after a few days.<br/>
+    ✅ Solution: Use the Leitner System to make them stick!<br/><br/>
+    <em>Action Plan:</em><br/>
+    1. Make 10 flashcards for new words.<br/>
+    2. Review all cards today. Tomorrow, only review the ones you missed.<br/>
+    3. Move correct cards to the next box—see your progress grow!<br/>
+    4. Keep going until all cards are easy.<br/><br/>
     🎉 You’ll remember words for exams and beyond!`,
 
     `<strong>🧪 Chemistry: Mastering Equations</strong><br/>
-    ❌ Struggle to remember chemical equations?<br/>
-    ✅ Flashcards and the Leitner System make it easy.<br/><br/>
-    <em>How to master “Chemistry Equations”:</em><br/>
-    • <strong>Step 1:</strong> Write tricky equations on flashcards<br/>
-    • <strong>Step 2:</strong> Review daily. If you get one right, move it to the next box<br/>
-    • <strong>Step 3:</strong> Focus on the tough ones—soon, nothing will surprise you in exams!<br/>
-    • <strong>Step 4:</strong> Celebrate when all your cards reach the last box<br/><br/>
-    🏆 You’ll ace even the hardest questions!`,
+    ❌ Problem: Struggle to remember chemical equations.<br/>
+    ✅ Solution: Flashcards and the Leitner System make it easy!<br/><br/>
+    <em>Action Plan:</em><br/>
+    1. Write tricky equations on flashcards.<br/>
+    2. Review daily. If you get one right, move it to the next box.<br/>
+    3. If you miss one, keep it in Box 1 for more practice.<br/>
+    4. Keep reviewing until all cards reach the last box.<br/><br/>
+    🧪 Master equations step by step!`,
 
-    `<strong>📚 Bangla Literature: Author & Poem Mastery</strong><br/>
-    ❌ Forget author names or poem lines in the exam?<br/>
-    ✅ Flashcards help you review and remember with ease.<br/><br/>
-    <em>How to master “Bangla Literature”:</em><br/>
-    • <strong>Step 1:</strong> Make flashcards for author names, poem lines, or key themes<br/>
-    • <strong>Step 2:</strong> Review the cards every day, moving the easy ones up a box<br/>
-    • <strong>Step 3:</strong> Watch your weak spots disappear and your confidence soar!<br/>
-    • <strong>Step 4:</strong> Flashcards make revision fun—keep leveling up!<br/><br/>
-    🌟 You’ll never fear literature questions again!`,
+    `<strong>📅 History: Key Dates with Flashcards</strong><br/>
+    ❌ Problem: Forget important dates before the exam.<br/>
+    ✅ Solution: Use flashcards and the Leitner System!<br/><br/>
+    <em>Action Plan:</em><br/>
+    1. Make flashcards for 5 key dates/events.<br/>
+    2. Review daily, moving correct cards up a box.<br/>
+    3. Focus on the ones you miss—review them more often.<br/>
+    4. Celebrate when all cards are in the last box!<br/><br/>
+    🗓️ Flashcards make history easy!`,
 
-    `<strong>➗ Math Formulas: Fast Recall for Exams</strong><br/>
-    ❌ Struggle to remember all the formulas before the test?<br/>
-    ✅ Leitner flashcards make revision quick and easy.<br/><br/>
-    <em>How to master “Math Formulas”:</em><br/>
-    • <strong>Step 1:</strong> Write each formula on a flashcard<br/>
-    • <strong>Step 2:</strong> Review daily, moving correct ones up a box<br/>
-    • <strong>Step 3:</strong> Focus on the ones you miss—review them more often<br/>
-    • <strong>Step 4:</strong> By exam week, you’ll know every formula by heart!<br/><br/>
-    🚀 You’ll feel calm and ready for any math question!`,
+    `<strong>✏️ Bangla: Grammar Rules with Flashcards</strong><br/>
+    ❌ Problem: Grammar rules slip away before the test.<br/>
+    ✅ Solution: Use the Leitner System for grammar mastery!<br/><br/>
+    <em>Action Plan:</em><br/>
+    1. Write 3–5 grammar rules on flashcards.<br/>
+    2. Review daily, moving correct cards up a box.<br/>
+    3. If you miss a rule, keep it in Box 1 for extra practice.<br/>
+    4. Review until all rules are easy to recall.<br/><br/>
+    ✍️ Flashcards make grammar simple!`,
   ],
   examPrepFocus: [
     "Perfect for quick, daily revision before exams.",

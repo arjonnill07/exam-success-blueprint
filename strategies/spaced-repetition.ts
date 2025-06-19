@@ -46,44 +46,44 @@ const spacedRepetition: Strategy = {
   ],
   realWorldExamples: [
     `<strong>📖 English Vocab: Remember Words for Life</strong><br/>
-    ❌ Forget new words after a few days?<br/>
-    ✅ Use spaced repetition to make them stick.<br/><br/>
-    <em>How to master “English Vocabulary”:</em><br/>
-    • <strong>Step 1:</strong> Learn 5 new words today<br/>
-    • <strong>Step 2:</strong> Review them tomorrow, then again after 3 days, then a week<br/>
-    • <strong>Step 3:</strong> Use flashcards or a notebook to track your reviews<br/>
-    • <strong>Step 4:</strong> Each review makes the words stick—watch your vocab grow!<br/><br/>
+    ❌ Problem: Forget new words after a few days.<br/>
+    ✅ Solution: Use spaced repetition to make them stick!<br/><br/>
+    <em>Action Plan:</em><br/>
+    1. Learn 5 new words today.<br/>
+    2. Review them tomorrow, then again after 3 days, then a week.<br/>
+    3. Use flashcards or a notebook to track your reviews.<br/>
+    4. Each review makes the words stick—watch your vocab grow!<br/><br/>
     🌟 You’ll remember words for exams and beyond!`,
 
     `<strong>📅 History: Dates & Events That Stick</strong><br/>
-    ❌ Forget important dates right before the exam?<br/>
-    ✅ Review at smart intervals to lock them in.<br/><br/>
-    <em>How to master “History Dates”:</em><br/>
-    • <strong>Step 1:</strong> Write 5 key dates from your chapter<br/>
-    • <strong>Step 2:</strong> Review them after 1 day, then 3 days, then a week<br/>
-    • <strong>Step 3:</strong> Quiz yourself each time—see how much you remember!<br/>
-    • <strong>Step 4:</strong> Spaced review = less cramming, more confidence!<br/><br/>
-    🏆 You’ll ace the timeline questions!`,
+    ❌ Problem: Forget important dates right before the exam.<br/>
+    ✅ Solution: Review at smart intervals to lock them in!<br/><br/>
+    <em>Action Plan:</em><br/>
+    1. Write down 5 key dates/events from your chapter.<br/>
+    2. Review them after 1 day, then 3 days, then a week.<br/>
+    3. Use a calendar or app to set reminders.<br/>
+    4. Quiz yourself each time—see your memory improve!<br/><br/>
+    🗓️ Spaced reviews make history easy!`,
 
-    `<strong>🔢 Math Formulas: Fast Recall for Exams</strong><br/>
-    ❌ Struggle to remember all the formulas before the test?<br/>
-    ✅ Spaced repetition makes revision quick and easy.<br/><br/>
-    <em>How to master “Math Formulas”:</em><br/>
-    • <strong>Step 1:</strong> Write each formula in your notebook<br/>
-    • <strong>Step 2:</strong> Review them after 1 day, then 3 days, then a week<br/>
-    • <strong>Step 3:</strong> Test yourself each time—no peeking!<br/>
-    • <strong>Step 4:</strong> Each review makes you faster and more confident<br/><br/>
-    🚀 You’ll feel calm and ready for any math question!`,
+    `<strong>🧬 Science: Mastering Diagrams</strong><br/>
+    ❌ Problem: Diagrams fade from memory after a week.<br/>
+    ✅ Solution: Use spaced repetition to keep them fresh!<br/><br/>
+    <em>Action Plan:</em><br/>
+    1. Draw the diagram and label all parts.<br/>
+    2. Review and redraw after 1 day, then 3 days, then a week.<br/>
+    3. Cover the labels and test yourself each time.<br/>
+    4. Add a new detail or color with each review.<br/><br/>
+    🎨 Repetition makes diagrams stick for exams!`,
 
-    `<strong>🔬 Science: Mastering Key Concepts</strong><br/>
-    ❌ Forget facts or diagrams after a week?<br/>
-    ✅ Review at spaced intervals for long-term memory.<br/><br/>
-    <em>How to master “Science Concepts”:</em><br/>
-    • <strong>Step 1:</strong> Learn a new concept (e.g., “Acid-Base Reactions”)<br/>
-    • <strong>Step 2:</strong> Review after 1 day, then 3 days, then a week<br/>
-    • <strong>Step 3:</strong> Draw the diagram or explain the process from memory<br/>
-    • <strong>Step 4:</strong> Each review makes it easier to recall in exams<br/><br/>
-    🎯 You’ll build real science memory power!`,
+    `<strong>📝 Bangla: Remembering Grammar Rules</strong><br/>
+    ❌ Problem: Grammar rules slip away before the test.<br/>
+    ✅ Solution: Review rules at spaced intervals!<br/><br/>
+    <em>Action Plan:</em><br/>
+    1. List 3–5 grammar rules you want to master.<br/>
+    2. Review them after 1 day, then 3 days, then a week.<br/>
+    3. Write a sentence using each rule during every review.<br/>
+    4. Quiz yourself or ask a friend to check your sentences.<br/><br/>
+    ✍️ Spaced repetition makes grammar easy!`,
   ],
   examPrepFocus: [
     "Perfect for long-term retention and exam prep.",

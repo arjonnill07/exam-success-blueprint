@@ -34,44 +34,44 @@ const stressTaming: Strategy = {
   ],
   realWorldExamples: [
     `<strong>😴 Night Before Exam: Calm & Ready</strong><br/>
-    ❌ Can’t sleep, mind racing with worries?<br/>
-    ✅ Use these steps to relax and prepare.<br/><br/>
-    <em>How to get a good night’s sleep before exams:</em><br/>
-    • <strong>Step 1:</strong> Try 5 deep breaths or listen to calming music<br/>
-    • <strong>Step 2:</strong> Pack your bag and lay out your uniform—feel prepared!<br/>
-    • <strong>Step 3:</strong> Remind yourself: “I’ve done my best. Tomorrow is a new chance.”<br/>
-    • <strong>Step 4:</strong> Sleep comes easier when you’re calm and ready<br/><br/>
+    ❌ Problem: Can’t sleep, mind racing with worries.<br/>
+    ✅ Solution: Use these steps to relax and prepare!<br/><br/>
+    <em>Action Plan:</em><br/>
+    1. Try 5 deep breaths or listen to calming music.<br/>
+    2. Pack your bag and lay out your uniform—feel prepared!<br/>
+    3. Remind yourself: “I’ve done my best. Tomorrow is a new chance.”<br/>
+    4. Sleep comes easier when you’re calm and ready.<br/><br/>
     🌙 You’ll wake up fresh and confident!`,
 
     `<strong>📝 Exam Hall Nerves: Stay Cool</strong><br/>
-    ❌ Heart racing before the first question?<br/>
-    ✅ Calm your mind and boost your focus.<br/><br/>
-    <em>How to stay calm in the exam hall:</em><br/>
-    • <strong>Step 1:</strong> Pause and do 3 slow breaths<br/>
-    • <strong>Step 2:</strong> Repeat a positive phrase: “I can do this!”<br/>
-    • <strong>Step 3:</strong> Look around and notice 3 things you see or hear<br/>
-    • <strong>Step 4:</strong> Start your exam with a clear head—you’ve got this!<br/><br/>
+    ❌ Problem: Heart racing before the first question.<br/>
+    ✅ Solution: Calm your mind and boost your focus!<br/><br/>
+    <em>Action Plan:</em><br/>
+    1. Pause and do 3 slow breaths.<br/>
+    2. Repeat a positive phrase: “I can do this!”<br/>
+    3. Look around and notice 3 things you see or hear.<br/>
+    4. Start your exam with a clear head—you’ve got this!<br/><br/>
     🏅 You’ll feel in control and ready to succeed!`,
 
-    `<strong>💭 Study Worries: Turn Stress Into Strength</strong><br/>
-    ❌ Worrying about tough subjects or low marks?<br/>
-    ✅ Use positive self-talk to build confidence.<br/><br/>
-    <em>How to turn worries into motivation:</em><br/>
-    • <strong>Step 1:</strong> Write your worry on a sticky note<br/>
-    • <strong>Step 2:</strong> Write a positive answer next to it: “I’m improving every day.”<br/>
-    • <strong>Step 3:</strong> Read your positive note before each study session<br/>
-    • <strong>Step 4:</strong> Small steps, big progress—be kind to yourself!<br/><br/>
-    🌟 You’ll feel lighter and more motivated!`,
+    `<strong>💬 Study Worries: Turn Stress Into Strength</strong><br/>
+    ❌ Problem: Worrying about tough subjects or low marks.<br/>
+    ✅ Solution: Use positive self-talk to build confidence!<br/><br/>
+    <em>Action Plan:</em><br/>
+    1. Write your worry on a sticky note.<br/>
+    2. Write a positive response next to it (e.g., “I can improve with practice!”).<br/>
+    3. Read your positive note before each study session.<br/>
+    4. Notice your confidence grow with each round!<br/><br/>
+    🌟 Turn worries into motivation!`,
 
     `<strong>🧘‍♂️ Quick Calm: Mindfulness Mini-Break</strong><br/>
-    ❌ Feeling overwhelmed during study or revision?<br/>
-    ✅ Take a short break to reset your mind.<br/><br/>
-    <em>How to use a mindfulness mini-break:</em><br/>
-    • <strong>Step 1:</strong> Close your eyes and take 3 deep breaths<br/>
-    • <strong>Step 2:</strong> Focus on what you hear, feel, and smell for 1 minute<br/>
-    • <strong>Step 3:</strong> Open your eyes and stretch<br/>
-    • <strong>Step 4:</strong> Return to study feeling refreshed and focused<br/><br/>
-    🌈 You’ll study better and feel less stressed!`,
+    ❌ Problem: Feeling overwhelmed during long study sessions.<br/>
+    ✅ Solution: Take a mindful break to reset your mind!<br/><br/>
+    <em>Action Plan:</em><br/>
+    1. Pause and focus on your breathing for 1 minute.<br/>
+    2. Notice what you see, hear, and feel around you.<br/>
+    3. Stretch or walk for 2–3 minutes.<br/>
+    4. Return to your study with a fresh, calm mind.<br/><br/>
+    🧘 Mindful breaks boost focus and reduce stress!`,
   ],
   examPrepFocus: []
 };

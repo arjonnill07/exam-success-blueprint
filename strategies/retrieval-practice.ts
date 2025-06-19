@@ -42,44 +42,44 @@ const retrievalPractice: Strategy = {
   ],
   realWorldExamples: [
     `<strong>📝 Exam Power: Past Question Practice</strong><br/>
-    ❌ Read the chapter but blank out in the exam?<br/>
-    ✅ Test yourself with real questions for true confidence.<br/><br/>
-    <em>How to use retrieval practice for “Board Questions”:</em><br/>
-    • <strong>Step 1:</strong> Pick 3 board questions from last year’s exam<br/>
-    • <strong>Step 2:</strong> Answer them without looking at your book—be brave!<br/>
-    • <strong>Step 3:</strong> Check your answers, then focus on what you missed<br/>
-    • <strong>Step 4:</strong> Repeat with new questions—each round builds confidence<br/><br/>
+    ❌ Problem: Read the chapter but blank out in the exam.<br/>
+    ✅ Solution: Test yourself with real questions for true confidence!<br/><br/>
+    <em>Action Plan:</em><br/>
+    1. Pick 3 board questions from last year’s exam.<br/>
+    2. Answer them without looking at your book—be brave!<br/>
+    3. Check your answers, then focus on what you missed.<br/>
+    4. Repeat with new questions—each round builds confidence.<br/><br/>
     🎯 You’ll walk into the exam hall ready for anything!`,
 
-    `<strong>➗ Math Mastery: Write from Memory</strong><br/>
-    ❌ Forget formulas or steps during the test?<br/>
-    ✅ Practice recalling and writing without notes.<br/><br/>
-    <em>How to use retrieval practice for “Math Formulas”:</em><br/>
-    • <strong>Step 1:</strong> After studying, close your book and write down all formulas you remember<br/>
-    • <strong>Step 2:</strong> Quiz yourself or ask a friend to test you<br/>
-    • <strong>Step 3:</strong> Check your answers—mistakes are just steps to success!<br/>
-    • <strong>Step 4:</strong> Try again tomorrow—each round makes you stronger<br/><br/>
-    🏆 You’ll remember more and feel less exam stress!`,
+    `<strong>➖ Math Mastery: Write from Memory</strong><br/>
+    ❌ Problem: Forget formulas or steps during the test.<br/>
+    ✅ Solution: Practice recalling and writing without notes!<br/><br/>
+    <em>Action Plan:</em><br/>
+    1. After studying, close your book and write down all formulas you remember.<br/>
+    2. Quiz yourself or ask a friend to test you.<br/>
+    3. Check your answers—mistakes are just steps to success!<br/>
+    4. Repeat every few days to keep formulas fresh.<br/><br/>
+    ➕ Writing from memory makes math easy!`,
 
-    `<strong>📚 Literature: Question Your Reading</strong><br/>
-    ❌ Read a story or poem but can’t answer questions about it?<br/>
-    ✅ Make your own questions and answer from memory.<br/><br/>
-    <em>How to use retrieval practice for “Bangla/English Stories”:</em><br/>
-    • <strong>Step 1:</strong> Write 3 possible exam questions after reading<br/>
-    • <strong>Step 2:</strong> Answer them from memory, then check your book<br/>
-    • <strong>Step 3:</strong> Notice what you missed—review and try again<br/>
-    • <strong>Step 4:</strong> Every try builds your confidence—keep going!<br/><br/>
-    🌟 You’ll be ready for any question in the exam!`,
+    `<strong>📚 Science: Self-Quiz for Diagrams</strong><br/>
+    ❌ Problem: Diagrams look easy in the book but hard to recall in exams.<br/>
+    ✅ Solution: Quiz yourself to make diagrams stick!<br/><br/>
+    <em>Action Plan:</em><br/>
+    1. Study a diagram (e.g., heart, cell, digestive system).<br/>
+    2. Cover the diagram and redraw it from memory.<br/>
+    3. Label all parts and check your work.<br/>
+    4. Repeat with new diagrams each week.<br/><br/>
+    🧬 Self-quizzing makes science diagrams unforgettable!`,
 
-    `<strong>🔬 Science: Self-Testing for Success</strong><br/>
-    ❌ Study hard but forget facts in the exam hall?<br/>
-    ✅ Test yourself regularly to lock in knowledge.<br/><br/>
-    <em>How to use retrieval practice for “Science Chapters”:</em><br/>
-    • <strong>Step 1:</strong> After reading, write down everything you remember about the topic<br/>
-    • <strong>Step 2:</strong> Quiz yourself with MCQs or short questions<br/>
-    • <strong>Step 3:</strong> Check your answers and review mistakes<br/>
-    • <strong>Step 4:</strong> Repeat next day—each round makes you exam-ready<br/><br/>
-    🚀 You’ll build real memory power for science!`,
+    `<strong>✏️ Bangla & English: Practice Writing Answers</strong><br/>
+    ❌ Problem: Struggle to write full answers in exams.<br/>
+    ✅ Solution: Practice writing from memory, step by step!<br/><br/>
+    <em>Action Plan:</em><br/>
+    1. Pick a question from your textbook or past paper.<br/>
+    2. Write your answer without looking at notes.<br/>
+    3. Check your answer and highlight what you missed.<br/>
+    4. Try again in a few days—see your writing improve!<br/><br/>
+    📝 Practice makes perfect for long answers!`,
   ],
   examPrepFocus: [
     "Perfect for mock tests, board prep, and class tests.",

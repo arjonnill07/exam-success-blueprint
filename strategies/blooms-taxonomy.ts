@@ -45,52 +45,52 @@ const bloomsTaxonomy: Strategy = {
   ],
   realWorldExamples: [
     `<strong>🧬 Biology Mastery: Photosynthesis Walkthrough</strong><br/>
-    ❌ Memorized the process but can’t explain it in your own words?<br/>
-    ✅ Try this Bloom’s ladder approach for real understanding.<br/><br/>
-    <em>How to master “Photosynthesis”:</em><br/>
-    • <strong>Step 1 (Remember):</strong> Write the formula and key terms from memory<br/>
-    • <strong>Step 2 (Understand):</strong> Explain the process to a friend or out loud<br/>
-    • <strong>Step 3 (Apply):</strong> Draw and label the diagram in your notebook<br/>
-    • <strong>Step 4 (Analyze):</strong> Compare photosynthesis in sunlight vs. shade<br/>
-    • <strong>Step 5 (Evaluate):</strong> Discuss: Why is sunlight so important?<br/>
-    • <strong>Step 6 (Create):</strong> Design a simple experiment to test plant growth<br/><br/>
+    ❌ Problem: Memorized the process but can’t explain it in your own words.<br/>
+    ✅ Solution: Try this Bloom’s ladder approach for real understanding!<br/><br/>
+    <em>Action Plan:</em><br/>
+    1. (Remember) Write the formula and key terms from memory.<br/>
+    2. (Understand) Explain the process to a friend or out loud.<br/>
+    3. (Apply) Draw and label the diagram in your notebook.<br/>
+    4. (Analyze) Compare photosynthesis in sunlight vs. shade.<br/>
+    5. (Evaluate) Discuss: Why is sunlight so important?<br/>
+    6. (Create) Design a simple experiment to test plant growth.<br/><br/>
     🌱 You’ll move from memorizing to truly mastering the topic!`,
 
     `<strong>📚 History Success: Liberation War Example</strong><br/>
-    ❌ You read the chapter but forget key events in the exam?<br/>
-    ✅ Use Bloom’s steps to lock in the details.<br/><br/>
-    <em>How to study “Bangladesh Liberation War”:</em><br/>
-    • <strong>Step 1 (Remember):</strong> List 3 important dates and leaders<br/>
-    • <strong>Step 2 (Understand):</strong> Summarize the main reason for the war in 2 sentences<br/>
-    • <strong>Step 3 (Apply):</strong> Connect a lesson from the war to a current event<br/>
-    • <strong>Step 4 (Analyze):</strong> Compare two leaders’ roles—how were they different?<br/>
-    • <strong>Step 5 (Evaluate):</strong> Share your opinion: What was the bravest act you learned about?<br/>
-    • <strong>Step 6 (Create):</strong> Write a diary entry as if you were a student in 1971<br/><br/>
-    🏆 You’ll remember more and write better answers!`,
+    ❌ Problem: You read the chapter but forget key events in the exam.<br/>
+    ✅ Solution: Climb Bloom’s steps for full understanding!<br/><br/>
+    <em>Action Plan:</em><br/>
+    1. (Remember) List the main events and dates.<br/>
+    2. (Understand) Explain why each event was important.<br/>
+    3. (Apply) Draw a timeline or map of the events.<br/>
+    4. (Analyze) Compare the causes and effects of two major events.<br/>
+    5. (Evaluate) Discuss: Which event had the biggest impact?<br/>
+    6. (Create) Write a short essay or story from a participant’s view.<br/><br/>
+    🗺️ Step-by-step mastery makes history easy!`,
 
-    `<strong>➗ Math Confidence: Geometry Problem Solving</strong><br/>
-    ❌ Stuck on geometry proofs or formulas?<br/>
-    ✅ Climb Bloom’s ladder for step-by-step mastery.<br/><br/>
-    <em>How to tackle “Area of Triangle” problems:</em><br/>
-    • <strong>Step 1 (Remember):</strong> Recall the formula from memory<br/>
-    • <strong>Step 2 (Understand):</strong> Explain why the formula works using a drawing<br/>
-    • <strong>Step 3 (Apply):</strong> Solve a real exam question using the formula<br/>
-    • <strong>Step 4 (Analyze):</strong> Compare the area of two triangles—what changes if the base doubles?<br/>
-    • <strong>Step 5 (Evaluate):</strong> Decide which method is fastest for a tricky problem<br/>
-    • <strong>Step 6 (Create):</strong> Make your own geometry puzzle for a friend<br/><br/>
-    📈 You’ll feel more confident and ready for any question!`,
+    `<strong>➗ Math: Climb the Mastery Mountain</strong><br/>
+    ❌ Problem: Can solve MCQs but struggle with word problems or creative questions.<br/>
+    ✅ Solution: Use Bloom’s steps to level up your math!<br/><br/>
+    <em>Action Plan:</em><br/>
+    1. (Remember) Write key formulas from memory.<br/>
+    2. (Understand) Explain a formula in your own words.<br/>
+    3. (Apply) Solve a problem using the formula.<br/>
+    4. (Analyze) Break down a complex problem into steps.<br/>
+    5. (Evaluate) Check your solution and explain why it works.<br/>
+    6. (Create) Make your own word problem and solve it.<br/><br/>
+    🧮 Bloom’s steps make math fun and powerful!`,
 
-    `<strong>📖 English Writing: Paragraph or Essay Success</strong><br/>
-    ❌ You start writing but get stuck or lose your main idea?<br/>
-    ✅ Use Bloom’s steps to organize and improve your writing.<br/><br/>
-    <em>How to write “A Rainy Day” (or any topic):</em><br/>
-    • <strong>Step 1 (Remember):</strong> List 3 key points for your topic<br/>
-    • <strong>Step 2 (Understand):</strong> Summarize your main idea in one sentence<br/>
-    • <strong>Step 3 (Apply):</strong> Write a short paragraph using your points<br/>
-    • <strong>Step 4 (Analyze):</strong> Check if your paragraph has a clear beginning, middle, and end<br/>
-    • <strong>Step 5 (Evaluate):</strong> Ask a friend to read and give feedback—what’s strong, what’s missing?<br/>
-    • <strong>Step 6 (Create):</strong> Add a personal story or example to make your writing unique<br/><br/>
-    ✍️ You’ll write faster, better, and with more confidence!`,
+    `<strong>📝 Bangla & English: From Facts to Creativity</strong><br/>
+    ❌ Problem: Only memorize answers, struggle with creative or analytical questions.<br/>
+    ✅ Solution: Climb Bloom’s ladder for every subject!<br/><br/>
+    <em>Action Plan:</em><br/>
+    1. (Remember) List key facts or lines from a poem.<br/>
+    2. (Understand) Explain the meaning in your own words.<br/>
+    3. (Apply) Use the idea in a new sentence or context.<br/>
+    4. (Analyze) Compare two characters or themes.<br/>
+    5. (Evaluate) Judge which character or idea is stronger.<br/>
+    6. (Create) Write your own poem, story, or essay.<br/><br/>
+    ✍️ Bloom’s steps unlock creativity and exam success!`,
   ],
   examPrepFocus: [
     "Perfect for preparing for all levels of exam questions.",

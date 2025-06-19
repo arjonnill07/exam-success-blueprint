@@ -34,44 +34,44 @@ const chunking: Strategy = {
   ],
   realWorldExamples: [
     `<strong>🧩 Science: Break Down Big Chapters</strong><br/>
-    ❌ The chapter feels huge and overwhelming?<br/>
-    ✅ Use chunking to make it easy and fun.<br/><br/>
-    <em>How to master “Cell Biology”:</em><br/>
-    • <strong>Chunk 1:</strong> List all cell parts (membrane, nucleus, etc.)<br/>
-    • <strong>Chunk 2:</strong> Learn each part’s function—draw and label<br/>
-    • <strong>Chunk 3:</strong> Practice MCQs or short questions on each chunk<br/>
-    • <strong>Chunk 4:</strong> Connect the chunks with a mind map or summary<br/><br/>
+    ❌ Problem: The chapter feels huge and overwhelming.<br/>
+    ✅ Solution: Use chunking to make it easy and fun!<br/><br/>
+    <em>Action Plan:</em><br/>
+    1. List all cell parts (membrane, nucleus, etc.).<br/>
+    2. Learn each part’s function—draw and label.<br/>
+    3. Practice MCQs or short questions on each chunk.<br/>
+    4. Connect the chunks with a mind map or summary.<br/><br/>
     🎉 You’ll finish the chapter step by step, not all at once!`,
 
-    `<strong>📚 Literature: Tackle Long Stories or Poems</strong><br/>
-    ❌ Can’t remember all the events or characters?<br/>
-    ✅ Break it into small, friendly pieces.<br/><br/>
-    <em>How to study “A Long Poem or Story”:</em><br/>
-    • <strong>Chunk 1:</strong> Write down the main events<br/>
-    • <strong>Chunk 2:</strong> List the key characters and their roles<br/>
-    • <strong>Chunk 3:</strong> Find the main theme or lesson<br/>
-    • <strong>Chunk 4:</strong> Summarize each chunk in your own words<br/><br/>
-    📖 Suddenly, the story makes sense and is easy to revise!`,
+    `<strong>📖 Literature: Tackle Long Stories or Poems</strong><br/>
+    ❌ Problem: Can’t remember all the events or characters.<br/>
+    ✅ Solution: Break it into small, friendly pieces!<br/><br/>
+    <em>Action Plan:</em><br/>
+    1. Write down the main events.<br/>
+    2. List the key characters and their roles.<br/>
+    3. Find the main theme or lesson.<br/>
+    4. Summarize each chunk in your own words.<br/><br/>
+    📚 Suddenly, the story makes sense and is easy to revise!`,
 
     `<strong>➗ Math: Master Theorems Step by Step</strong><br/>
-    ❌ Theorem proofs feel confusing and too long?<br/>
-    ✅ Chunk them into simple, clear steps.<br/><br/>
-    <em>How to master “Area of Triangle” or any theorem:</em><br/>
-    • <strong>Chunk 1:</strong> Write the definitions and formula<br/>
-    • <strong>Chunk 2:</strong> Break the proof into 2–3 logical steps<br/>
-    • <strong>Chunk 3:</strong> Solve a sample problem for each step<br/>
-    • <strong>Chunk 4:</strong> Teach the whole process to a friend or sibling<br/><br/>
-    🏅 You’ll feel proud and confident with every chunk you finish!`,
+    ❌ Problem: Theorem proofs feel confusing and too long.<br/>
+    ✅ Solution: Chunk them into simple, clear steps!<br/><br/>
+    <em>Action Plan:</em><br/>
+    1. Write the definitions and formula.<br/>
+    2. Break the proof into 3–4 logical steps.<br/>
+    3. Practice each step separately.<br/>
+    4. Connect all steps for the full proof.<br/><br/>
+    🧮 Step-by-step chunks make math easy!`,
 
-    `<strong>🌏 History/Geography: Big Chapters, Small Chunks</strong><br/>
-    ❌ Struggling to remember all the facts for a big chapter?<br/>
-    ✅ Divide and conquer with chunking.<br/><br/>
-    <em>How to study “Bangladesh Liberation War” or “River Systems”:</em><br/>
-    • <strong>Chunk 1:</strong> List key dates or places<br/>
-    • <strong>Chunk 2:</strong> Write 2–3 sentences about each event or location<br/>
-    • <strong>Chunk 3:</strong> Draw a timeline or map<br/>
-    • <strong>Chunk 4:</strong> Review each chunk before moving to the next<br/><br/>
-    🌟 You’ll remember more and feel less stressed at exam time!`,
+    `<strong>📝 Bangla: Essay or Grammar in Chunks</strong><br/>
+    ❌ Problem: Essays or grammar rules feel overwhelming.<br/>
+    ✅ Solution: Break them into chunks for easy learning!<br/><br/>
+    <em>Action Plan:</em><br/>
+    1. For essays: List main points, then write a paragraph for each.<br/>
+    2. For grammar: List rules, then practice one at a time.<br/>
+    3. Review and connect all chunks.<br/>
+    4. Summarize or teach the full topic to a friend.<br/><br/>
+    ✍️ Chunking makes big tasks simple!`,
   ],
   examPrepFocus: []
 };
