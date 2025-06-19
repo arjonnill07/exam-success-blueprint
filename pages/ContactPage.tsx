@@ -72,7 +72,7 @@ const ContactPage: React.FC = () => {
 			{/* Confetti burst on click */}
 			{showConfetti && (
 				<div className="pointer-events-none fixed inset-0 flex items-center justify-center z-50 animate-fadeIn">
-					<div className="text-5xl select-none">🎊✨🎉🥳🎈</div>
+					<div className="text-5xl select-none">✨</div>
 				</div>
 			)}
 			<SectionWrapper>
@@ -94,7 +94,7 @@ const ContactPage: React.FC = () => {
 										onClick={handleConfetti}
 									>
 										<span className="absolute -top-2 -right-2 animate-spin-slow pointer-events-none text-base">
-											✨
+											
 										</span>
 										<ContactIconComponent className="w-8 h-8 text-indigo-600 group-hover:text-blue-700 transition-transform duration-300 flex-shrink-0 mb-0.5" />
 										<span className="text-base font-semibold text-indigo-800 truncate">
