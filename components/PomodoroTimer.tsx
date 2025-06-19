@@ -1,74 +1,41 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import useTimer from '../hooks/useTimer';
+import React, { useEffect } from 'react';
 import ClockIcon from './icons/ClockIcon';
+import { usePomodoroTimer } from './PomodoroTimerContext';
 
 const PomodoroTimer: React.FC = () => {
-  // Customizable durations
-  const [workDuration, setWorkDuration] = useState(25);
-  const [shortBreakDuration, setShortBreakDuration] = useState(5);
-  const [longBreakDuration, setLongBreakDuration] = useState(15);
+  const {
+    workDuration, setWorkDuration,
+    shortBreakDuration, setShortBreakDuration,
+    longBreakDuration, setLongBreakDuration,
+    mode, setMode,
+    pomodorosCompleted,
+    timer,
+    setConfigChanged,
+  } = usePomodoroTimer();
+
   const WORK_DURATION = workDuration * 60;
   const SHORT_BREAK_DURATION = shortBreakDuration * 60;
   const LONG_BREAK_DURATION = longBreakDuration * 60;
 
-  const [mode, setMode] = useState<'work' | 'shortBreak' | 'longBreak'>('work');
-  const [pomodorosCompleted, setPomodorosCompleted] = useState(0);
-
-  const handleTimerEnd = useCallback(() => {
-    // Basic notification, browser might block this without user interaction
-    // Consider a more subtle visual cue or a user-configurable sound.
-    try {
-      new Audio('https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3').play().catch(e => console.warn("Audio play failed:", e));
-    } catch (e) {
-      console.warn("Audio notification failed:", e);
-    }
-
-
-    if (mode === 'work') {
-      const newPomodorosCompleted = pomodorosCompleted + 1;
-      setPomodorosCompleted(newPomodorosCompleted);
-      if (newPomodorosCompleted % 4 === 0) {
-        setMode('longBreak');
-        timer.reset(LONG_BREAK_DURATION);
-      } else {
-        setMode('shortBreak');
-        timer.reset(SHORT_BREAK_DURATION);
-      }
-    } else {
-      setMode('work');
-      timer.reset(WORK_DURATION);
-    }
-    // Automatically start next session
-    // timer.start(); // Commented out to allow manual start
-  }, [mode, pomodorosCompleted]);
-
-  const timer = useTimer({
-    initialTime: mode === 'work' ? WORK_DURATION : (mode === 'shortBreak' ? SHORT_BREAK_DURATION : LONG_BREAK_DURATION),
-    onEnd: handleTimerEnd,
-  });
-  
-  // Update timer's initial time when mode changes and timer is not active
   useEffect(() => {
-    if (!timer.isActive) {
-        const newInitialTime = mode === 'work' ? WORK_DURATION : (mode === 'shortBreak' ? SHORT_BREAK_DURATION : LONG_BREAK_DURATION);
-        timer.reset(newInitialTime);
-    }
+    const newInitialTime = mode === 'work' ? WORK_DURATION : (mode === 'shortBreak' ? SHORT_BREAK_DURATION : LONG_BREAK_DURATION);
+    timer.reset(newInitialTime);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mode]);
 
-  // Add state to trigger timer reset on config change
-  const [configChanged, setConfigChanged] = useState(false);
-
-  // When config changes, reset timer for current mode
   useEffect(() => {
-    if (configChanged) {
-      const newInitialTime = mode === 'work' ? WORK_DURATION : (mode === 'shortBreak' ? SHORT_BREAK_DURATION : LONG_BREAK_DURATION);
-      timer.reset(newInitialTime);
-      setConfigChanged(false);
+    if (timer.isActive && !timer.isPaused) {
+      const handle = () => {
+        try {
+          new Audio('https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3').play().catch(e => console.warn("Audio play failed:", e));
+        } catch (e) {
+          console.warn("Audio notification failed:", e);
+        }
+      };
+      handle();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [configChanged]);
-
+  }, [timer.isActive, timer.isPaused]);
 
   const formatTime = (timeInSeconds: number): string => {
     const minutes = Math.floor(timeInSeconds / 60);
@@ -80,9 +47,9 @@ const PomodoroTimer: React.FC = () => {
     if (timer.isActive) {
       timer.pause();
     } else {
-      if (timer.isPaused || timer.time === (mode === 'work' ? WORK_DURATION : (mode === 'shortBreak' ? SHORT_BREAK_DURATION : LONG_BREAK_DURATION)) ) { // resume or start
+      if (timer.isPaused || timer.time === (mode === 'work' ? WORK_DURATION : (mode === 'shortBreak' ? SHORT_BREAK_DURATION : LONG_BREAK_DURATION)) ) {
          timer.time > 0 ? timer.resume() : timer.start();
-      } else { // if time is 0 or it's a fresh start for this mode
+      } else {
         timer.start();
       }
     }
@@ -92,12 +59,10 @@ const PomodoroTimer: React.FC = () => {
     const currentModeDuration = mode === 'work' ? WORK_DURATION : (mode === 'shortBreak' ? SHORT_BREAK_DURATION : LONG_BREAK_DURATION);
     timer.reset(currentModeDuration);
   };
-  
+
   const switchMode = (newMode: 'work' | 'shortBreak' | 'longBreak') => {
     setMode(newMode);
-    // timer.reset will be called by useEffect for mode change
   };
-
 
   const getModeButtonClass = (buttonMode: 'work' | 'shortBreak' | 'longBreak') => {
     return `px-4 py-2 rounded-lg transition-colors text-sm font-medium ${
