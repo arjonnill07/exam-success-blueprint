@@ -32,7 +32,7 @@ const HomePage: React.FC = () => {
 		);
 		const interval = setInterval(() => {
 			setTestimonialIdx((idx) => (idx + 1) % testimonials.length);
-		}, 6000);
+		}, 8000);
 		return () => clearInterval(interval);
 	}, []);
 
