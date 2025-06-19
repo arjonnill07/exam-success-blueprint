@@ -66,8 +66,7 @@ const ContactPage: React.FC = () => {
 					Contact & Connect
 				</h1>
 				<p className="text-base text-blue-800 mt-0 text-center max-w-xl font-medium">
-					Having a question, suggestion, or want to collaborate? Reach out
-					anytime—your feedback and ideas are always welcome!
+					You’ve reached the end of the exam success adventure, but your journey continues! Whether you want to share feedback, ask a question, I’d love to hear from you.
 				</p>
 			</div>
 			{/* Confetti burst on click */}

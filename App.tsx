@@ -15,6 +15,8 @@ const App: React.FC = () => {
 
   // Collapsible Pomodoro Timer state
   const [pomodoroOpen, setPomodoroOpen] = React.useState(false);
+  // Mobile Pomodoro modal state
+  const [pomodoroMobileOpen, setPomodoroMobileOpen] = React.useState(false);
 
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -34,7 +36,7 @@ const App: React.FC = () => {
         </Routes>
       </main>
       <Footer />
-      {/* Collapsible Floating Pomodoro Timer (always mounted, toggled by CSS) */}
+      {/* Collapsible Floating Pomodoro Timer (always mounted, toggled by CSS) - Desktop only */}
       <div className="fixed bottom-6 right-6 z-50 w-[350px] max-w-full hidden md:block">
         <div className={pomodoroOpen ? 'relative' : 'hidden'}>
           <button
@@ -49,17 +51,43 @@ const App: React.FC = () => {
         </div>
         {!pomodoroOpen && (
           <button
-            className="bg-yellow-400 text-white rounded-full w-14 h-14 flex items-center justify-center text-3xl shadow-lg hover:bg-yellow-500 transition"
+            className="bg-yellow-400 text-white rounded-full w-10 h-10 flex items-center justify-center text-2xl shadow-lg hover:bg-yellow-500 transition"
             onClick={() => setPomodoroOpen(true)}
             title="Expand Pomodoro Timer"
             aria-label="Expand Pomodoro Timer"
           >
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
           </button>
         )}
       </div>
-      {/* Floating button for mobile to open Pomodoro Timer modal */}
-      {/* You can add a modal for mobile if desired */}
+      {/* Mobile: Small floating button and modal for Pomodoro Timer */}
+      <div className="fixed bottom-4 right-4 z-50 md:hidden">
+        <button
+          className="bg-yellow-400 text-white rounded-full w-10 h-10 flex items-center justify-center text-2xl shadow-lg hover:bg-yellow-500 transition"
+          onClick={() => setPomodoroMobileOpen(true)}
+          title="Open Pomodoro Timer"
+          aria-label="Open Pomodoro Timer"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        </button>
+        {/* Modal (always mounted, toggled by CSS) */}
+        <div className={pomodoroMobileOpen ? 'fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50' : 'hidden'}
+          onClick={e => { if (e.target === e.currentTarget) setPomodoroMobileOpen(false); }}
+          tabIndex={0}
+          aria-modal="true"
+          role="dialog"
+        >
+          <div className="bg-white rounded-2xl shadow-2xl p-4 w-full max-w-xs animate-fadeIn relative" tabIndex={0}>
+            <button
+              className="absolute top-2 right-2 text-gray-500 hover:text-red-600 text-2xl font-bold"
+              onClick={() => setPomodoroMobileOpen(false)}
+              title="Close"
+              tabIndex={0}
+            >×</button>
+            <PomodoroTimer />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

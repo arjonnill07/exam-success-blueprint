@@ -1,6 +1,5 @@
 import React, { useState, useEffect, KeyboardEvent } from 'react';
 import SectionWrapper from '../components/SectionWrapper';
-import PomodoroTimer from '../components/PomodoroTimer';
 
 interface Topic {
   name: string;
@@ -107,11 +106,11 @@ const MultiSubjectPlannerPage = () => {
   const [focusMode, setFocusMode] = useState(false);
   const [focusList, setFocusList] = useState<{ subject: string; topic: string }[]>([]);
 
-  // Add state for mobile Pomodoro modal
-  const [showPomodoro, setShowPomodoro] = useState(false);
-
   // Add state for mobile subject input
   const [showMobileAdd, setShowMobileAdd] = useState(false);
+
+  // State for Pomodoro modal
+  const [showPomodoro, setShowPomodoro] = useState(false);
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(subjects));
@@ -691,7 +690,6 @@ const MultiSubjectPlannerPage = () => {
                   <svg className="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                   Pomodoro Focus Timer
                 </span>
-                <PomodoroTimer />
               </div>
             </div>
           </aside>
@@ -706,28 +704,6 @@ const MultiSubjectPlannerPage = () => {
             <span className="sr-only">Open Pomodoro Timer</span>
             <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
           </button>
-          {/* Pomodoro Modal for mobile */}
-          {showPomodoro && (
-            <div
-              className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50"
-              onClick={e => { if (e.target === e.currentTarget) setShowPomodoro(false); }}
-              tabIndex={0}
-              onKeyDown={e => { if (e.key === 'Escape') setShowPomodoro(false); }}
-              aria-modal="true"
-              role="dialog"
-            >
-              <div className="bg-white rounded-2xl shadow-2xl p-6 w-full max-w-xs animate-fadeIn" tabIndex={0}>
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-lg font-bold text-yellow-700 flex items-center gap-2">
-                    <svg className="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                    Pomodoro Timer
-                  </span>
-                  <button className="text-gray-500 hover:text-red-600 text-2xl font-bold" onClick={() => setShowPomodoro(false)} title="Close" tabIndex={0}>×</button>
-                </div>
-                <PomodoroTimer />
-              </div>
-            </div>
-          )}
         </div>
       </SectionWrapper>
       {/* Persistent Help Button */}
