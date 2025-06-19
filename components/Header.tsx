@@ -39,7 +39,7 @@ const Header: React.FC = () => {
     <nav className="backdrop-blur-md bg-white/80 border-b border-sky-100 shadow-lg sticky top-0 z-50 rounded-b-2xl mx-auto max-w-7xl mt-2">
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
+          <div className="flex items-center flex-1">
             <NavLink to="/" className="flex-shrink-0 flex items-center text-blue-900">
               <SparklesIcon className="h-10 w-10 mr-3 text-sky-400" />
               <span className="font-extrabold text-3xl tracking-tight drop-shadow-sm">{APP_NAME}</span>
@@ -67,7 +67,7 @@ const Header: React.FC = () => {
               </NavLink>
             </div>
           </div>
-          <div className="-mr-2 flex md:hidden">
+          <div className="-mr-2 flex md:hidden sm:pr-0 pr-2 ml-3">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               type="button"
