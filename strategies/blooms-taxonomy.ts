@@ -8,29 +8,29 @@ const bloomsTaxonomy: Strategy = {
   description: "Climb the learning mountain: from basic facts to creative genius—Bangla-English style!",
   longDescription: `
     <div class="space-y-3">
-      <div><strong>⛰️ Imagine This:</strong> Tumi ekta mountain climber, but your mountain is learning! Each step—Remember, Understand, Apply, Analyze, Evaluate, Create—takes you higher, from basic info to creative boss-level thinking.<br/>Just like learning to cook biryani: first recipe মুখস্থ, then understand the steps, apply in your kitchen, analyze taste, evaluate what went wrong, and finally create your own twist!</div>
-      <div><strong>🔥 Why Care?</strong> Exams (SSC, HSC, varsity, board) ask questions from every level. Only memorizing? That’s why MCQ তে ঠিক, but creative question এ blackout! Climb up, and MCQ, short, creative, and project—all will be easy for you.</div>
+      <div><strong>⛰️ Imagine This:</strong> ধরো, তুমি পাহাড়ে চড়ছো—কিন্তু এই পাহাড়টা পড়াশোনার! প্রতিটা ধাপ—মুখস্থ (Remember), বুঝে বলা (Understand), কাজে লাগানো (Apply), বিশ্লেষণ (Analyze), বিচার (Evaluate), আর নিজের কিছু তৈরি (Create)—তোমাকে উপরে তুলবে, একদম master level-এ।<br/>যেমন, মজার biryani রান্না: প্রথমে রেসিপি মুখস্থ, তারপর কেন কী দিচ্ছো বুঝে নাও, রান্না করো, স্বাদ নাও, কোথায় ভুল সেটা খুঁজে ঠিক করো, আর শেষে নিজের স্টাইলের biryani বানাও! পড়াশোনাতেও ঠিক তাই—ধাপে ধাপে উপরে উঠো, নিজের স্টাইল তৈরি করো!</div>
+      <div><strong>🔥 Why Care?</strong> Exams (SSC, HSC, varsity, board) ask questions from every level. শুধু মুখস্থ? Base camp-এ আটকে যাবে! MCQ, short, creative, project—সব unlock করতে হলে, mountain-এর top-এ উঠতে হবে। Climb higher, and exam will feel easy!</div>
       <div class="bg-yellow-50 border-l-4 border-yellow-400 p-2 rounded">
-        <strong>Common Mistake:</strong> শুধু মুখস্থ করলে base camp-এ আটকে যাবে! Creative, analysis, বা project question এ stuck হয়ে যাবে। Bloom’s steps follow করলেই সব unlock হবে!
+        <strong>Common Mistake:</strong> শুধু পড়া বা মুখস্থ—no climbing! তাই creative, analysis, বা project question এ blackout। Bloom’s steps মানে—level by level unlock, like a game!
       </div>
-      <div><strong>🚀 How to Climb:</strong>
+      <div><strong>🚀 How to Climb (Step by Step):</strong>
         <ul class="list-disc list-inside ml-4">
-          <li><strong>Remember:</strong> Facts, formulas, dates—MCQ, fill-in-the-blanks. (Like: Who scored the fastest century? ICT: shortcut keys?)</li>
-          <li><strong>Understand:</strong> Explain in your own words—short answers. (Why is photosynthesis important? Business: profit vs. revenue?)</li>
-          <li><strong>Apply:</strong> Use knowledge in new situations—problem-solving, lab, real life. (Solve a new math problem, do an experiment, use Excel formula.)</li>
-          <li><strong>Analyze:</strong> Break down, compare, find patterns—essay, data, case study. (Compare two poems, analyze a cricket match, break down a business plan.)</li>
-          <li><strong>Evaluate:</strong> Judge, argue, justify—debate, critical response. (Which method is better? Why? ICT: Which software is best for your project?)</li>
-          <li><strong>Create:</strong> Invent, design, write—project, story, experiment. (Write your own ending, design a science project, make a new app idea.)</li>
+          <li><strong>Remember:</strong> Facts, formulas, dates—MCQ, fill-in-the-blanks. (Like: Who scored the fastest century? ICT: shortcut keys? Biology: cell parts?)</li>
+          <li><strong>Understand:</strong> Explain in your own words—short answers. (Why is photosynthesis important? Business: profit vs. revenue? ICT: shortcut কী কাজে লাগে?)</li>
+          <li><strong>Apply:</strong> Use knowledge in new situations—problem-solving, lab, real life. (Solve a new math problem, do an experiment, use Excel formula, write a real-life example.)</li>
+          <li><strong>Analyze:</strong> Break down, compare, find patterns—essay, data, case study. (Compare two poems, analyze a cricket match, break down a business plan, spot trends in a graph.)</li>
+          <li><strong>Evaluate:</strong> Judge, argue, justify—debate, critical response. (Which method is better? Why? ICT: Which software is best for your project? Bangla: কোন কবি বেশি impactful?)</li>
+          <li><strong>Create:</strong> Invent, design, write—project, story, experiment. (Write your own ending, design a science project, make a new app idea, invent a mnemonic.)</li>
         </ul>
       </div>
       <div class="bg-sky-50 border-l-4 border-sky-400 p-2 rounded">
-        <strong>Try Now:</strong> Pick any topic (e.g., Liberation War, Cell Division, Trigonometry, ICT: Database, Business: Marketing Mix). Ask: Can I recall facts? Explain? Apply? Analyze? Evaluate? Create something new? If yes, you’re a mountain climber! If not, start climbing—one step at a time.
+        <strong>Try Now:</strong> Pick any topic (e.g., Liberation War, Cell Division, Trigonometry, ICT: Database, Business: Marketing Mix, Bangla: কবিতা)। নিজেকে challenge করো: Can I recall facts? Explain? Apply? Analyze? Evaluate? Create something new? If yes, you’re a mountain climber! If not, start climbing—one step at a time.
       </div>
       <div class="bg-green-50 border-l-4 border-green-400 p-2 rounded mt-2">
-        <strong>Quick Self-Check:</strong> Last chapter-এর জন্য ৬টা step পারো? কোনটা missing? ওখান থেকেই শুরু করো!
+        <strong>Quick Self-Check:</strong> Last chapter-এর জন্য ৬টা step পারো? কোনটা missing? ওখান থেকেই শুরু করো! Challenge your friends—who can climb higher?
       </div>
       <div class="text-blue-700 text-sm mt-2">
-        <strong>Real Life Example:</strong> Cricket practice! First, remember the rules, then understand the grip, apply in nets, analyze your shots, evaluate your performance, and finally create your own signature move. Exams are just like this—step by step, you become a pro!<br/>Or, think about TikTok trends: first you watch, then understand, try, analyze what’s viral, evaluate your own video, and finally create your own trend!
+        <strong>Real Life Example:</strong> Cricket practice: first remember the rules, then understand the grip, apply in nets, analyze your shots, evaluate your performance, and finally create your own signature move. Or, TikTok trends: watch, understand, try, analyze what’s viral, evaluate your own video, and finally create your own trend! Exams are just like this—step by step, you become a pro!
       </div>
       <div class="text-pink-700 text-sm mt-2 font-bold">
         Tumi পারবে! Just climb one step higher every day—soon, you’ll be the master! 💪
