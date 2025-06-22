@@ -3,7 +3,7 @@ import ClockIcon from '../components/icons/ClockIcon';
 
 const pomodoro: Strategy = {
   id: "pomodoro",
-  title: "Pomodoro Technique (পড়ার সুপারপাওয়ার!)",
+  title: "Pomodoro Technique",
   description: "২৫ মিনিট একদম ফোকাস, তারপর ছোট্ট break—এইভাবেই ভায়া বাজিমাত !",
   longDescription: `
     <p><strong>ছোট্ট বন্ধু, মনোযোগ ধরে রাখতে কষ্ট হচ্ছে?</strong><br/>
