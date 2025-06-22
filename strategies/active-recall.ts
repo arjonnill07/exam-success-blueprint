@@ -4,15 +4,15 @@ import BrainArrowsIcon from '../components/icons/BrainArrowsIcon';
 
 const activeRecall: Strategy = {
   id: "active-recall",
-  title: "Active Recall (Test Yourself!)",
-  description: "Unlock your brain’s full power—actively pull out knowledge and make it unforgettable for exams!",
+  title: "Active Recall (নিজেকে পরীক্ষা করো!)",
+  description: "তোমার brain-এর আসল শক্তি বের করো—নিজেই নিজেকে প্রশ্ন করো, আর পড়া হবে একদম পাকা!",
   longDescription: `
-    <p><strong>Quick Take for Your Exams:</strong> Want to remember more in less time? Active Recall is the secret weapon of toppers! Instead of just reading, challenge your brain to retrieve answers—this is how you make facts stick for the real exam.</p>
-    <p><strong>🧠🔍 What Is It?</strong></p>
+    <p> কম সময়ে বেশি মনে রাখতে চাও? Active Recall-ই toppers-দের গোপন অস্ত্র! শুধু পড়ে গেলে হবে না, নিজেকে প্রশ্ন করো—তোমার brain তখনই আসল কাজটা শিখে নেবে।</p>
+    <p><strong>🧠🔍 Active Recall কী?</strong></p>
     <ul>
-      <li>Deliberately try to remember information without looking at your notes—like a quiz, but you’re the quizmaster!</li>
-      <li>Every time you pull out an answer, your memory gets stronger. It’s like doing push-ups for your brain.</li>
-      <li>Way more effective than re-reading or highlighting—this is how you train for exam day!</li>
+      <li>নোট না দেখে মনে করার চেষ্টা করো—quiz-এর মতো, কিন্তু quizmaster তুমিই!</li>
+      <li>প্রতিবার মনে করতে পারলে, brain-এর muscle আরও শক্তিশালী হয়। এটা একদম gym-এর মতো, শুধু brain-এর জন্য।</li>
+      <li>বারবার পড়া বা highlight করার চেয়ে অনেক বেশি কাজের—এভাবেই পরীক্ষার জন্য নিজেকে তৈরি করো!</li>
     </ul>
   `,
   category: StrategyCategory.MEMORY_ENHANCEMENT,
@@ -20,11 +20,11 @@ const activeRecall: Strategy = {
   visualExplainerComponent: BrainArrowsIcon,
   visualExplainerCaption: "Visualizing Active Recall: Actively pulling information out of your brain, like retrieving a file.",
   howTo: [
-    "**1. Study Smart:** Learn a topic as usual, but don’t stop there!",
-    "**2. Hide Your Notes:** Close your book or cover your page.",
-    "**3. Test Yourself:** Write, say, or draw everything you remember—no peeking!",
-    "**4. Check & Target Gaps:** Compare with your notes. Missed something? That’s your next focus!",
-    "**💡 Try it now:** After reading this, close your eyes and recall the 4 steps. Can you do it? That’s Active Recall in action!"
+    "১. যেকোনো একটা Topic পড়ো!",
+    "২. এবার নোট বা বই টা বন্ধ করো — brain-এর সাথে কথা বলো।",
+    "৩. নিজেকে প্রশ্ন করো—লিখে, মুখে বলো, বা ছবি আঁকো—কিছুতেই চুরি না!",
+    "৪. যা পড়ছো মনে করার চেষ্টা করো তো, remember- no peeking! চুরি করে দেখা যাবে না",
+    "💡 এখনই চেষ্টা করো তো: এই ৪টা ধাপ পড়ে চোখ বন্ধ করো—মনে করতে পারো? এটাই তো Active Recall!"
   ],
   benefits: [
     "Dramatically boosts memory retention for exams.",
@@ -32,59 +32,61 @@ const activeRecall: Strategy = {
     "Saves time—less re-reading, more learning!",
     "Makes exam revision feel like a game or challenge."
   ],
-realWorldExamples: [
-  `<strong>🧠 History: Remembering Key Events</strong><br/>
-  ❌ Problem: You read about the Liberation War, but forget the dates and events during revision.<br/>
-  ✅ Solution: Use Active Recall to make facts stick!<br/><br/>
-  <em>Action Plan:</em><br/>
-  1. Read the key facts from your textbook.<br/>
-  2. Close your book and write down all the important dates and events from memory.<br/>
-  3. Check your notes—what did you miss? Mark those for tomorrow’s recall session.<br/>
-  4. Repeat this process every day for 1 week.<br/><br/>
-  ⭐ Step by step, you’ll remember more and feel exam-ready!`,
+  realWorldExamples: [
+    `<strong>🧠 ইতিহাস: মুক্তিযুদ্ধের ঘটনা মনে রাখো</strong><br/>
+    ❌ সমস্যা: মুক্তিযুদ্ধ নিয়ে পড়েছো, কিন্তু তারিখ বা ঘটনা গুলিয়ে ফেলো।<br/>
+    ✅ Solution: Active Recall দিয়ে সব মনে রাখো!<br/><br/>
+    <em>Action Plan:</em><br/>
+    ১. বই থেকে key fact পড়ো।<br/>
+    ২. বই বন্ধ করে, নিজের খাতায় তারিখ আর ঘটনা লিখে ফেলো।<br/>
+    ৩. মিলিয়ে দেখো—যা ভুলে গেছো, সেটা কাল আবার মনে করার চেষ্টা করো।<br/>
+    ৪. এভাবে ১ সপ্তাহ চালিয়ে যাও।<br/><br/>
+    ⭐ দেখবে, ধাপে ধাপে সব মনে থাকবে!`,
 
-  `<strong>📘 Science: Mastering Physics Laws</strong><br/>
-  ❌ Problem: You read “Laws of Motion” but can’t explain them in your own words.<br/>
-  ✅ Solution: Give your brain a workout with Active Recall!<br/><br/>
-  <em>Action Plan:</em><br/>
-  1. Read the chapter once with focus.<br/>
-  2. Close your book and write down Newton’s 3 Laws from memory.<br/>
-  3. Next day, try explaining the laws out loud as if teaching a friend.<br/>
-  4. Check your notes and fill in any gaps.<br/><br/>
-  💡 Each time you recall, your memory gets stronger!`,
+    `<strong>🔬 Science: পদার্থবিজ্ঞানের সূত্র</strong><br/>
+    ❌ সমস্যা: Laws of Motion পড়েছো, কিন্তু নিজের ভাষায় বলতে পারো না।<br/>
+    ✅ Solution: Active Recall !<br/><br/>
+    <em>Action Plan:</em><br/>
+    ১. মনোযোগ দিয়ে chapter পড়ো।<br/>
+    ২. বই বন্ধ করে Newton-এর ৩টা law নিজের ভাষায় লিখে ফেলো।<br/>
+    ৩. পরের দিন, বন্ধু বা ছোট ভাই/বোনকে বোঝাও।<br/>
+    ৪. ভুল হলে আবার পড়ো, আবার চেষ্টা করো।<br/><br/>
+    💡 যতবার মনে করবে, ততবার শক্তিশালী হবে!`,
 
-  `<strong>📐 Math: Conquering Formulas</strong><br/>
-  ❌ Problem: You keep forgetting the quadratic formula during practice.<br/>
-  ✅ Solution: Recall before you peek!<br/><br/>
-  <em>Action Plan:</em><br/>
-  1. Write down the quadratic formula from memory.<br/>
-  2. Solve 2–3 problems without looking at your notes.<br/>
-  3. Check your answers and note any mistakes.<br/>
-  4. Explain the steps aloud to yourself or a study buddy.<br/><br/>
-  🚀 With calm, steady practice, formulas will become second nature!`,
+    `<strong>📐 Math: Conquering Formulas</strong><br/>
+    ❌ সমস্যা: Quadratic formula বারবার ভুলে যাও।<br/>
+    ✅ Solution: আগে recall, পরে দেখে নাও!<br/><br/>
+    <em>Action Plan:</em><br/>
+    ১. খাতায় formula লিখে ফেলো, মনে করে।<br/>
+    ২. ২-৩টা সমস্যা সমাধান করো, নোট না দেখে।<br/>
+    ৩. মিলিয়ে দেখো, ভুল হলে চিহ্নিত করো।<br/>
+    ৪. নিজেকে বা বন্ধুকে বোঝাও।<br/><br/>
+    🚀 ধীরে ধীরে, সূত্র হবে তোমার নিজের!`,
 
-  `<strong>📝 Bangla: Essay Writing Confidence</strong><br/>
-  ❌ Problem: You read model essays but struggle to remember key points when writing your own.<br/>
-  ✅ Solution: Recall and organize ideas step by step!<br/><br/>
-  <em>Action Plan:</em><br/>
-  1. Read a model essay once.<br/>
-  2. Close the book and list the main points from memory.<br/>
-  3. Write a short paragraph about each point.<br/>
-  4. Check your work and gently improve any weak areas.<br/><br/>
-  ✍️ Each session builds your confidence to write essays on your own!`,
+    `<strong>📝 বাংলা/English Essay Writing</strong><br/>
+    ❌ সমস্যা: Model essay পড়ো, কিন্তু লিখতে গেলে পয়েন্ট মনে থাকে না।<br/>
+    ✅ Solution: Recall দিয়ে আইডিয়া সাজাও!<br/><br/>
+    <em>Action Plan:</em><br/>
+    ১. Model essay পড়ো।<br/>
+    ২. বই বন্ধ করে, মূল পয়েন্টগুলো লিখে ফেলো।<br/>
+    ৩. প্রতিটা পয়েন্ট নিয়ে ছোট ছোট প্যারাগ্রাফ লেখো।<br/>
+    ৪. মিলিয়ে দেখো, কোথায় ভুল বা ফাঁক আছে, ঠিক করো।<br/><br/>
+    ✍️ এভাবে চর্চা করলে, রচনা লেখা হবে super easy!`,
 
-  `<strong>🧬 Biology: Drawing Diagrams from Memory</strong><br/>
-  ❌ Problem: You memorize the heart diagram but forget the labels during exams.<br/>
-  ✅ Solution: Recall and draw for lasting memory!<br/><br/>
-  <em>Action Plan:</em><br/>
-  1. Study the heart diagram and its parts.<br/>
-  2. Close your book and draw the diagram on a blank page.<br/>
-  3. Label each part and write its function.<br/>
-  4. Review and repeat the next day.<br/><br/>
-  🎨 Drawing and recalling helps you remember with clarity!`,
-],
-
-  examPrepFocus: []
+    `<strong>🧬 Biology: Draw to remember </strong><br/>
+    ❌ সমস্যা: Heart-এর diagram মুখস্থ করো, কিন্তু পরীক্ষায় label ভুলে যাও।<br/>
+    ✅ Solution: Recall আর ছবি আঁকা—দুটো একসাথে!<br/><br/>
+    <em>Action Plan:</em><br/>
+    ১. Study the heart diagram and its parts <br/>
+    ২. বই বন্ধ করে, খাতায় diagram আঁকো।<br/>
+    ৩. প্রতিটা অংশ label দাও, কাজ লিখে রাখো।<br/>
+    ৪. পরের দিন আবার আঁকো, ভুল হলে ঠিক করো।<br/><br/>
+    🎨 ছবি এঁকে মনে রাখলে, ভুল হবে না!`,
+  ],
+  examPrepFocus: [
+    "MCQ, short question, board exam-এর জন্য দারুণ কাজের।",
+    "নিজেকে প্রশ্ন করার অভ্যাস গড়ে তুললে, পরীক্ষার ভয় থাকবে না!"
+  ]
 };
 
 export default activeRecall;
