@@ -4,82 +4,85 @@ import UsersIcon from '../components/icons/UsersIcon';
 const interleaving: Strategy = {
   id: "interleaving",
   title: "Interleaving (Mix It Up!)",
-  description: "Mix up Math, Science, and English problems in one session—just like your real exam paper!",
+  description: "একঘেয়ে পড়া? Nah! Mix Math, Science, English—just like exam hall-এর real challenge! Brain হবে agile, boredom zero!",
   longDescription: `
     <div class="space-y-3">
-      <div><strong>🔄 What:</strong> Mix different types of questions or subjects in one study session.</div>
-      <div><strong>❓ Why:</strong> Exams always mix things up! This trains your brain to switch and adapt—no surprises on test day.</div>
+      <div><strong>🔄 What:</strong> এক session-এ আলাদা আলাদা subject বা topic mix করো—Math, English, Science, ICT—সব একসাথে!</div>
+      <div><strong>❓ Why:</strong> Exam-এ তো সবকিছুই mixed! Brain-কে switch করতে শেখাও—surprise কমবে, confidence বাড়বে!</div>
       <div><strong>⚡ How:</strong>
         <ul class="list-disc list-inside ml-4">
-          <li>Pick 2-3 topics (e.g., Algebra, Geometry, English).</li>
-          <li>Do 1-2 problems from each, then switch. Repeat.</li>
+          <li>২-৩টা topic বেছে নাও (যেমন, Algebra, English Grammar, Biology)।</li>
+          <li>প্রতিটা থেকে ১-২টা problem solve করো, তারপর switch করো। Repeat!</li>
         </ul>
       </div>
       <div class="bg-sky-50 border-l-4 border-sky-400 p-2 rounded">
-        <strong>Try it now:</strong> Mix 2 Math sums, 2 English grammar, 2 Science MCQs. Notice how you have to think harder!
+        <strong>Try it now:</strong> ২টা Math sum, ২টা English grammar, ২টা Science MCQ—mix করে দেখো, brain কেমন active হয়!
       </div>
       <div class="text-blue-700 text-sm mt-2">
-        <strong>Real-world connection:</strong> Imagine you’re preparing for your SSC or HSC exams. In your Math session, instead of solving 10 algebra problems in a row, you do 2 algebra, 2 geometry, and 2 statistics problems. Then, you switch to English and do a grammar fill-in-the-blank, a summary, and a translation. This way, your brain gets used to switching between topics—just like you’ll have to do in the real exam, where questions are never grouped by type!<br/><br/>
-        <em>Bonus:</em> If you’re studying Science, try mixing up MCQs from Physics, Chemistry, and Biology in one sitting. You’ll notice you get better at quickly figuring out what each question is really asking, and you’ll feel more confident on exam day.
+        <strong>Real-world connection:</strong> ধরো, SSC/HSC-র জন্য পড়ছো। Math-এ ২টা algebra, ২টা geometry, ২টা statistics—সব একসাথে। তারপর English-এ grammar, summary, translation। Exam-এ যেমন mix থাকে, তেমনই practice—brain হবে ready for anything!<br/><br/>
+        <em>Bonus:</em> Science পড়লে Physics, Chemistry, Biology—সব MCQ একসাথে mix করো। Question বুঝে solve করতে পারবে lightning speed-এ!
       </div>
     </div>
   `,
   category: StrategyCategory.LEARNING_TECHNIQUES,
   icon: UsersIcon,
   visualExplainerComponent: UsersIcon,
-  visualExplainerCaption: "Visualizing Interleaving: Switching between different topics or problem types in a study session.",
+  visualExplainerCaption: "Interleaving: এক session-এ আলাদা আলাদা topic switch করা—brain-এর জন্য real gym!",
   howTo: [
-    "Pick 2-3 subjects or topics (e.g., Math, Physics, Bangla).",
-    "Alternate between them in your study session.",
-    "If it feels tough, that’s normal! It means your brain is learning to adapt.",
+    "২-৩টা subject বা topic বেছে নাও (যেমন, Math, Physics, Bangla)।",
+    "একটার পর একটা switch করে পড়ো—boring লাগবে না!",
+    "Tough লাগলে ভয় নেই—brain-কে agile বানাচ্ছো!",
+    "Mix করার সময় timer set করো—challenge নাও!"
   ],
   benefits: [
-    "Prepares you for mixed exam papers.",
-    "Makes revision less boring!",
+    "Exam-এর mixed questions-এ আর ভয় থাকবে না!",
+    "Revision হবে interesting—boredom zero!",
+    "Brain agile হবে—quickly adapt করতে পারবে।",
+    "Different subject-এ switch করার skill বাড়বে—real life-এও কাজে লাগবে!"
   ],
   realWorldExamples: [
-    `<strong>🔄 Math & Science: Mix It Up for Exam Power</strong><br/>
-    ❌ Problem: Always study one subject at a time and get bored or stuck.<br/>
-    ✅ Solution: Mix different topics to train your brain for real exams!<br/><br/>
+    `<strong>🔄 Math & Science: Brain Gym Session</strong><br/>
+    ❌ Problem: এক subject পড়তে পড়তে মাথা গরম!<br/>
+    ✅ Solution: Mix করো—brain fresh থাকবে!<br/><br/>
     <em>Action Plan:</em><br/>
-    1. Do 2 algebra sums, then 2 geometry problems.<br/>
-    2. Switch to 2 science MCQs (Physics or Chemistry).<br/>
-    3. Repeat the cycle—notice how you adapt faster.<br/>
-    4. Review what felt tricky and try again next session.<br/><br/>
-    🚀 You’ll be ready for any mix of questions on exam day!`,
+    ১. ২টা algebra, ২টা geometry, ২টা Physics MCQ solve করো।<br/>
+    ২. প্রতিবার subject switch করো—notice করো কেমন লাগে।<br/>
+    ৩. যেটা hardest, সেটা পরের session-এ আগে করো।<br/><br/>
+    🚀 Exam-এ যেকোনো mix question-এ ready থাকবে!`,
 
-    `<strong>📚 Bangla & English: Variety for Stronger Memory</strong><br/>
-    ❌ Problem: Forget what you studied by the next day.<br/>
-    ✅ Solution: Mix subjects to keep your brain active and alert!<br/><br/>
+    `<strong>📚 Bangla & English: Memory Power Boost</strong><br/>
+    ❌ Problem: পড়া মনে থাকে না, boring লাগে।<br/>
+    ✅ Solution: Bangla summary, English grammar, Bangla MCQ, English paragraph—সব mix করো!<br/><br/>
     <em>Action Plan:</em><br/>
-    1. Do a Bangla summary, then an English grammar fill-in-the-blank.<br/>
-    2. Next, try a Bangla MCQ, then an English paragraph.<br/>
-    3. Keep switching every 2–3 questions.<br/>
-    4. Notice how you remember more and get less bored!<br/><br/>
-    🌟 Mixing it up makes revision fun and effective!`,
+    ১. ১টা Bangla summary, ১টা English grammar fill-in-the-blank।<br/>
+    ২. ১টা Bangla MCQ, ১টা English paragraph।<br/>
+    ৩. প্রতি ২-৩টা problem-এ subject switch করো।<br/><br/>
+    🌟 Mix করলে boredom কমবে, মনে থাকবে বেশি!`,
 
-    `<strong>🧬 Science: Mix MCQs for Mastery</strong><br/>
-    ❌ Problem: Get stuck on one type of question.<br/>
-    ✅ Solution: Mix MCQs from different science subjects!<br/><br/>
+    `<strong>🧬 Science: MCQ Mix Mastery</strong><br/>
+    ❌ Problem: এক type question-এ stuck হয়ে যাও।<br/>
+    ✅ Solution: Physics, Chemistry, Biology—সব MCQ একসাথে solve করো!<br/><br/>
     <em>Action Plan:</em><br/>
-    1. Pick 2 MCQs each from Physics, Chemistry, and Biology.<br/>
-    2. Solve them in a mixed order.<br/>
-    3. Review which ones felt hardest.<br/>
-    4. Next session, start with your weak area.<br/><br/>
-    🧪 Mixing MCQs builds exam confidence!`,
+    ১. Physics, Chemistry, Biology—প্রতিটা থেকে ২টা MCQ নাও।<br/>
+    ২. Random order-এ solve করো।<br/>
+    ৩. Hardest topic-এ বেশি practice করো।<br/><br/>
+    🧪 Mix করলে exam confidence বাড়বে!`,
 
-    `<strong>✏️ Math & English: Alternate for Focus</strong><br/>
-    ❌ Problem: Lose focus after too much of one subject.<br/>
-    ✅ Solution: Alternate between Math and English for better focus!<br/><br/>
+    `<strong>✏️ Math & English: Focus & Fun</strong><br/>
+    ❌ Problem: এক subject পড়তে পড়তে focus হারাও।<br/>
+    ✅ Solution: Math problem, English grammar—alternate করো!<br/><br/>
     <em>Action Plan:</em><br/>
-    1. Do 2 math problems, then 2 English grammar questions.<br/>
-    2. Take a 5-minute break.<br/>
-    3. Repeat the cycle for 3 rounds.<br/>
-    4. Review your answers and celebrate progress!<br/><br/>
-    📝 Alternating keeps your mind fresh!`,
+    ১. ২টা math problem, ২টা English grammar।<br/>
+    ২. ৫ মিনিট break নাও।<br/>
+    ৩. ৩ round repeat করো।<br/>
+    ৪. Answer review করে নিজের progress celebrate করো!<br/><br/>
+    📝 Alternating করলে mind fresh থাকবে!`,
   ],
   examPrepFocus: [
-    "Great for last-month revision before board exams.",
+    "Board exam-এর last month—mix করে revision করো, brain ready থাকবে!",
+    "ICT: Coding, theory, MCQ—সব একসাথে practice করো।",
+    "Math: Algebra, Geometry, Statistics—mix করে solve করো।",
+    "English: Grammar, paragraph, translation—alternate করো।"
   ]
 };
 

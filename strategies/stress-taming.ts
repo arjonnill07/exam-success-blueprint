@@ -5,75 +5,80 @@ import CalmIcon from '../components/icons/CalmIcon';
 const stressTaming: Strategy = {
   id: "stress-taming",
   title: "Stress Taming & Test Anxiety",
-  description: "Master your nerves—turn exam stress into calm, focused energy for top performance!",
+  description: "পরীক্ষার স্ট্রেস? Cool ভাই/আপু mode on! Calm, confident energy দিয়ে exam conquer করো!",
   longDescription: `
-    <p><strong>Quick Take for Your Exams:</strong> Exam jitters? You’re not alone—even toppers feel them! These simple, science-backed techniques help you stay cool and confident, so you can show what you really know when it matters most.</p>
+    <p><strong>Quick Take:</strong> পরীক্ষার আগে হাত-পা ঠান্ডা? বুক ধড়ফড়? Relax, even the toppers feel it! এই science-backed tricks দিয়ে তুমি হবে exam hall-এর calmest legend!</p>
     <p><strong>🧘‍♀️ What Is It?</strong></p>
     <ul>
-      <li>Easy ways to calm your body and mind before and during exams.</li>
-      <li>Includes deep breathing, positive self-talk, and quick mindfulness tricks you can use anywhere—even in the exam hall!</li>
-      <li>Helps you turn stress into focus and confidence, not panic.</li>
+      <li>Easy, proven ways to chill your mind & body—exam hall-এও কাজ করে!</li>
+      <li>Deep breathing, positive self-talk, আর lightning-fast mindfulness—সব ready!</li>
+      <li>Stress কে বানাও তোমার secret weapon—panic নয়, power!</li>
     </ul>
   `,
   category: StrategyCategory.STRESS_MANAGEMENT,
   icon: SparklesIcon,
   visualExplainerComponent: CalmIcon,
-  visualExplainerCaption: "Visualizing Stress Taming: Finding a calm center amidst exam pressures.",
+  visualExplainerCaption: "Calm center খুঁজে পাও—exam pressure-এর মাঝেও!",
   howTo: [
-    "**1. Power Breathing:** Inhale slowly for 4 counts, hold for 4, exhale for 6-8. Do this 3-5 times before entering the exam hall or when you feel anxious.",
-    "**2. Positive Self-Talk:** Swap 'I’ll fail!' for 'I’ve prepared, I can do this!' Write your favorite phrase on a sticky note or in your notebook.",
-    "**3. Mindfulness Mini-Break:** Focus on your senses—what do you see, hear, feel? This grounds you in the present and calms racing thoughts.",
-    "**4. Preparation Ritual:** The night before, pack your bag, lay out your uniform, and review your notes calmly. This routine signals your brain: 'I’m ready.'",
-    "**💡 Try it now:** Before your next study session, do 3 deep breaths and say one positive thing to yourself. Notice the difference!"
+    "**১. Power Breathing (শ্বাসের জাদু):** ৪ সেকেন্ড ধরে শ্বাস নাও, ৪ সেকেন্ড ধরে রাখো, ৬-৮ সেকেন্ডে ছাড়ো। ৩-৫ বার করো—exam hall-এ ঢোকার আগে বা টেনশন লাগলে।",
+    "**২. Positive Self-Talk (নিজেকে hype দাও!):** 'পারব না' বাদ দাও, বলো—'আমি পারি, আমি প্রস্তুত!' তোমার favourite phrase লিখে রাখো—copy, খাতায়, বা মনের ভেতর।",
+    "**৩. Mindfulness Mini-Break (মাথা ঠান্ডা pause):** চোখ বন্ধ করে, ৩টা জিনিস দেখো/শোনো/অনুভব করো। Present-এ থাকো—brain cool হবে!",
+    "**৪. Preparation Ritual (রাতের আগের hero move):** ব্যাগ গুছিয়ে রাখো, uniform বের করো, notes একবার দেখে নাও। Brain বুঝবে—'Ready!'",
+    "**💡 Try it now:** পরের বার পড়তে বসার আগে ৩টা deep breath নাও, আর নিজেকে একটা positive কথা বলো। পার্থক্য টের পাবে!"
   ],
   benefits: [
-    "Reduces exam-day panic and blanking out.",
-    "Boosts focus and memory recall under pressure.",
-    "Makes you feel in control, even in tough situations.",
-    "Turns stress into a source of energy and motivation."
+    "Exam panic কমে যাবে—blank out হবে না!",
+    "Pressure-এও focus & memory sharp থাকবে।",
+    "Tough situation-এও control তোমার হাতে!",
+    "Stress কে energy & motivation-এ বদলে ফেলো।"
   ],
   realWorldExamples: [
-    `<strong>😴 Night Before Exam: Calm & Ready</strong><br/>
-    ❌ Problem: Can’t sleep, mind racing with worries.<br/>
-    ✅ Solution: Use these steps to relax and prepare!<br/><br/>
+    `<strong>🌙 রাতের আগে: Sleep Like a Champ</strong><br/>
+    ❌ Problem: ঘুম আসছে না, মাথায় শুধু চিন্তা।<br/>
+    ✅ Solution: Hero-দের মতো relax করো!<br/><br/>
     <em>Action Plan:</em><br/>
-    1. Try 5 deep breaths or listen to calming music.<br/>
-    2. Pack your bag and lay out your uniform—feel prepared!<br/>
-    3. Remind yourself: “I’ve done my best. Tomorrow is a new chance.”<br/>
-    4. Sleep comes easier when you’re calm and ready.<br/><br/>
-    🌙 You’ll wake up fresh and confident!`,
+    ১. ৫টা deep breath নাও বা calming music শোনো।<br/>
+    ২. ব্যাগ গুছিয়ে, uniform বের করো—feel ready!<br/>
+    ৩. নিজেকে বলো: “আমি চেষ্টা করেছি, কাল নতুন দিন।”<br/>
+    ৪. Calm থাকলে ঘুম আসবেই!<br/><br/>
+    🌟 সকালে উঠবে fresh & confident!`,
 
-    `<strong>📝 Exam Hall Nerves: Stay Cool</strong><br/>
-    ❌ Problem: Heart racing before the first question.<br/>
-    ✅ Solution: Calm your mind and boost your focus!<br/><br/>
+    `<strong>📝 Exam Hall Nerves: Cool Boss Mode</strong><br/>
+    ❌ Problem: প্রশ্ন দেখেই heart beat বেড়ে গেল!<br/>
+    ✅ Solution: Mind cool করো, focus বাড়াও!<br/><br/>
     <em>Action Plan:</em><br/>
-    1. Pause and do 3 slow breaths.<br/>
-    2. Repeat a positive phrase: “I can do this!”<br/>
-    3. Look around and notice 3 things you see or hear.<br/>
-    4. Start your exam with a clear head—you’ve got this!<br/><br/>
-    🏅 You’ll feel in control and ready to succeed!`,
+    ১. Pause দিয়ে ৩টা slow breath নাও।<br/>
+    ২. Positive phrase repeat করো: “I can do this!”<br/>
+    ৩. চারপাশে ৩টা জিনিস দেখো/শোনো।<br/>
+    ৪. Fresh mind-এ exam শুরু করো—legendary performance!<br/><br/>
+    🏅 Control তোমার হাতে, success guaranteed!`,
 
-    `<strong>💬 Study Worries: Turn Stress Into Strength</strong><br/>
-    ❌ Problem: Worrying about tough subjects or low marks.<br/>
-    ✅ Solution: Use positive self-talk to build confidence!<br/><br/>
+    `<strong>💬 Study Worries: Stress কে Motivation বানাও</strong><br/>
+    ❌ Problem: Tough subject বা কম নম্বর নিয়ে চিন্তা।<br/>
+    ✅ Solution: Positive self-talk দিয়ে confidence boost করো!<br/><br/>
     <em>Action Plan:</em><br/>
-    1. Write your worry on a sticky note.<br/>
-    2. Write a positive response next to it (e.g., “I can improve with practice!”).<br/>
-    3. Read your positive note before each study session.<br/>
-    4. Notice your confidence grow with each round!<br/><br/>
-    🌟 Turn worries into motivation!`,
+    ১. চিন্তা লিখে ফেলো sticky note-এ।<br/>
+    ২. পাশে positive response লেখো (যেমন, “Practice করলে improve হবেই!”)।<br/>
+    ৩. পড়ার আগে positive note পড়ো।<br/>
+    ৪. Self-confidence বাড়বে—guaranteed!<br/><br/>
+    🌟 Worry কে motivation-এ turn করো!`,
 
-    `<strong>🧘‍♂️ Quick Calm: Mindfulness Mini-Break</strong><br/>
-    ❌ Problem: Feeling overwhelmed during long study sessions.<br/>
-    ✅ Solution: Take a mindful break to reset your mind!<br/><br/>
+    `<strong>🧘‍♂️ Quick Calm: Mindfulness Break</strong><br/>
+    ❌ Problem: Long study session-এ overwhelmed লাগছে?<br/>
+    ✅ Solution: Mindful break নাও—reset করো mind!<br/><br/>
     <em>Action Plan:</em><br/>
-    1. Pause and focus on your breathing for 1 minute.<br/>
-    2. Notice what you see, hear, and feel around you.<br/>
-    3. Stretch or walk for 2–3 minutes.<br/>
-    4. Return to your study with a fresh, calm mind.<br/><br/>
-    🧘 Mindful breaks boost focus and reduce stress!`,
+    ১. ১ মিনিট চোখ বন্ধ করে শ্বাসে মন দাও।<br/>
+    ২. চারপাশে কী দেখো, শোনো, অনুভব করো—notice করো।<br/>
+    ৩. ২-৩ মিনিট stretch বা হেঁটে আসো।<br/>
+    ৪. Fresh mind-এ আবার পড়া শুরু করো!<br/><br/>
+    🧘 Mindful break দিলে focus & mood দুই-ই boost হবে!`,
   ],
-  examPrepFocus: []
+  examPrepFocus: [
+    "Math: Exam hall-এ sum ভুলে গেলে, ৩টা deep breath নাও—panic কমবে, formula মনে পড়বে!",
+    "Biology: Nervous লাগলে, চোখ বন্ধ করে নিজের heartbeat শুনো—calm হবে, answer clear হবে!",
+    "Bangla: Essay লেখার আগে positive self-talk—'আমি পারব!'—confidence বাড়াবে!",
+    "ICT: Coding problem-এ stuck? ১ মিনিট mindful pause নাও, fresh mind-এ আবার শুরু করো!"
+  ]
 };
 
 export default stressTaming;

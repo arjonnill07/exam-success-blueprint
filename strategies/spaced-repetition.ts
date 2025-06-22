@@ -4,28 +4,28 @@ import CalendarSpacedIcon from '../components/icons/CalendarSpacedIcon';
 
 const spacedRepetition: Strategy = {
   id: "spaced-repetition",
-  title: "Spaced Repetition (Smart Reviewing)",
-  description: "Review material at increasing intervals to beat forgetting and lock in learning.",
+  title: "Spaced Repetition (স্মার্ট রিভিউ)",
+  description: "স্মার্ট ইন্টারভ্যালে রিভিউ করো—ভুলে যাওয়ার আগেই মনে রাখো, এক্সাম-এ বাজিমাত করো!",
   longDescription: `
     <div class="space-y-3">
-      <div><strong>⏳ What:</strong> Review what you learn at smart intervals—right before you’re about to forget. Each review strengthens your memory for exams!</div>
-      <div><strong>💡 Why it works:</strong> Your brain forgets fast (see the curve below), but every review resets the curve and makes your memory stronger. That’s why toppers don’t cram—they review smartly!</div>
+      <div><strong>⏳ কী:</strong> পড়া শেষ? এবার ভুলে যাওয়ার আগেই, ঠিক সময়ে আবার রিভিউ করো—১ দিন, ৩ দিন, ১ সপ্তাহ, ২ সপ্তাহ পর। প্রতিটা রিভিউ তোমার মেমোরি আরও শক্তিশালী করে!</div>
+      <div><strong>💡 কেন কাজ করে:</strong> আমাদের ব্রেইন খুব দ্রুত ভুলে যায় (নিচের গ্রাফ দেখো), কিন্তু প্রতিবার রিভিউ করলে ভুলে যাওয়ার গ্রাফটা ফ্ল্যাট হয়ে যায়—মেমোরি হয় দারুণ শক্তিশালী। তাই টপাররা শুধু মুখস্থ করে না, স্মার্ট রিভিউ করে!</div>
       <div class="flex flex-col items-center my-4">
         <img src="/images/curve 3.png" alt="Ebbinghaus Forgetting Curve" class="w-full max-w-xs md:max-w-md rounded shadow border border-sky-200 mb-2"/>
-        <span class="text-blue-700 text-xs">The Forgetting Curve: Each review flattens the drop!</span>
+        <span class="text-blue-700 text-xs">ভুলে যাওয়ার গ্রাফ: প্রতিটা রিভিউ মানে কম ভুল!</span>
       </div>
-      <div><strong>⚡ How to use it:</strong>
+      <div><strong>⚡ কিভাবে করবে:</strong>
         <ul class="list-disc list-inside ml-4">
-          <li>First, learn the topic well.</li>
-          <li>Review after 1 day, then 3 days, then a week, then 2 weeks, and so on.</li>
-          <li>Use flashcards or apps (like Anki) to remind you when to review.</li>
+          <li>প্রথমে ভালোভাবে পড়ো, বুঝে নাও।</li>
+          <li>১ দিন পর রিভিউ করো, তারপর ৩ দিন, ১ সপ্তাহ, ২ সপ্তাহ পর—এভাবে বাড়াও।</li>
+          <li>ফ্ল্যাশকার্ড, নোটবুক, বা অ্যাপ (যেমন Anki) ব্যবহার করো—রিমাইন্ডার সেট করো।</li>
         </ul>
       </div>
       <div class="bg-sky-50 border-l-4 border-sky-400 p-2 rounded">
-        <strong>Try it now:</strong> After learning a new Math formula or English word, set reminders to review it tomorrow, in 3 days, and next week. Watch how it sticks!
+        <strong>এখনই চেষ্টা করো:</strong> আজকে শেখা নতুন ম্যাথ ফর্মুলা বা ইংরেজি শব্দ—আগামীকাল, ৩ দিন পর, ১ সপ্তাহ পর রিভিউ করো। দেখবে, সহজে ভুলবে না!
       </div>
       <div class="text-blue-700 text-sm mt-2">
-        <strong>Real-world Eureka:</strong> Think of your memory like a leaky bucket. If you pour in water (review) just before it’s empty, you never run dry! That’s how toppers remember so much for board exams and beyond.
+        <strong>রিয়েল লাইফ টিপস:</strong> তোমার মেমোরি একটা ফুটো বালতির মতো—ঠিক সময়ে পানি (রিভিউ) দিলে কখনো শুকাবে না! এভাবেই টপাররা সব মনে রাখে, শুধু এক্সাম না, লাইফেও。
       </div>
     </div>
   `,
@@ -34,60 +34,60 @@ const spacedRepetition: Strategy = {
   visualExplainerComponent: CalendarSpacedIcon,
   visualExplainerCaption: "Visualizing Spaced Repetition: Reviewing material at increasing time intervals.",
   howTo: [
-    "Learn the material well the first time.",
-    "Review after 1 day, then 3 days, then a week, then 2 weeks, etc.",
-    "Use flashcards or spaced repetition apps to help you remember when to review.",
-    "Each review makes your memory stronger and longer-lasting.",
+    "১. প্রথমবার ভালোভাবে পড়ো, বুঝে নাও।",
+    "২. ১ দিন পর রিভিউ করো, তারপর ৩ দিন, ১ সপ্তাহ, ২ সপ্তাহ পর—এভাবে বাড়াও।",
+    "৩. ফ্ল্যাশকার্ড, নোটবুক, বা স্পেসড রিভিউ অ্যাপ ব্যবহার করো—কখন রিভিউ করতে হবে মনে করিয়ে দেবে।",
+    "৪. প্রতিটা রিভিউ তোমার মেমোরি আরও শক্তিশালী করবে।"
   ],
   benefits: [
-    "Beats forgetting and helps you remember for exams and life!",
-    "Saves time—no more last-minute cramming.",
-    "Makes revision less stressful and more effective.",
+    "ভুলে যাওয়ার ভয় থাকবে না—এক্সাম আর লাইফে সব মনে থাকবে!",
+    "সময় বাঁচাবে—শেষ মুহূর্তে গলদঘর্ম মুখস্থ নয়!",
+    "রিভিশন হবে সহজ, চাপমুক্ত, আর বেশি কার্যকর।"
   ],
   realWorldExamples: [
-    `<strong>📖 English Vocab: Remember Words for Life</strong><br/>
-    ❌ Problem: Forget new words after a few days.<br/>
-    ✅ Solution: Use spaced repetition to make them stick!<br/><br/>
-    <em>Action Plan:</em><br/>
-    1. Learn 5 new words today.<br/>
-    2. Review them tomorrow, then again after 3 days, then a week.<br/>
-    3. Use flashcards or a notebook to track your reviews.<br/>
-    4. Each review makes the words stick—watch your vocab grow!<br/><br/>
-    🌟 You’ll remember words for exams and beyond!`,
+    `<strong>📖 ইংরেজি শব্দ: আজীবন মনে রাখো</strong><br/>
+    ❌ সমস্যা: নতুন শব্দ কয়েকদিন পরেই ভুলে যাও।<br/>
+    ✅ সমাধান: স্পেসড রিভিউ দিয়ে শব্দগুলো পাকাপোক্ত করো!<br/><br/>
+    <em>করণীয়:</em><br/>
+    ১. আজ ৫টা নতুন শব্দ শেখো।<br/>
+    ২. আগামীকাল, ৩ দিন পর, ১ সপ্তাহ পর রিভিউ করো।<br/>
+    ৩. ফ্ল্যাশকার্ড বা নোটবুক ব্যবহার করো।<br/>
+    ৪. প্রতিটা রিভিউ শব্দগুলোকে পাকাপোক্ত করবে—তোমার ভোকাব বাড়বে!<br/><br/>
+    🌟 এক্সাম আর লাইফে শব্দ থাকবে মনে!`,
 
-    `<strong>📅 History: Dates & Events That Stick</strong><br/>
-    ❌ Problem: Forget important dates right before the exam.<br/>
-    ✅ Solution: Review at smart intervals to lock them in!<br/><br/>
-    <em>Action Plan:</em><br/>
-    1. Write down 5 key dates/events from your chapter.<br/>
-    2. Review them after 1 day, then 3 days, then a week.<br/>
-    3. Use a calendar or app to set reminders.<br/>
-    4. Quiz yourself each time—see your memory improve!<br/><br/>
-    🗓️ Spaced reviews make history easy!`,
+    `<strong>📅 ইতিহাস: তারিখ ও ঘটনা সহজে মনে রাখো</strong><br/>
+    ❌ সমস্যা: এক্সামের আগে তারিখ ভুলে যাও।<br/>
+    ✅ সমাধান: স্মার্ট ইন্টারভ্যালে রিভিউ করো!<br/><br/>
+    <em>করণীয়:</em><br/>
+    ১. অধ্যায় থেকে ৫টা গুরুত্বপূর্ণ তারিখ/ঘটনা লিখে রাখো।<br/>
+    ২. ১ দিন, ৩ দিন, ১ সপ্তাহ পর রিভিউ করো।<br/>
+    ৩. ক্যালেন্ডার বা অ্যাপে রিমাইন্ডার দাও।<br/>
+    ৪. নিজেকে কুইজ করো—দেখবে, মেমোরি আগের চেয়ে অনেক ভালো!<br/><br/>
+    🗓️ স্পেসড রিভিউ ইতিহাসকে সহজ করে!`,
 
-    `<strong>🧬 Science: Mastering Diagrams</strong><br/>
-    ❌ Problem: Diagrams fade from memory after a week.<br/>
-    ✅ Solution: Use spaced repetition to keep them fresh!<br/><br/>
-    <em>Action Plan:</em><br/>
-    1. Draw the diagram and label all parts.<br/>
-    2. Review and redraw after 1 day, then 3 days, then a week.<br/>
-    3. Cover the labels and test yourself each time.<br/>
-    4. Add a new detail or color with each review.<br/><br/>
-    🎨 Repetition makes diagrams stick for exams!`,
+    `<strong>🧬 বিজ্ঞান: ডায়াগ্রাম মাস্টারি</strong><br/>
+    ❌ সমস্যা: ডায়াগ্রাম কয়েকদিন পরেই ভুলে যাও।<br/>
+    ✅ সমাধান: স্পেসড রিভিউ দিয়ে সব ফ্রেশ রাখো!<br/><br/>
+    <em>করণীয়:</em><br/>
+    ১. ডায়াগ্রাম আঁকো, সব অংশ লেবেল দাও।<br/>
+    ২. ১ দিন, ৩ দিন, ১ সপ্তাহ পর আবার আঁকো।<br/>
+    ৩. লেবেল ঢেকে নিজেকে টেস্ট করো।<br/>
+    ৪. প্রতিবার নতুন কিছু যোগ করো—রঙ, ডিটেইল, ইত্যাদি।<br/><br/>
+    🎨 রিভিউ করলে ডায়াগ্রাম থাকবে মনে!`,
 
-    `<strong>📝 Bangla: Remembering Grammar Rules</strong><br/>
-    ❌ Problem: Grammar rules slip away before the test.<br/>
-    ✅ Solution: Review rules at spaced intervals!<br/><br/>
-    <em>Action Plan:</em><br/>
-    1. List 3–5 grammar rules you want to master.<br/>
-    2. Review them after 1 day, then 3 days, then a week.<br/>
-    3. Write a sentence using each rule during every review.<br/>
-    4. Quiz yourself or ask a friend to check your sentences.<br/><br/>
-    ✍️ Spaced repetition makes grammar easy!`,
+    `<strong>📝 বাংলা: ব্যাকরণ নিয়ম মনে রাখো</strong><br/>
+    ❌ সমস্যা: ব্যাকরণ নিয়ম এক্সামের আগে ভুলে যাও।<br/>
+    ✅ সমাধান: স্পেসড রিভিউ করো!<br/><br/>
+    <em>করণীয়:</em><br/>
+    ১. ৩–৫টা নিয়ম লিখে রাখো।<br/>
+    ২. ১ দিন, ৩ দিন, ১ সপ্তাহ পর রিভিউ করো।<br/>
+    ৩. প্রতিটা রিভিউতে নিয়ম দিয়ে বাক্য লেখো।<br/>
+    ৪. নিজেকে কুইজ করো বা বন্ধুকে দেখাও।<br/><br/>
+    ✍️ স্পেসড রিভিউ ব্যাকরণকে সহজ করে!`
   ],
   examPrepFocus: [
-    "Perfect for long-term retention and exam prep.",
-    "Great for vocab, formulas, and key facts.",
+    "দীর্ঘমেয়াদী মনে রাখার জন্য এবং এক্সাম প্রস্তুতিতে পারফেক্ট!",
+    "ভোকাব, সূত্র, গুরুত্বপূর্ণ তথ্য—সবকিছুর জন্য দারুণ!"
   ]
 };
 
