@@ -4,7 +4,7 @@ import TargetIcon from '../components/icons/TargetIcon';
 const deliberatePractice: Strategy = {
   id: "deliberate-practice",
   title: "Deliberate Practice",
-  description: "Practice like a topper: target your weak spots, get feedback, and level up for exam day!",
+  description: "Turn your weaknesses into strengths with focused practice!",
   longDescription: `
     <p><strong>Quick Take for Your Exams:</strong> Want to turn your biggest weaknesses into strengths? Deliberate Practice is how toppers do it—by zooming in on their mistakes and fixing them, one by one. It’s not about doing more, but doing what matters most!</p>
     <p><strong>🎯 What Is It?</strong></p>
@@ -20,58 +20,58 @@ const deliberatePractice: Strategy = {
   visualExplainerComponent: TargetIcon,
   visualExplainerCaption: "Visualizing Deliberate Practice: Focused effort on specific weaknesses to hit the target of mastery.",
   howTo: [
-    "**1. Find Your Weakest Link:** Review your last exam or mock test. Which topics or question types cost you the most marks?",
-    "**2. Set a Mini-Goal:** Instead of 'get better at math,' try 'solve 5 integration MCQs without silly mistakes.'",
-    "**3. Practice with Purpose:** Work only on that weak area. Use a timer and keep distractions away.",
-    "**4. Get Instant Feedback:** Check answers right away. For every mistake, ask: Why did I miss this? How can I avoid it next time?",
-    "**💡 Try it now:** Pick your weakest chapter and set a 30-minute deliberate practice session. Track your progress—see how fast you improve!"
+    "১. তোমার সবচেয়ে দুর্বল জায়গা খুঁজে বের করো—শেষ exam বা mock test-এর ভুলগুলো দেখো।",
+    "২. Mini-goal ঠিক করো—যেমন, '৫টা integration MCQ ভুল না করে solve করব'।",
+    "৩. শুধু ওই topic-এ ২০-৩০ মিনিট practice করো, timer দিয়ে, distraction-free!",
+    "৪. সাথে সাথে answer check করো—ভুল হলে, কেন হলো বুঝে নাও, আরেকটা similar problem try করো।",
+    "৫. Progress লিখে রাখো—দেখবে, ধাপে ধাপে improvement!"
   ],
   benefits: [
-    "Transforms weaknesses into strengths for exams.",
-    "Builds true confidence—no more exam surprises!",
-    "Saves time by focusing only on what matters most.",
-    "Makes practice feel like a game or mission."
+    "দুর্বলতা শক্তিতে বদলে যাবে—exam-এ আর ভয় নেই!",
+    "Practice হবে mission-এর মতো—boring লাগবে না।",
+    "Time বাঁচবে—শুধু দরকারি জিনিসে ফোকাস।",
+    "Confidence বাড়বে—surprise কমবে!"
   ],
   realWorldExamples: [
-    `<strong>🎯 Math Power-Up: Mastering Quadratic Equations</strong><br/>
-    ❌ Problem: Keep making the same mistakes in algebra problems.<br/>
-    ✅ Solution: Use deliberate practice to target your weak spots!<br/><br/>
+    `<strong>🎯 Math: Sign Mistake Fixer</strong><br/>
+    ❌ সমস্যা: Algebra-তে বারবার sign ভুল করো?<br/>
+    ✅ Solution: শুধু sign mistake-এর problem আলাদা করে practice করো!<br/><br/>
     <em>Action Plan:</em><br/>
-    1. Pick 3 problems you got wrong before.<br/>
-    2. Solve them again, checking each step.<br/>
-    3. Review the answer key and note your mistakes.<br/>
-    4. Try a similar problem right away.<br/><br/>
-    🏆 Each round makes you stronger and more confident!`,
+    ১. পুরনো exam-এর sign mistake গুলো খুঁজে বের করো।<br/>
+    ২. ৫টা similar problem timer দিয়ে solve করো।<br/>
+    ৩. সাথে সাথে answer check করো, ভুল হলে কারণ লিখে রাখো।<br/>
+    ৪. পরের দিন আবার try করো।<br/><br/>
+    🏆 এক সপ্তাহে sign mistake কমে যাবে!`,
 
-    `<strong>📝 English Writing: Essay Introduction Practice</strong><br/>
-    ❌ Problem: Struggle to start essays or get stuck on the intro.<br/>
-    ✅ Solution: Practice just the introduction, one step at a time!<br/><br/>
+    `<strong>📝 English: Only Conclusion Drill</strong><br/>
+    ❌ সমস্যা: Essay-এর conclusion লিখতে আটকে যাও?<br/>
+    ✅ Solution: শুধু conclusion practice করো, feedback নাও!<br/><br/>
     <em>Action Plan:</em><br/>
-    1. Write the intro for 2 different essay topics.<br/>
-    2. Ask a friend or teacher for feedback.<br/>
-    3. Rewrite the intro using their advice.<br/>
-    4. Repeat for the next section.<br/><br/>
-    ✍️ Each try makes you more confident and creative!`,
+    ১. ২টা essay topic-এর conclusion লিখো।<br/>
+    ২. Friend বা teacher-কে দেখাও, feedback নাও।<br/>
+    ৩. Feedback দিয়ে rewrite করো।<br/>
+    ৪. পরের দিন নতুন topic-এ repeat করো।<br/><br/>
+    ✍️ Conclusion-এ confident হবে!`,
 
-    `<strong>🔬 Science Success: Physics MCQ Mastery</strong><br/>
-    ❌ Problem: Lose marks on tricky MCQs in Physics or Chemistry.<br/>
-    ✅ Solution: Practice with purpose and instant feedback!<br/><br/>
+    `<strong>🔬 Science: Diagram Label Drill</strong><br/>
+    ❌ সমস্যা: Biology-তে diagram label ভুলে যাও?<br/>
+    ✅ Solution: শুধু label practice করো, সাথে সাথে check করো!<br/><br/>
     <em>Action Plan:</em><br/>
-    1. Find 5 MCQs from your last test or textbook.<br/>
-    2. Solve them and check your answers right away.<br/>
-    3. For every mistake, ask: Why did I miss this? How can I avoid it next time?<br/>
-    4. Try a similar MCQ to reinforce your learning.<br/><br/>
-    🧪 Deliberate practice makes science easy!`,
+    ১. ৩টা diagram (যেমন, heart, leaf, digestive system) আঁকো।<br/>
+    ২. Label দাও, answer key দিয়ে মিলিয়ে দেখো।<br/>
+    ৩. ভুল হলে, কারণ লিখে রাখো।<br/>
+    ৪. Similar diagram আবার practice করো।<br/><br/>
+    🧪 Label ভুল কমে যাবে!`,
 
-    `<strong>📚 Bangla: Mastering Grammar or Literature</strong><br/>
-    ❌ Problem: Struggle with certain grammar rules or story questions.<br/>
-    ✅ Solution: Target your weak spots with focused practice!<br/><br/>
+    `<strong>📚 Bangla: Grammar Rule Target</strong><br/>
+    ❌ সমস্যা: Bangla grammar-এর নির্দিষ্ট rule বারবার ভুল করো?<br/>
+    ✅ Solution: শুধু ওই rule-এর example practice করো!<br/><br/>
     <em>Action Plan:</em><br/>
-    1. Pick 2–3 grammar rules or story questions you find hard.<br/>
-    2. Practice them and check your answers.<br/>
-    3. Review mistakes and try again the next day.<br/>
-    4. Celebrate progress with each round!<br/><br/>
-    🌟 Focused practice builds exam confidence!`,
+    ১. যে rule-এ ভুল করো, ৩টা example practice করো।<br/>
+    ২. সাথে সাথে answer check করো।<br/>
+    ৩. ভুল হলে, কারণ লিখে রাখো।<br/>
+    ৪. পরের দিন আবার try করো।<br/><br/>
+    🌟 Grammar-এ mastery আসবে!`
   ],
   examPrepFocus: []
 };
