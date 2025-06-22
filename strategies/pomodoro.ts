@@ -3,87 +3,92 @@ import ClockIcon from '../components/icons/ClockIcon';
 
 const pomodoro: Strategy = {
   id: "pomodoro",
-  title: "Pomodoro Technique",
-  description: "Work in focused 25-minute intervals with short breaks.",
+  title: "Pomodoro Technique (পড়ার সুপারপাওয়ার!)",
+  description: "২৫ মিনিট একদম ফোকাস, তারপর ছোট্ট break—এইভাবেই ভায়া বাজিমাত !",
   longDescription: `
-    <p><strong>Quick Take for Your Exams:</strong><br/>
-    Struggling to focus?<br/>
-    Long study hours but little progress? Pomodoro breaks your study into focused bursts to keep you sharp and energized.</p>
-    <p><strong>🕒 What Is It?</strong></p>
+    <p><strong>ছোট্ট বন্ধু, মনোযোগ ধরে রাখতে কষ্ট হচ্ছে?</strong><br/>
+    ঘণ্টার পর ঘণ্টা পড়েও কিছু মনে থাকছে না? Pomodoro-র magic দিয়ে পড়া হবে cool, মাথা থাকবে fresh!</p>
+    <p><strong>🕒 Pomodoro কী?</strong></p>
     <ul>
-      <li>Study for 25 minutes with zero distractions.</li>
-      <li>Take a 3–5 minute break to recharge.</li>
-      <li>After 4 sessions, take a longer break (15–30 mins).</li>
+      <li>২৫ মিনিট একদম ফোকাস—মোবাইল silent, বন্ধুদের group mute!</li>
+      <li>তারপর ৩–৫ মিনিটের মিনি break—একটু হাঁটো, পানি খাও, জানালায় তাকাও।</li>
+      <li>এভাবে ৪ বার পড়া হলে, ১৫–৩০ মিনিটের বড় break—cricket, adda, snack, যা খুশি!</li>
     </ul>
+    <p>এইভাবে পড়লে brain আর body—দুটোই থাকবে energetic! Pomodoro মানে—study like a superhero!</p>
   `,
   category: StrategyCategory.TIME_MANAGEMENT,
   icon: ClockIcon,
   visualExplainerComponent: ClockIcon,
-  visualExplainerCaption: "Visualizing Pomodoro: Focused work sprints followed by short, refreshing breaks.",
+  visualExplainerCaption: "Pomodoro মানে—একটু ফোকাস, একটু মজা, সব মিলিয়ে পড়াশোনায় full রাপ্পারাপ্পা !",
   howTo: [
-    "**🎯 Pick One Clear Goal**<br/>Example: “Solve 10 physics MCQs” or “Revise math formulas from Chapter 7”",
-    "**⏱️ Set a 25-Minute Timer**<br/>This is your full-focus zone. No phone, no tabs, just the task.",
-    "**🔥 Study with Intensity**<br/>If your mind wanders, gently bring it back. Keep a scratch pad to note distractions.",
-    "**🧘 Take a 5-Minute Break**<br/>Get up. Stretch. Drink water. Don’t scroll!",
-    "**🔁 Repeat**<br/>After 4 Pomodoros, take a longer break. Let your brain fully recharge."
+    "🎯 **একটা clear goal ঠিক করো**<br/>যেমন: ‘১০টা physics MCQ solve করব’ বা ‘Chapter 7-এর math formula revise করব’।",
+    "⏱️ **২৫ মিনিটের timer দাও**<br/>এই সময়টা শুধু পড়া—মোবাইল দূরে, মনোযোগ একদম sharp!",
+    "🔥 **পুরো মন দিয়ে পড়ো**<br/>মন অন্যদিকে গেলে, scratch pad-এ distraction লিখে রাখো, পরে দেখবে!",
+    "🧘 **৫ মিনিটের break**<br/>উঠে দাঁড়াও, পানি খাও, জানালায় তাকাও—কিন্তু scroll না!",
+    "🔁 **Repeat করো**<br/>৪টা Pomodoro হলে, বড় break—cricket, snack, গান, যা খুশি! Brain recharge, তারপর আবার ready!"
   ],
-  benefits: [],
-realWorldExamples: [
-  `<strong>🕒 Physics: Master a Chapter in Less Time</strong><br/>
-  ❌ Problem: You study “Motion” for hours but can’t recall Newton’s Laws the next day.<br/>
-  ✅ Solution: Use 4 Pomodoros (2 hours) for focused, effective learning!<br/><br/>
-  <em>Action Plan:</em><br/>
-  1. Pomodoro 1: Read and understand Newton’s Laws.<br/>
-  2. Pomodoro 2: Watch a short concept video, then solve 3 examples.<br/>
-  3. Pomodoro 3: Practice MCQs from past questions.<br/>
-  4. Pomodoro 4: Write key points and formulas from memory.<br/>
-  5. Take short breaks between each Pomodoro.<br/><br/>
-  🔁 You’ll remember more and feel less tired!`,
+  benefits: [
+    "পড়া হবে super effective—কম সময়ে বেশি মনে থাকবে!",
+    "Break-এর জন্য মাথা থাকবে cool, stress কমবে।",
+    "Distraction কমবে, পড়া হবে game-এর মতো!",
+    "Exam-এর আগে energy থাকবে—burnout হবে না!"
+  ],
+  realWorldExamples: [
+    `<strong>🕒 Physics: কম সময়ে পুরো chapter শেষ!</strong><br/>
+    ❌ সমস্যা: “Motion” পড়ছো, কিন্তু Newton’s Laws মনে থাকছে না।<br/>
+    ✅ Solution: ৪টা Pomodoro (২ ঘণ্টা)—দেখো, কেমন মনে থাকে!<br/><br/>
+    <em>Action Plan:</em><br/>
+    ১. Pomodoro 1: Newton’s Laws পড়ো, বুঝে নাও।<br/>
+    ২. Pomodoro 2: ছোট্ট video দেখো, ৩টা example solve করো।<br/>
+    ৩. Pomodoro 3: MCQ practice করো।<br/>
+    ৪. Pomodoro 4: Key points আর formula লিখে ফেলো।<br/>
+    ৫. প্রতিটা Pomodoro-র পর ছোট্ট break—জানালায় তাকাও, পানি খাও!<br/><br/>
+    🔁 দেখবে, পড়া মনে থাকবে, মাথা থাকবে cool!`,
 
-  `<strong>📐 Math: Trigonometry Made Simple</strong><br/>
-  ❌ Problem: Trigonometry feels confusing and overwhelming.<br/>
-  ✅ Solution: Break it into 3 Pomodoros for clarity and confidence!<br/><br/>
-  <em>Action Plan:</em><br/>
-  1. Pomodoro 1: Memorize basic formulas and draw the table.<br/>
-  2. Pomodoro 2: Solve 5 textbook examples.<br/>
-  3. Pomodoro 3: Write formulas and solve 3 problems from memory.<br/>
-  4. Review and relax after each session.<br/><br/>
-  📈 After 3 Pomodoros, the chapter will feel much easier!`,
+    `<strong>📐 Math: Trigonometry আর ভয় নয়!</strong><br/>
+    ❌ সমস্যা: Trigonometry শুনলেই মাথা ঘুরে যায়?<br/>
+    ✅ Solution: ৩টা Pomodoro-তে সব সহজ!<br/><br/>
+    <em>Action Plan:</em><br/>
+    ১. Pomodoro 1: Formula মুখস্থ করো, table আঁকো।<br/>
+    ২. Pomodoro 2: ৫টা example solve করো।<br/>
+    ৩. Pomodoro 3: Formula লিখে, ৩টা problem নিজের থেকে করো।<br/>
+    ৪. প্রতিটা session-এর পর একটু relax!<br/><br/>
+    📈 ৩টা Pomodoro-র পর, chapter, একেবারে pocket-এর মধ্যে!`,
 
-  `<strong>📝 Bangla: Write an Essay Without Stress</strong><br/>
-  ❌ Problem: You spend too long on essays and feel stuck.<br/>
-  ✅ Solution: Structure your writing with Pomodoros!<br/><br/>
-  <em>Action Plan:</em><br/>
-  1. Pomodoro 1: Brainstorm and list 5 key points.<br/>
-  2. Pomodoro 2: Draft the essay (intro, body, conclusion).<br/>
-  3. Pomodoro 3: Revise grammar, improve words, and add quotes.<br/>
-  4. Take a break and review your work.<br/><br/>
-  🧠 You’ll finish faster and with less stress!`,
+    `<strong>📝 Bangla: Essay লেখা হবে cool!</strong><br/>
+    ❌ সমস্যা: Essay লিখতে গিয়ে stuck হয়ে যাচ্ছো?<br/>
+    ✅ Solution: Pomodoro-তে essay লেখা হবে game-এর মতো!<br/><br/>
+    <em>Action Plan:</em><br/>
+    ১. Pomodoro 1: ৫টা main point brainstorm করো।<br/>
+    ২. Pomodoro 2: Draft লেখো (intro, body, conclusion)।<br/>
+    ৩. Pomodoro 3: Grammar, word, quote ঠিক করো।<br/>
+    ৪. Break নিয়ে নিজের লেখা দেখে নাও।<br/><br/>
+    🧠 দেখবে, essay লেখা super easy!`,
 
-  `<strong>🧬 Biology: Memorize Diagrams Effectively</strong><br/>
-  ❌ Problem: You read about the digestive system but forget the diagram in class.<br/>
-  ✅ Solution: Use Pomodoros to memorize and recall!<br/><br/>
-  <em>Action Plan:</em><br/>
-  1. Pomodoro 1: Read and draw the full diagram, labeling each part.<br/>
-  2. Take a 5-minute break (walk, stretch, or relax).<br/>
-  3. Pomodoro 2: Redraw from memory and list each organ’s function.<br/>
-  4. Add MCQs from past papers for extra practice.<br/><br/>
-  🔍 Repeat the next day for mastery!`,
+    `<strong>🧬 Biology: Diagram মুখস্থ হবে মজা করে!</strong><br/>
+    ❌ সমস্যা: Digestive system পড়েছো, কিন্তু diagram ভুলে যাচ্ছো?<br/>
+    ✅ Solution: Pomodoro-তে diagram মনে থাকবে!<br/><br/>
+    <em>Action Plan:</em><br/>
+    ১. Pomodoro 1: Diagram পড়ো, আঁকো, label দাও।<br/>
+    ২. ৫ মিনিট break—walk, stretch, relax!<br/>
+    ৩. Pomodoro 2: মনে করে আবার আঁকো, organ-এর কাজ লিখো।<br/>
+    ৪. MCQ practice করো।<br/><br/>
+    🔍 পরের দিন repeat করো—diagram হবে pocket-এর মধ্যে!`,
 
-  `<strong>⚖️ Balanced Study-Life Routine</strong><br/>
-  ❌ Problem: Studying late leaves you tired and unfocused.<br/>
-  ✅ Solution: Use Pomodoros to balance study and rest!<br/><br/>
-  <em>Action Plan:</em><br/>
-  1. Pomodoro 1: Focus on English comprehension.<br/>
-  2. Pomodoro 2: Practice Physics MCQs.<br/>
-  3. Pomodoros 3 & 4: Work on Bangla grammar and a model test.<br/>
-  4. Use breaks for snacks, prayer, or rest.<br/><br/>
-  🎯 Result: High focus, no burnout, and time for yourself after study!`,
-],
-
-
-  examPrepFocus: [],
-  // interactiveComponent: <PomodoroTimer />
+    `<strong>⚖️ Study-Life Balance: পড়া, মজা, সব একসাথে!</strong><br/>
+    ❌ সমস্যা: Late-night পড়া, মাথা গরম?<br/>
+    ✅ Solution: Pomodoro-তে পড়া আর মজা—দুটোই!<br/><br/>
+    <em>Action Plan:</em><br/>
+    ১. Pomodoro 1: English comprehension পড়ো।<br/>
+    ২. Pomodoro 2: Physics MCQ practice করো।<br/>
+    ৩. Pomodoro 3 & 4: Bangla grammar আর model test practice।<br/>
+    ৪. Break-এ snacks, prayer, বা একটু rest!<br/><br/>
+    🎯 Result: Focus থাকবে, energy থাকবে, পড়া হবে cool!`
+  ],
+  examPrepFocus: [
+    "Board exam, model test, revision—সবকিছুর জন্য Pomodoro technique দারুণ!",
+    "পড়ার মাঝে ছোট্ট break—brain থাকবে fresh, তুমিও থাকবে champ!"
+  ]
 };
 
 export default pomodoro;
