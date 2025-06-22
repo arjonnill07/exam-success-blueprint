@@ -35,6 +35,18 @@ const chunking: Strategy = {
     "Long answer-এ connect করতে পারবে—topper-দের secret!"
   ],
   realWorldExamples: [
+
+    `<strong>📚 History: Long Chapter Chunking</strong><br/>
+    ❌ সমস্যা: Liberation War বা Mughal Empire-এর বিশাল chapter—সব event, date, leader গুলিয়ে যায়?<br/>
+    ✅ Solution: Chunk করে timeline, leader, event আলাদা করো!<br/><br/>
+    <em>Action Plan:</em><br/>
+    ১. Timeline chunk: Main year/period গুলো আলাদা করো।<br/>
+    ২. Leader chunk: Key leader-দের নাম, কাজ লিখে রাখো।<br/>
+    ৩. Event chunk: Important event গুলো আলাদা করো।<br/>
+    ৪. সব chunk revise করে, নিজের ভাষায় গল্প বলো—বন্ধুকে না পেলে, আয়নায় বলো!<br/><br/>
+    🗺️ Chunk-wise পড়লে, বড় chapter-ও মনে থাকবে!`,
+
+
     `<strong>🔬 Chemistry: Periodic Table Chunking—Like a Superhero Map!</strong><br/>
     ❌ সমস্যা: Periodic table-এর সব element, group, property—একসাথে পড়লে মাথা ঘুরে যায়, মনে হয় Avengers Assemble!<br/>
     ✅ Solution: Chunk করে পড়ো, মনে থাকবে super easy—আর Avengers-এর মতো group-ও চিনে ফেলো!<br/><br/>
@@ -59,15 +71,7 @@ const chunking: Strategy = {
     ৪. সব chunk connect করে পুরো process revise করো।<br/><br/>
     🧪 Chunking করলে, বড় equation-ও মনে থাকবে!`,
 
-    `<strong>📚 History: Long Chapter Chunking</strong><br/>
-    ❌ সমস্যা: Liberation War বা Mughal Empire-এর বিশাল chapter—সব event, date, leader গুলিয়ে যায়?<br/>
-    ✅ Solution: Chunk করে timeline, leader, event আলাদা করো!<br/><br/>
-    <em>Action Plan:</em><br/>
-    ১. Timeline chunk: Main year/period গুলো আলাদা করো।<br/>
-    ২. Leader chunk: Key leader-দের নাম, কাজ লিখে রাখো।<br/>
-    ৩. Event chunk: Important event গুলো আলাদা করো।<br/>
-    ৪. সব chunk revise করে, নিজের ভাষায় গল্প বলো—বন্ধুকে না পেলে, আয়নায় বলো!<br/><br/>
-    🗺️ Chunk-wise পড়লে, বড় chapter-ও মনে থাকবে!`,
+
 
     `<strong>📐 Math: Formula & Problem Chunking</strong><br/>
     ❌ সমস্যা: Algebra-র formula, theorem, আর problem—সব একসাথে পড়লে মাথা গুলিয়ে যায়?<br/>
