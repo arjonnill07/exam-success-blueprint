@@ -10,63 +10,59 @@ import ZapIcon from '../components/icons/ZapIcon';
 import LightbulbIcon from '../components/icons/LightbulbIcon';
 
 const studentStories = [
-  {
-    name: 'Ayesha (Class 10)',
-    story: '“I used to memorize everything, but when I started drawing mind maps and teaching my friends, I finally understood Chemistry. My marks jumped from 60% to 85%!”',
-  },
-  {
-    name: 'Rahim (Class 12)',
-    story: '“Active recall felt weird at first, but quizzing myself every week made the formulas stick. I felt confident walking into the exam.”',
-  },
+
 ];
 
 const quickTips = [
-  'Break big chapters into small, daily goals.',
-  'Explain what you learn to a friend or even your pillow!',
-  'Use color and diagrams to make notes memorable.',
-  'Test yourself before the exam tests you.',
+  'বড় chapter? ছোট ছোট goal-এ ভাগ করো—আজ একটু, কাল একটু, শেষে boss feeling!',
+  'যা শিখছো, বন্ধু বা pillow-কে explain করো—না পারলে, আবার পড়ো!',
+  'Color, diagram, meme—notes memorable বানাও!',
+  'Exam-এর আগে নিজেকে test করো—surprise zero, confidence hero!',
 ];
 
 const roadmapSteps = [
   {
-    label: '1. Understand Concepts',
-    desc: 'Focus on WHY, not just WHAT. Use the Feynman Technique or mind maps.',
+    label: '১. Concept Ninja',
+    desc: 'WHY বুঝো, শুধু WHAT নয়! Feynman Technique বা mind map use করো—concept clear মানে subject তোমার!',
     icon: <BrainIcon className="w-7 h-7 text-blue-500" />,
+    buddy: '“বন্ধুকে explain করতে পারলে—concept boss!”'
   },
   {
-    label: '2. Practice & Recall',
-    desc: 'Quiz yourself, solve problems, and use spaced repetition.',
+    label: '২. Practice Pro',
+    desc: 'Quiz, problem solve, spaced repetition—practice মানে brain gym!',
     icon: <BookOpenIcon className="w-7 h-7 text-green-500" />,
+    buddy: '“নিজেকে quiz করো—mistake মানে next level!”'
   },
   {
-    label: '3. Review & Reflect',
-    desc: 'Check mistakes, ask questions, and adjust your plan.',
+    label: '৩. Review Hero',
+    desc: 'ভুল ধরো, প্রশ্ন করো, plan adjust করো—mistake মানে upgrade!',
     icon: <LightbulbIcon className="w-7 h-7 text-yellow-500" />,
+    buddy: '“ভুল মানে ভয় না—next time boss move!”'
   },
 ];
 
 const faq = [
   {
-    q: 'What if I forget everything on exam day?',
-    a: 'Take a deep breath, start with easy questions, and trust your preparation. Use quick recall triggers like mnemonics or diagrams.',
+    q: 'Exam hall-এ সব ভুলে গেলে কী করব?',
+    a: 'গভীর শ্বাস নাও, সহজ question দিয়ে শুরু করো, নিজের preparation-এ বিশ্বাস রাখো। Mnemonic বা diagram মনে করো—panic মানে pause, not game over!',
   },
   {
-    q: 'How do I stay motivated for boring subjects?',
-    a: 'Set small rewards, study with a friend, or turn it into a game. Remind yourself of your bigger goal!',
+    q: 'Boring subject-এ motivation পাই না—help!',
+    a: 'ছোট reward set করো, বন্ধু নিয়ে পড়ো, game বানিয়ে নাও। বড় goal মনে রাখো—তুমি পারবে!',
   },
 ];
 
 const dos = [
-  'Summarize each topic in your own words.',
-  'Practice with past papers and quizzes.',
-  'Take short breaks to recharge.',
-  'Ask for help when stuck.',
+  'নিজের ভাষায় topic explain করো—brain-এ বসে যাবে!',
+  'Past paper, quiz—practice, practice, practice!',
+  'Short break নাও—brain recharge!',
+  'Stuck? Help চাও—cool ভাই/আপু-রা help করে!',
 ];
 const donts = [
-  "Cram everything the night before.",
-  "Just read without testing yourself.",
-  "Skip sleep for extra study.",
-  "Ignore topics you find hard.",
+  'Last night hero হয়ো না—brain hang হবে!',
+  'শুধু পড়া নয়—নিজেকে test করো!',
+  'ঘুম skip করলে brain lag—no superpower!',
+  'Hard topic ignore করলে exam-এ surprise!',
 ];
 
 const SingleSubjectMasteryPage: React.FC = () => {
@@ -87,40 +83,44 @@ const SingleSubjectMasteryPage: React.FC = () => {
     <div className="animate-fadeIn">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-100 to-sky-200 py-12 px-4 rounded-b-3xl shadow mb-10 text-center">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-900 mb-4">Master Any Subject</h1>
-        <p className="text-xl md:text-2xl text-blue-700 mb-6 max-w-2xl mx-auto">“Success is the sum of small efforts, repeated day in and day out.”</p>
-        <a href="#roadmap" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg transition">Start Here</a>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-900 mb-4">Subject Mastery: Cool ভাই/আপু Style!</h1>
+        <p className="text-xl md:text-2xl text-blue-700 mb-6 max-w-2xl mx-auto">“একটা সাবজেক্ট, একশো percent mastery—তুমি পারবে!”</p>
+        <a href="#roadmap" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg transition">Start Your Gameplan</a>
       </div>
 
       {/* Visual Roadmap */}
-      <SectionWrapper id="roadmap" title={<span>🗺️ Your 3-Step Roadmap to Mastery</span>} subtitle="Follow these steps for every subject. Simple, powerful, proven.">
+      <SectionWrapper id="roadmap" title={<span>🗺️ Mastery Gameplan: ৩টা Step, Boss Result!</span>} subtitle="Step by step—subject হবে তোমার playground!">
         <div className="flex flex-col md:flex-row justify-center items-stretch gap-6 mb-8">
           {roadmapSteps.map((step, idx) => (
             <div key={idx} className="flex-1 bg-white rounded-xl shadow p-6 flex flex-col items-center text-center border-t-4 border-blue-400">
               {step.icon}
               <h3 className="mt-3 text-xl font-bold text-blue-800">{step.label}</h3>
               <p className="mt-2 text-gray-700">{step.desc}</p>
+              <div className="mt-2 text-blue-500 font-semibold">{step.buddy}</div>
             </div>
           ))}
+        </div>
+        <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-xl text-blue-700 font-bold text-center">
+          Self-Check: আজকে কোন topic-টা বন্ধু/পিলো-কে explain করতে পারবে?
         </div>
       </SectionWrapper>
 
       {/* Quick Tips & Did You Know */}
       <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 mb-12">
         <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-xl shadow">
-          <h4 className="font-bold text-yellow-700 mb-2">⚡ Quick Tips</h4>
+          <h4 className="font-bold text-yellow-700 mb-2">⚡ Cool Buddy Tips</h4>
           <ul className="list-disc list-inside text-gray-700 space-y-1">
             {quickTips.map((tip, i) => <li key={i}>{tip}</li>)}
           </ul>
         </div>
         <div className="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-xl shadow">
           <h4 className="font-bold text-blue-700 mb-2">💡 Did You Know?</h4>
-          <p className="text-gray-700">Active recall and spaced repetition can double your retention compared to rereading notes. Try quizzing yourself after every study session!</p>
+          <p className="text-gray-700">Active recall মানে brain gym—just rereading মানে শুধু চোখের ব্যায়াম! Quiz war শুরু করো—retention double!</p>
         </div>
       </div>
 
       {/* Do's and Don'ts */}
-      <SectionWrapper title={<span>✅ Do’s & ❌ Don’ts for Mastery</span>}>
+      <SectionWrapper title={<span>✅ Survival Guide: Do’s & ❌ Don’ts</span>}>
         <div className="grid md:grid-cols-2 gap-8">
           <div>
             <h4 className="text-green-700 font-bold mb-2">Do’s</h4>
@@ -138,19 +138,20 @@ const SingleSubjectMasteryPage: React.FC = () => {
       </SectionWrapper>
 
       {/* Student Voices */}
-      <SectionWrapper title={<span>🎤 Student Voices</span>} subtitle="Real stories from Bangladeshi students who mastered their toughest subjects.">
+      <SectionWrapper title={<span>🎤 Squad Stories</span>} subtitle="Bangladeshi student-দের real mastery hacks!">
         <div className="grid md:grid-cols-2 gap-6">
           {studentStories.map((s, i) => (
             <div key={i} className="bg-white rounded-xl shadow p-6 border-l-4 border-blue-400">
               <p className="italic text-gray-800 mb-2">{s.story}</p>
               <div className="text-right text-blue-700 font-semibold">— {s.name}</div>
+              <div className="mt-2 text-green-600 text-sm">{s.advice}</div>
             </div>
           ))}
         </div>
       </SectionWrapper>
 
       {/* Study Techniques Gallery */}
-      <SectionWrapper title={<span>🧠 Strategy Gallery</span>} subtitle="Click any strategy to see how it works and how to use it.">
+      <SectionWrapper title={<span>🧠 Strategy Power-Ups</span>} subtitle="Click any strategy—see how cool toppers actually study!">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {subjectMasteryStrategies.map(strategy => {
             const Icon = strategy.icon;
@@ -167,6 +168,7 @@ const SingleSubjectMasteryPage: React.FC = () => {
                 >
                   <p>{strategy.description}</p>
                   <span className="mt-2 inline-block text-blue-600 font-semibold group-hover:underline">View Details &rarr;</span>
+                  <div className="text-xs text-blue-400 mt-1">Cool Tip: এই strategy-টা ICT, Math, Bangla—সব subject-এ কাজ করে!</div>
                 </Card>
               </button>
             );
@@ -202,7 +204,7 @@ const SingleSubjectMasteryPage: React.FC = () => {
       )}
 
       {/* Test Anxiety Toolkit (FAQ) */}
-      <SectionWrapper title={<span>🧘 Test Anxiety Toolkit</span>} subtitle="Stay calm, confident, and in control during exams.">
+      <SectionWrapper title={<span>🧘 Test Anxiety Toolkit</span>} subtitle="Exam মানে war না—calm থাকো, confident থাকো, boss থাকো!">
         <div className="grid md:grid-cols-2 gap-8 mb-8">
           {faq.map((item, i) => (
             <div key={i} className="bg-blue-50 rounded-xl shadow p-6 mb-2">
@@ -225,16 +227,16 @@ const SingleSubjectMasteryPage: React.FC = () => {
           ))}
         </div>
         <div className="bg-white rounded-xl shadow p-6">
-          <h4 className="font-bold text-blue-700 mb-2">Extra Tips</h4>
+          <h4 className="font-bold text-blue-700 mb-2">Extra Buddy Tips</h4>
           <ul className="list-disc list-inside space-y-2 text-gray-600">
-            <li><strong>Thorough Preparation:</strong> The best antidote to anxiety is knowing you're well-prepared. Let's work on this together!</li>
-            <li><strong>Positive Self-Talk:</strong> Replace negative thoughts with positive affirmations. Remind yourself: "I am capable, I have prepared."</li>
-            <li><strong>Visualize Success:</strong> Imagine yourself performing well, feeling calm and confident. See it, believe it.</li>
-            <li><strong>Proper Sleep & Nutrition:</strong> A healthy body supports a calm mind. Remember the importance of good rest and food.</li>
-            <li><strong>Arrive Early:</strong> Avoid any last-minute rushes that can spike stress levels.</li>
-            <li><strong>Read Instructions Carefully:</strong> Take a moment to understand what's expected before diving in.</li>
-            <li><strong>Focus on Your Own Pace:</strong> Don't get flustered by others. Stick to the plan.</li>
-            <li><strong>If You Blank Out:</strong> It's okay. Take a few deep breaths, maybe move to an easier question, and come back. This guide is here to support you (in spirit!).</li>
+            <li><strong>Solid Preparation:</strong> ভালো করে পড়া মানে anxiety কমে যাবে—তুমি ready!</li>
+            <li><strong>Positive Self-Talk:</strong> Negative thought-কে positive-এ বদলাও—“আমি পারি, আমি প্রস্তুত!”</li>
+            <li><strong>Visualize Success:</strong> নিজেকে calm, confident, winner হিসেবে imagine করো—see it, believe it!</li>
+            <li><strong>Sleep & Food:</strong> Healthy body মানে calm mind—ঘুম, খাবার skip করো না!</li>
+            <li><strong>Arrive Early:</strong> Last minute rush মানে stress—আগে গিয়ে relax করো।</li>
+            <li><strong>Read Carefully:</strong> Instruction ভালো করে পড়ো—confusion zero!</li>
+            <li><strong>Your Own Pace:</strong> অন্যদের দেখে stress নিও না—নিজের plan-এ থাকো।</li>
+            <li><strong>If You Blank Out:</strong> Deep breath, easy question দিয়ে শুরু—panic মানে pause, not game over!</li>
           </ul>
         </div>
       </SectionWrapper>
