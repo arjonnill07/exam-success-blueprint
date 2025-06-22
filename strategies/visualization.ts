@@ -4,7 +4,7 @@ import MindMapIcon from '../components/icons/MindMapIcon';
 
 const visualization: Strategy = {
   id: "visualization",
-  title: "Visualization Methods (দেখে শিখে রাখো)",
+  title: "Visualization Methods ",
   description: "Textbook-এর boring জিনিসগুলোকে mind map, diagram বা কল্পনার ছবিতে রূপ দাও—দেখে দেখে পরীক্ষায় বাজিমাত করো!",
   longDescription: `
     <div class="space-y-3">
