@@ -6,12 +6,12 @@ const focusDiffuse: Strategy = {
   title: "Focus & Diffuse Modes",
   description: "Alternate between intense concentration and relaxed thinking.",
   longDescription: `
-    <p><strong>Quick Take for Your Exams:</strong> This is how 'aha!' moments for those tricky exam problems are unlocked! It’s about knowing when to concentrate deeply (focused mode) and when to step back and let the brain connect ideas more broadly (diffuse mode).</p>
-    <p><strong>🧠 What Is It?</strong></p>
+    <p><strong>পরীক্ষার জন্য টিপস:</strong> কঠিন math বা science-এর সমস্যায় stuck? 'Aha!' moment পেতে হলে শুধু গম্ভীর মুখে পড়লেই হবে না—কখনো মনোযোগ দিয়ে পড়ো (Focus), আবার কখনো একটু relax হও (Diffuse)। Brain তখনই magic টা করে!</p>
+    <p><strong>🧠 Focus & Diffuse কী?</strong></p>
     <ul>
-      <li><strong>Focused Mode:</strong> Intense concentration for direct problem-solving or learning details.</li>
-      <li><strong>Diffuse Mode:</strong> Relaxed thinking where your brain makes background connections. Activated by stepping away (e.g., walk, light chore).</li>
-      <li><strong>The Switch:</strong> Strategically alternate between modes for breakthroughs on tough exam concepts. Master this mental switch!</li>
+      <li><strong>Focus Mode:</strong> একদম মনোযোগ দিয়ে পড়ছো বা সমস্যা সমাধান করছো—যেমন, exam-এর আগের রাতের পড়া, বা কঠিন sum solve করা।</li>
+      <li><strong>Diffuse Mode:</strong> একটু relax, ছাদে গিয়ে আকাশ দেখো, বা প্রিয় গান শোনো। Brain তখন background-এ connect করে দেয় সব idea!</li>
+      <li><strong>Switch করো:</strong> দুইটা mode বদলাও—দেখবে, হঠাৎ নতুন solution মাথায় চলে আসবে! এইটাই secret!</li>
     </ul>
   `,
   category: StrategyCategory.LEARNING_TECHNIQUES,
@@ -19,26 +19,32 @@ const focusDiffuse: Strategy = {
   visualExplainerComponent: BrainIcon,
   visualExplainerCaption: "Visualizing Focus/Diffuse: Switching between deep concentration (focus) and relaxed, broad thinking (diffuse).",
   howTo: [
-    "🤯 **1. Tackle the Tough Stuff:** Pick a challenging exam concept or problem.",
-    "🧐 **2. Deep Focus Session:** Work intently for a set time (e.g., one Pomodoro). Full concentration!",
-    "🚶 **3. Step Away (Diffuse Time!):** Take a real break. Walk, doodle, listen to music (instrumental is good!). Don't actively think about the problem.",
-    "💡 **4. Return & Re-engage:** Come back to the task with fresh eyes. Often, new insights will appear."
+    "🤯 ১. কঠিন কিছু বেছে নাও—যেমন, tricky math problem বা science-এর concept।",
+    "🧐 ২. Deep Focus: ২৫ মিনিট একদম মনোযোগ দিয়ে পড়ো (Pomodoro timer দিলে ভালো)। Mobile দূরে রাখো!",
+    "🚶 ৩. Diffuse Time: এবার একটু break—ছাদে হাঁটো, বারান্দায় দাঁড়াও, বা প্রিয় গান শোনো। একদম relax!",
+    "💡 ৪. আবার ফিরে এসো—নতুন চোখে দেখো, দেখবে, হঠাৎ মাথায় idea চলে এসেছে!"
   ],
-  benefits: [],
+  benefits: [
+    "কঠিন বিষয় সহজে মাথায় ঢুকে যাবে।",
+    "Stress কমবে, পড়া হবে মজার!",
+    "নতুন idea বা solution পেতে আর ভয় লাগবে না।",
+    "পরীক্ষার আগে brain থাকবে fresh!"
+  ],
   realWorldExamples: [
-    `<strong>🧠 Math Breakthrough: Solving Tough Problems</strong><br/>
-    ❌ Problem: Stuck on a geometry or algebra problem for ages.<br/>
-    ✅ Solution: Use focus and diffuse modes to unlock new ideas!<br/><br/>
+    `<strong>🧠 Math: Geometry-তে আটকে গেছো?</strong><br/>
+    ❌ সমস্যা: অনেকক্ষণ ধরে try করছো, but কিছুতেই হচ্ছে না।<br/>
+    ✅ Solution: Focus & Diffuse মিক্স করো!<br/><br/>
     <em>Action Plan:</em><br/>
-    1. (Focus) Work on the problem for 20 minutes, no distractions.<br/>
-    2. (Diffuse) Take a real break—walk, stretch, or listen to music.<br/>
-    3. (Focus) Come back and try again—notice new ideas popping up!<br/>
-    4. Celebrate every small win—progress is progress!<br/><br/>
-    🚀 This is how toppers get “aha!” moments!`,
+    ১. (Focus) ২০ মিনিট মনোযোগ দিয়ে চেষ্টা করো।<br/>
+    ২. (Diffuse) একটু ছাদে হাঁটো, বা বারান্দায় দাঁড়াও।<br/>
+    ৩. (Focus) আবার desk-এ ফিরে আসো—দেখবে, নতুন clue পেয়ে গেছো!<br/>
+    ৪. Celebrate your small wins!<br/><br/>
+    🚀 এইভাবেই brain-এ 'aha!' moment টা আসে ভাইয়া
+!`,
 
-    `<strong>✍️ English Essay Brainstorm: Get Creative</strong><br/>
-    ❌ Problem: Can’t think of ideas for your essay or story.<br/>
-    ✅ Solution: Switch between focus and relax to spark creativity!<br/><br/>
+    `<strong>✍️ English: Essay-র idea পাচ্ছো না?</strong><br/>
+    ❌ সমস্যা: খাতা খুলে বসে আছো, মাথায় কিছুই আসছে না।<br/>
+    ✅ Solution: Focus & Diffuse-এ switch করো!<br/><br/>
     <em>Action Plan:</em><br/>
     1. (Focus) Write down ideas for 15 minutes—no stopping.<br/>
     2. (Diffuse) Take a break: doodle, make tea, or chat with family.<br/>
@@ -46,19 +52,19 @@ const focusDiffuse: Strategy = {
     4. Every break is a brain boost. You’re getting creative!<br/><br/>
     💡 You’ll write faster and with more confidence!`,
 
-    `<strong>🧪 Science Revision: Chemistry Made Easy</strong><br/>
-    ❌ Problem: Forgetting reactions or facts after hours of study.<br/>
-    ✅ Solution: Alternate focus and break sessions for better memory!<br/><br/>
+    `<strong>🧪 Science: Chemistry পড়ে ভুলে যাচ্ছো?</strong><br/>
+    ❌ সমস্যা: অনেকক্ষণ পড়ে, কিছুই মনে থাকছে না।<br/>
+    ✅ Solution: Focus & Diffuse-এ পড়ো!<br/><br/>
     <em>Action Plan:</em><br/>
-    1. (Focus) Study the chapter for 25 minutes.<br/>
-    2. (Diffuse) Step away—play a quick game or listen to a song.<br/>
-    3. (Focus) Come back and quiz yourself—surprised by what you remember?<br/>
-    4. Pat yourself on the back—this is how toppers learn!<br/><br/>
-    🌟 You’ll remember more and feel less stressed!`,
+    ১. (Focus) ২৫ মিনিট পড়ো।<br/>
+    ২. (Diffuse) একটু গান শোনো, বা বারান্দায় দাঁড়াও।<br/>
+    ৩. (Focus) ফিরে এসে নিজেকে quiz করো—দেখবে, অনেক কিছু মনে আছে!<br/>
+    ৪. praise yourself buddy!<br/><br/>
+    🌟 stress কমবে!`,
 
-    `<strong>📚 History/Geography: Essay or Map Mastery</strong><br/>
-    ❌ Problem: Can’t organize your thoughts for a big answer or map.<br/>
-    ✅ Solution: Use focus and diffuse modes for clarity!<br/><br/>
+    `<strong>📚 History/Geography: বড় answer লিখতে পারছো না?</strong><br/>
+    ❌ সমস্যা: মাথায় কিছুই আসছে না, কোথা থেকে শুরু করবে বুঝতে পারছো না।<br/>
+    ✅ Solution: Focus & Diffuse-এ switch করো!<br/><br/>
     <em>Action Plan:</em><br/>
     1. (Focus) Outline your answer or map for 15 minutes.<br/>
     2. (Diffuse) Take a break—walk, stretch, or relax.<br/>
