@@ -5,86 +5,89 @@ import FlashcardsIcon from '../components/icons/FlashcardsIcon';
 const leitnerSystem: Strategy = {
   id: "leitner-system",
   title: "Leitner System (Smart Flashcards)",
-  description: "Level up your memory! Use flashcards in boxes to focus on what you need most.",
+  description: "Memory game খেলো! Flashcards দিয়ে tough facts সহজে শিখো—level up like a pro!",
   longDescription: `
     <div class="space-y-3">
-      <div><strong>🗂️ What:</strong> Turn revision into a game! Move flashcards through boxes—easy cards move up, tough ones stay for more practice. You win by clearing all boxes!</div>
-      <div><strong>💡 Why it works:</strong> You spend more time on what’s hard and less on what’s easy. This saves time and makes sure you’re always ready for surprise exam questions.</div>
+      <div><strong>🗂️ What:</strong> Revision-কে বানাও game! Flashcard বানাও, ভুল করলে বারবার practice—ঠিক হলে next level! সব box clear মানে—memory boss! </div>
+      <div><strong>💡 Why it works:</strong> Hard topics-এ বেশি সময়, easy-তে কম—time save, brain sharp! Surprise exam question-এও confident থাকবে।</div>
       <div><strong>⚡ How to play:</strong>
         <ul class="list-disc list-inside ml-4">
-          <li>Make flashcards for key facts, formulas, or vocab.</li>
-          <li>Start all cards in Box 1 (review daily).</li>
-          <li>If you get a card right, move it to the next box (review less often). If wrong, keep it in Box 1.</li>
-          <li>Keep going until all cards reach the last box—now you’re a master!</li>
+          <li>Key facts, formula, vocab—সব flashcard-এ লেখো।</li>
+          <li>সব card Box 1-এ রাখো (daily review)।</li>
+          <li>ঠিক উত্তর? Next box-এ move করো (review কম)। ভুল? Box 1-এ রাখো।</li>
+          <li>সব card last box-এ গেলে—তুমি master!</li>
         </ul>
       </div>
       <div class="bg-sky-50 border-l-4 border-sky-400 p-2 rounded">
-        <strong>Try it now:</strong> Make 10 flashcards for your next exam. Review them today. Tomorrow, only review the ones you missed. See how fast you level up!
+        <strong>Try it now:</strong> তোমার পরের exam-এর জন্য ১০টা flashcard বানাও। আজ সব পড়ো, কাল শুধু ভুলগুলো। দেখো, কত দ্রুত level up করো!
       </div>
       <div class="text-blue-700 text-sm mt-2">
-        <strong>Real-world Eureka:</strong> It’s like cricket nets: you practice the shots you miss most. The Leitner System makes sure you’re always working on your weak spots—so nothing surprises you in the real match (exam)!
+        <strong>Real-world Eureka:</strong> Cricket practice-এর মতো—যে shot miss করো, সেটাই বেশি practice! Leitner System-এ weak spot-এ বেশি সময়—exam-এ আর কোনো surprise নেই!
       </div>
     </div>
   `,
   category: StrategyCategory.MEMORY_ENHANCEMENT,
   icon: ClipboardListIcon,
   visualExplainerComponent: FlashcardsIcon,
-  visualExplainerCaption: "Visualizing Leitner System: Flashcards moving between review boxes based on recall success.",
+  visualExplainerCaption: "Leitner System: Flashcard-গুলো box থেকে box-এ jump করে—recall success হলে!",
   howTo: [
-    "Make flashcards for key facts, formulas, or vocab.",
-    "Start all cards in Box 1 (review daily).",
-    "If correct, move to next box. If wrong, keep in Box 1.",
-    "Repeat until all cards reach the last box.",
+    "Key facts, formula, vocab—সব flashcard-এ লেখো।",
+    "সব card Box 1-এ রাখো (daily review)।",
+    "ঠিক হলে next box-এ move, ভুল হলে Box 1-এ রাখো।",
+    "সব card last box-এ গেলে—তুমি memory master!",
+    "Group study-তে বন্ধুদের সাথে flashcard challenge করো—fun & fast revision!"
   ],
   benefits: [
-    "Saves time—focuses on what you need most.",
-    "Makes revision fun and motivating.",
-    "Builds confidence for any exam.",
+    "Time save—hard topics-এ বেশি focus!",
+    "Revision হবে game-এর মতো—boring নয়, motivating!",
+    "Exam-এর আগে confidence boost!",
+    "Self-check—কোনটা পারো, কোনটা revise দরকার, সঙ্গে সঙ্গে বুঝে যাবে।"
   ],
   realWorldExamples: [
     `<strong>🎲 English Vocab: Flashcard Power</strong><br/>
-    ❌ Problem: Forget new words after a few days.<br/>
-    ✅ Solution: Use the Leitner System to make them stick!<br/><br/>
+    ❌ Problem: নতুন শব্দ মনে থাকে না!<br/>
+    ✅ Solution: Leitner System-এ flashcard বানাও—word master হয়ে যাও!<br/><br/>
     <em>Action Plan:</em><br/>
-    1. Make 10 flashcards for new words.<br/>
-    2. Review all cards today. Tomorrow, only review the ones you missed.<br/>
-    3. Move correct cards to the next box—see your progress grow!<br/>
-    4. Keep going until all cards are easy.<br/><br/>
-    🎉 You’ll remember words for exams and beyond!`,
+    ১. ১০টা নতুন শব্দ flashcard-এ লেখো।<br/>
+    ২. আজ সব পড়ো, কাল শুধু ভুলগুলো।<br/>
+    ৩. ঠিক হলে next box-এ move করো—progress দেখো!<br/>
+    ৪. সব card easy হলে—celebrate!<br/><br/>
+    🎉 Word-গুলো exam-এও মনে থাকবে!`,
 
-    `<strong>🧪 Chemistry: Mastering Equations</strong><br/>
-    ❌ Problem: Struggle to remember chemical equations.<br/>
-    ✅ Solution: Flashcards and the Leitner System make it easy!<br/><br/>
+    `<strong>🧪 Chemistry: Equation Boss</strong><br/>
+    ❌ Problem: Chemical equation মনে থাকে না।<br/>
+    ✅ Solution: Flashcard-এ tricky equation লিখে Leitner System-এ practice করো!<br/><br/>
     <em>Action Plan:</em><br/>
-    1. Write tricky equations on flashcards.<br/>
-    2. Review daily. If you get one right, move it to the next box.<br/>
-    3. If you miss one, keep it in Box 1 for more practice.<br/>
-    4. Keep reviewing until all cards reach the last box.<br/><br/>
-    🧪 Master equations step by step!`,
+    ১. Hard equation-গুলো flashcard-এ লেখো।<br/>
+    ২. Daily review—ঠিক হলে next box, ভুল হলে Box 1।<br/>
+    ৩. সব equation last box-এ গেলে—chemistry master!<br/><br/>
+    🧪 Step by step master হও!`,
 
-    `<strong>📅 History: Key Dates with Flashcards</strong><br/>
-    ❌ Problem: Forget important dates before the exam.<br/>
-    ✅ Solution: Use flashcards and the Leitner System!<br/><br/>
+    `<strong>📅 History: Date Champ</strong><br/>
+    ❌ Problem: Important date exam-এর আগে ভুলে যাও।<br/>
+    ✅ Solution: Flashcard-এ date লিখে Leitner System-এ practice করো!<br/><br/>
     <em>Action Plan:</em><br/>
-    1. Make flashcards for 5 key dates/events.<br/>
-    2. Review daily, moving correct cards up a box.<br/>
-    3. Focus on the ones you miss—review them more often.<br/>
-    4. Celebrate when all cards are in the last box!<br/><br/>
-    🗓️ Flashcards make history easy!`,
+    ১. ৫টা key date/event flashcard-এ লেখো।<br/>
+    ২. Daily review—ঠিক হলে next box-এ move।<br/>
+    ৩. ভুলগুলো বেশি revise করো।<br/>
+    ৪. সব card last box-এ গেলে—celebrate!<br/><br/>
+    🗓️ History হবে easy!`,
 
-    `<strong>✏️ Bangla: Grammar Rules with Flashcards</strong><br/>
-    ❌ Problem: Grammar rules slip away before the test.<br/>
-    ✅ Solution: Use the Leitner System for grammar mastery!<br/><br/>
+    `<strong>✏️ Bangla: Grammar Hero</strong><br/>
+    ❌ Problem: Grammar rule মনে থাকে না।<br/>
+    ✅ Solution: Leitner System-এ flashcard-এ rule practice করো!<br/><br/>
     <em>Action Plan:</em><br/>
-    1. Write 3–5 grammar rules on flashcards.<br/>
-    2. Review daily, moving correct cards up a box.<br/>
-    3. If you miss a rule, keep it in Box 1 for extra practice.<br/>
-    4. Review until all rules are easy to recall.<br/><br/>
-    ✍️ Flashcards make grammar simple!`,
+    ১. ৩-৫টা grammar rule flashcard-এ লেখো।<br/>
+    ২. Daily review—ঠিক হলে next box-এ move।<br/>
+    ৩. ভুল হলে Box 1-এ রাখো, বেশি practice করো।<br/>
+    ৪. সব rule easy হলে—grammar master!<br/><br/>
+    ✍️ Grammar হবে simple!`,
   ],
   examPrepFocus: [
-    "Perfect for quick, daily revision before exams.",
-    "Great for large subjects with lots of facts.",
+    "Quick, daily revision—exam-এর আগে perfect!",
+    "Big subject, অনেক fact—flashcard-এ ভাগ করে নাও!",
+    "ICT: Coding syntax, shortcut, theory—সব flashcard-এ নাও!",
+    "Biology: Diagram label, function, definition—flashcard-এ practice করো!"
   ]
 };
 
