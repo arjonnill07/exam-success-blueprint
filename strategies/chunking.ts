@@ -5,75 +5,104 @@ import SegmentedBarIcon from '../components/icons/SegmentedBarIcon';
 const chunking: Strategy = {
   id: "chunking",
   title: "Chunking (Breaking It Down!)",
-  description: "Turn overwhelming topics into bite-sized, conquerable pieces for exam success.",
+  description: "বড় chapter বা syllabus দেখে ভয় পাও? Chunking দিয়ে সব হবে pocket-এর মধ্যে!",
   longDescription: `
-    <p><strong>Quick Take for Your Exams:</strong> Overwhelmed by a giant chapter or syllabus? Chunking is your secret weapon to make it easy and even fun! Break big topics into small, meaningful parts—like solving a puzzle, one piece at a time.</p>
-    <p><strong>🧩 What Is It?</strong></p>
+    <p><strong>কমরেড, বিশাল chapter দেখে মাথা ঘুরে যায়?</strong><br/>
+    Chunking-ই তোমার secret weapon! বড় জিনিসকে ছোট ছোট টুকরো করো—puzzle-এর মতো, এক টুকরো এক টুকরো করে solve করো।<br/>
+    <strong>🧩 Chunking কী?</strong></p>
     <ul>
       <li>Divide large topics (like the whole SSC syllabus) into smaller, logical 'chunks'—each chunk is easier to learn and remember.</li>
       <li>Focus on one chunk at a time, then connect them for the full picture.</li>
       <li>Chunking helps you avoid last-minute panic and makes revision feel achievable!</li>
     </ul>
+    <p>Chunking মানে—big boss chapter-ও হবে তোমার ছোট ভাই!</p>
   `,
   category: StrategyCategory.LEARNING_TECHNIQUES,
   icon: PuzzleIcon,
   visualExplainerComponent: SegmentedBarIcon,
   visualExplainerCaption: "Visualizing Chunking: A huge task broken into smaller, manageable segments.",
   howTo: [
-    "**🔍 1. Spot the Monster:** Find that big, scary chapter or topic (e.g., 'Cell Biology' or 'Bangladesh Liberation War').",
-    "**✂️ 2. Slice It Up:** Break it into logical chunks—like sub-topics, events, or question types. Use your textbook’s headings or past exam questions as a guide.",
-    "**🎯 3. Master Each Chunk:** Focus on one chunk at a time. Summarize it in your own words, draw a diagram, or teach it to a friend.",
-    "**🔗 4. Connect the Chunks:** After learning each part, link them together. Make a mind map or explain how the pieces fit for the exam.",
-    "**🚀 Try it now:** Pick your hardest chapter and break it into 3–5 chunks. Study just one chunk today—you’ll feel the difference!"
+    "🔍 **১. বের করো:** বড়, ভয়ংকর chapter বা topic (যেমন, 'Cell Biology' বা 'বাংলাদেশের মুক্তিযুদ্ধ')।",
+    "✂️ **২. টুকরো টুকরো করো:** Sub-topic, event, question type—textbook-এর heading বা exam question দেখে ভাগ করো।",
+    "🎯 **৩. একেকটা chunk-এ master হও:** নিজের ভাষায় summary লেখো, diagram আঁকো, বা ছোট ভাই/বোনকে শেখাও (না থাকলে আয়নায় বলো!)।",
+    "🔗 **৪. সব chunk connect করো:** Mind map বানাও, বা exam-এর জন্য পুরোটা একসাথে explain করো।",
+    "🚀 **Try করো:** তোমার hardest chapter-টা ৩–৫টা chunk-এ ভাগ করো। আজ শুধু একটা chunk পড়ো—দেখো, কেমন easy লাগে!"
   ],
   benefits: [
-    "Reduces overwhelm and exam stress.",
-    "Boosts memory by organizing information.",
-    "Makes revision faster and more effective.",
-    "Helps you spot connections and ace long-answer questions."
+    "বড় chapter দেখে আর ভয় লাগবে না—সব manageable!",
+    "পড়া মনে থাকবে, কারণ brain ছোট ছোট টুকরোতে info store করে।",
+    "Revision super fast হবে, exam-এর আগেও confident!",
+    "Long answer-এ connect করতে পারবে—topper-দের secret!"
   ],
   realWorldExamples: [
-    `<strong>🧩 Science: Break Down Big Chapters</strong><br/>
-    ❌ Problem: The chapter feels huge and overwhelming.<br/>
-    ✅ Solution: Use chunking to make it easy and fun!<br/><br/>
+    `<strong>🔬 Chemistry: Periodic Table Chunking—Like a Superhero Map!</strong><br/>
+    ❌ সমস্যা: Periodic table-এর সব element, group, property—একসাথে পড়লে মাথা ঘুরে যায়, মনে হয় Avengers Assemble!<br/>
+    ✅ Solution: Chunk করে পড়ো, মনে থাকবে super easy—আর Avengers-এর মতো group-ও চিনে ফেলো!<br/><br/>
     <em>Action Plan:</em><br/>
-    1. List all cell parts (membrane, nucleus, etc.).<br/>
-    2. Learn each part’s function—draw and label.<br/>
-    3. Practice MCQs or short questions on each chunk.<br/>
-    4. Connect the chunks with a mind map or summary.<br/><br/>
-    🎉 You’ll finish the chapter step by step, not all at once!`,
+    ১. Group chunk: Alkali metals, Halogens, Noble gases—প্রতিটা group আলাদা chunk-এ পড়ো, group-এর জন্য আলাদা রং বা symbol দাও (যেমন, Alkali metals=লাল, Halogens=সবুজ)।<br/>
+    ২. Period chunk: Row-wise element গুলো chunk করো, প্রতিটা row-কে আলাদা story বা funny নাম দাও (যেমন, 2nd period=“School Friends”, 3rd period=“Cricket Team”)।<br/>
+    ৩. Property chunk: প্রতিটা group-এর main property আলাদা chunk-এ লিখে রাখো, সাথে ছোট্ট doodle বা emoji দাও (Halogens=🔥, Noble gases=🎈)।<br/>
+    ৪. Proven mnemonic বা funny rhyme দিয়ে chunk-wise revise করো:<br/>
+    &nbsp;&nbsp;• Alkali metals (Li, Na, K, Rb, Cs, Fr): “লি না কে রুবি শেখায় ফ্রেন্স”<br/>
+    &nbsp;&nbsp;• Halogens (F, Cl, Br, I, At): “Fahim Cleared Bristi, Iftar Ashbe Taratari” (ফাহিম ক্লিয়ারড বৃষ্টি, ইফতার আসবে তারাতারি)<br/>
+    
+    ৫. Group-wise flashcard বানাও, quiz খেলো বন্ধুদের সাথে—কে বেশি group চিনতে পারে!<br/><br/>
+    🧪 Chunk-wise পড়লে, Periodic Table হবে তোমার superhero squad—exam-এ আর ভয় নেই!`,
 
-    `<strong>📖 Literature: Tackle Long Stories or Poems</strong><br/>
-    ❌ Problem: Can’t remember all the events or characters.<br/>
-    ✅ Solution: Break it into small, friendly pieces!<br/><br/>
+    `<strong>🧪 Chemistry: Equation & Reaction Chunking</strong><br/>
+    ❌ সমস্যা: Organic chemistry-র equation, reaction, আর mechanism—সব গুলিয়ে যায়?<br/>
+    ✅ Solution: Chunking দিয়ে একেকটা step আলাদা করো!<br/><br/>
     <em>Action Plan:</em><br/>
-    1. Write down the main events.<br/>
-    2. List the key characters and their roles.<br/>
-    3. Find the main theme or lesson.<br/>
-    4. Summarize each chunk in your own words.<br/><br/>
-    📚 Suddenly, the story makes sense and is easy to revise!`,
+    ১. Equation-এর reactant, product, catalyst—সব আলাদা chunk।<br/>
+    ২. প্রতিটা step diagram এঁকে বুঝে practice করো।<br/>
+    ৩. Mechanism-এর প্রতিটা ধাপ chunk করো—arrow দিয়ে flow বোঝাও।<br/>
+    ৪. সব chunk connect করে পুরো process revise করো।<br/><br/>
+    🧪 Chunking করলে, বড় equation-ও মনে থাকবে!`,
 
-    `<strong>➗ Math: Master Theorems Step by Step</strong><br/>
-    ❌ Problem: Theorem proofs feel confusing and too long.<br/>
-    ✅ Solution: Chunk them into simple, clear steps!<br/><br/>
+    `<strong>📚 History: Long Chapter Chunking</strong><br/>
+    ❌ সমস্যা: Liberation War বা Mughal Empire-এর বিশাল chapter—সব event, date, leader গুলিয়ে যায়?<br/>
+    ✅ Solution: Chunk করে timeline, leader, event আলাদা করো!<br/><br/>
     <em>Action Plan:</em><br/>
-    1. Write the definitions and formula.<br/>
-    2. Break the proof into 3–4 logical steps.<br/>
-    3. Practice each step separately.<br/>
-    4. Connect all steps for the full proof.<br/><br/>
-    🧮 Step-by-step chunks make math easy!`,
+    ১. Timeline chunk: Main year/period গুলো আলাদা করো।<br/>
+    ২. Leader chunk: Key leader-দের নাম, কাজ লিখে রাখো।<br/>
+    ৩. Event chunk: Important event গুলো আলাদা করো।<br/>
+    ৪. সব chunk revise করে, নিজের ভাষায় গল্প বলো—বন্ধুকে না পেলে, আয়নায় বলো!<br/><br/>
+    🗺️ Chunk-wise পড়লে, বড় chapter-ও মনে থাকবে!`,
 
-    `<strong>📝 Bangla: Essay or Grammar in Chunks</strong><br/>
-    ❌ Problem: Essays or grammar rules feel overwhelming.<br/>
-    ✅ Solution: Break them into chunks for easy learning!<br/><br/>
+    `<strong>📐 Math: Formula & Problem Chunking</strong><br/>
+    ❌ সমস্যা: Algebra-র formula, theorem, আর problem—সব একসাথে পড়লে মাথা গুলিয়ে যায়?<br/>
+    ✅ Solution: Formula, example, problem-solving—সব আলাদা chunk করো!<br/><br/>
     <em>Action Plan:</em><br/>
-    1. For essays: List main points, then write a paragraph for each.<br/>
-    2. For grammar: List rules, then practice one at a time.<br/>
-    3. Review and connect all chunks.<br/>
-    4. Summarize or teach the full topic to a friend.<br/><br/>
-    ✍️ Chunking makes big tasks simple!`,
+    ১. Formula chunk: সব formula আলাদা করে লিখে রাখো।<br/>
+    ২. Example chunk: প্রতিটা formula-র ২টা করে example solve করো।<br/>
+    ৩. Problem chunk: Exam-এর problem গুলো আলাদা chunk-এ practice করো।<br/>
+    ৪. সব chunk revise করে, নিজের ভাষায় explain করো।<br/><br/>
+    🧮 Chunk-wise পড়লে, math হবে magic!`,
+
+    `<strong>📝 English: Passage & Writing Chunking</strong><br/>
+    ❌ সমস্যা: Passage পড়লে answer, summary, vocabulary—সব গুলিয়ে যায়?<br/>
+    ✅ Solution: Passage-কে chunk করে পড়ো!<br/><br/>
+    <em>Action Plan:</em><br/>
+    ১. Passage chunk: Paragraph বা section আলাদা করো।<br/>
+    ২. Question chunk: প্রতিটা question আলাদা chunk-এ answer practice করো।<br/>
+    ৩. Vocabulary chunk: নতুন শব্দগুলো আলাদা chunk-এ লিখে revise করো।<br/>
+    ৪. Writing chunk: Summary, main idea, opinion—সব আলাদা chunk-এ practice করো।<br/><br/>
+    📖 Chunk-wise পড়লে, English-এ confident হবে!`,
+
+    `<strong>🧬 Biology: Diagram & Process Chunking</strong><br/>
+    ❌ সমস্যা: Digestive system, photosynthesis-এর diagram, step, function—সব একসাথে পড়লে ভুলে যাও?<br/>
+    ✅ Solution: Diagram, step, function—সব আলাদা chunk করো!<br/><br/>
+    <em>Action Plan:</em><br/>
+    ১. Diagram chunk: প্রতিটা organ বা part আলাদা করে আঁকো।<br/>
+    ২. Step chunk: Process-এর প্রতিটা ধাপ আলাদা chunk-এ লিখো।<br/>
+    ৩. Function chunk: প্রতিটা part-এর কাজ আলাদা chunk-এ লিখো।<br/>
+    ৪. সব chunk revise করে, নিজের ভাষায় explain করো।<br/><br/>
+    🌱 Chunk-wise পড়লে, biology diagram আর ভুল হবে না!`
   ],
-  examPrepFocus: []
+  examPrepFocus: [
+    "Big chapter, long answer, revision—সবকিছুর জন্য chunking technique দারুণ!",
+    "Chunk-wise পড়লে, exam-এর আগের রাতেও cool!"
+  ]
 };
 
 export default chunking;
