@@ -107,6 +107,18 @@ const ContactPage: React.FC = () => {
 								);
 							})}
 						</div>
+						<div className="w-full flex flex-col items-center mt-6">
+							<h3 className="text-indigo-700 font-bold text-base mb-2">📝 Student Feedback</h3>
+							<iframe
+								src="https://forms.gle/gbjhxCN3QXPr83j67"
+								title="Student Feedback Form"
+								width="100%"
+								height="480"
+								className="rounded-xl border border-indigo-100 shadow-sm bg-white"
+								loading="lazy"
+							></iframe>
+							<p className="text-xs text-gray-400 mt-2 text-center">Your feedback helps make this platform even better for everyone!</p>
+						</div>
 						<p className="text-xs text-gray-500 mt-4 text-center italic">
 							Keep exploring, keep learning, and keep forging your unique path to mastery!
 						</p>
