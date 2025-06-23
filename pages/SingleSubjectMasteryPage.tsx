@@ -83,13 +83,13 @@ const SingleSubjectMasteryPage: React.FC = () => {
     <div className="animate-fadeIn">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-100 to-sky-200 py-12 px-4 rounded-b-3xl shadow mb-10 text-center">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-900 mb-4">Subject Mastery: Cool ভাই/আপু Style!</h1>
-        <p className="text-xl md:text-2xl text-blue-700 mb-6 max-w-2xl mx-auto">“একটা সাবজেক্ট, একশো percent mastery—তুমি পারবে!”</p>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-900 mb-4">Subject Mastery</h1>
+        <p className="text-xl md:text-2xl text-blue-700 mb-6 max-w-2xl mx-auto">Master any subject, unlock your full potential—yes, you can!</p>
         <a href="#roadmap" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg transition">Start Your Gameplan</a>
       </div>
 
       {/* Visual Roadmap */}
-      <SectionWrapper id="roadmap" title={<span>🗺️ Mastery Gameplan: ৩টা Step, Boss Result!</span>} subtitle="Step by step—subject হবে তোমার playground!">
+      <SectionWrapper id="roadmap" title={<span>🗺️ Mastery Gameplan: ৩টা Step !</span>} subtitle="Step by step—subject হবে তোমার playground!">
         <div className="flex flex-col md:flex-row justify-center items-stretch gap-6 mb-8">
           {roadmapSteps.map((step, idx) => (
             <div key={idx} className="flex-1 bg-white rounded-xl shadow p-6 flex flex-col items-center text-center border-t-4 border-blue-400">
@@ -101,7 +101,7 @@ const SingleSubjectMasteryPage: React.FC = () => {
           ))}
         </div>
         <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-xl text-blue-700 font-bold text-center">
-          Self-Check: আজকে কোন topic-টা বন্ধু/পিলো-কে explain করতে পারবে?
+          Self-Check: আজকে কোন topic-টা explain করতে পারবে?
         </div>
       </SectionWrapper>
 
@@ -168,7 +168,7 @@ const SingleSubjectMasteryPage: React.FC = () => {
                 >
                   <p>{strategy.description}</p>
                   <span className="mt-2 inline-block text-blue-600 font-semibold group-hover:underline">View Details &rarr;</span>
-                  <div className="text-xs text-blue-400 mt-1">Cool Tip: এই strategy-টা ICT, Math, Bangla—সব subject-এ কাজ করে!</div>
+                  <div className="text-xs text-blue-400 mt-1">Cool Tip: এই strategy সব subject-এ কাজ করে!</div>
                 </Card>
               </button>
             );
