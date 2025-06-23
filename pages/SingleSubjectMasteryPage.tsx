@@ -14,30 +14,30 @@ const studentStories = [
 ];
 
 const quickTips = [
-  'বড় chapter? ছোট ছোট goal-এ ভাগ করো—আজ একটু, কাল একটু, শেষে boss feeling!',
-  'যা শিখছো, বন্ধু বা pillow-কে explain করো—না পারলে, আবার পড়ো!',
-  'Color, diagram, meme—notes memorable বানাও!',
-  'Exam-এর আগে নিজেকে test করো—surprise zero, confidence hero!',
+  'বড় chapter দেখলেই মাথা ঘুরে? ভাবো, ছোট ছোট টুকরো—আজ একটু, কাল একটু, শেষে দেখবে, “ওহ, শেষ!”',
+  'যা শিখছো, pillow-কে বা বন্ধুকে হাসতে হাসতে explain করো—নিজেই হেসে ফেলবে, আর মনে থাকবে!',
+  'Color, diagram, meme—notes বানাতে মজা লাগলে, পড়াটাও মজার হয়ে যায়, তাই না?',
+  'Exam-এর আগে নিজেকে ছোট quiz দাও—ভুল পেলে, “আহা, এইটুকু তো revise করলেই হবে!”',
 ];
 
 const roadmapSteps = [
   {
-    label: '১. Concept Ninja',
-    desc: 'WHY বুঝো, শুধু WHAT নয়! Feynman Technique বা mind map use করো—concept clear মানে subject তোমার!',
+    label: '১. Concept বুঝো',
+    desc: 'কেন, কীভাবে—এই প্রশ্নগুলো মাথায় আনো। Feynman Technique বা mind map-এ আঁকো, মজা পাবে!',
     icon: <BrainIcon className="w-7 h-7 text-blue-500" />,
-    buddy: '“বন্ধুকে explain করতে পারলে—concept boss!”'
+    buddy: '“বন্ধুকে বা pillow-কে বোঝাতে পারলে, বুঝে গেছো—এটা তো নিজের superpower!”'
   },
   {
-    label: '২. Practice Pro',
-    desc: 'Quiz, problem solve, spaced repetition—practice মানে brain gym!',
+    label: '২. Practice করো',
+    desc: 'নিজেকে quiz দাও, ছোট ছোট problem solve করো, spaced repetition-এ পড়ো—ভুল হলে, “ওরে বাবা, এইটা তো মজার!”',
     icon: <BookOpenIcon className="w-7 h-7 text-green-500" />,
-    buddy: '“নিজেকে quiz করো—mistake মানে next level!”'
+    buddy: '“ভুল করলে মন খারাপ? আরে, সবাই তো করে! পরের বার দেখো, কেমন পারো!”'
   },
   {
-    label: '৩. Review Hero',
-    desc: 'ভুল ধরো, প্রশ্ন করো, plan adjust করো—mistake মানে upgrade!',
+    label: '৩. Review & Reflect',
+    desc: 'ভুলগুলো খুঁজে বের করো, প্রশ্ন করো, একটু একটু করে plan বদলাও—এভাবেই তো level up!',
     icon: <LightbulbIcon className="w-7 h-7 text-yellow-500" />,
-    buddy: '“ভুল মানে ভয় না—next time boss move!”'
+    buddy: '“নিজের ভুল নিয়ে relax—এটাই তো শেখার আসল মজা!”'
   },
 ];
 
@@ -53,16 +53,16 @@ const faq = [
 ];
 
 const dos = [
-  'নিজের ভাষায় topic explain করো—brain-এ বসে যাবে!',
-  'Past paper, quiz—practice, practice, practice!',
-  'Short break নাও—brain recharge!',
-  'Stuck? Help চাও—cool ভাই/আপু-রা help করে!',
+  'নিজের মতো করে বুঝে নিলে, পড়া আর চাপ মনে হয় না—মাথায় ঢুকে যায়, মজা লাগে!',
+  'Past paper বা quiz-এ নিজেকে একটু challenge দাও—নিজেই অবাক হবে, কত কিছু পারো!',
+  'পড়ার মাঝে একটু হাঁটা, একটু চা—brain-ও তো বন্ধু, ওকেও break দাও!',
+  'কিছু বুঝতে না পারলে, বন্ধু বা বড়দের জিজ্ঞেস করো—help চাইলে, সবাই খুশি হয়!',
 ];
 const donts = [
-  'Last night hero হয়ো না—brain hang হবে!',
-  'শুধু পড়া নয়—নিজেকে test করো!',
-  'ঘুম skip করলে brain lag—no superpower!',
-  'Hard topic ignore করলে exam-এ surprise!',
+  'সব এক রাতে গিলতে গেলে, brain-ও বলবে, “ভাই, একটু দয়া করো!”',
+  'শুধু পড়া পড়া খেললে, quiz-এ মজা মিস করবে!',
+  'ঘুম না দিলে, brain-ও তো “hang”—তাই না?',
+  'যা কঠিন লাগে, সেটাকে একটু একটু করে tackle করো—শেষে দেখবে, “এটা তো পারি!”',
 ];
 
 const SingleSubjectMasteryPage: React.FC = () => {
